@@ -3,6 +3,9 @@
 
 #include "AbilitySystem/OWAbilitySystemComponent.h"
 
+#include "AbilitySystem/Abilities/OWGameplayAbility.h"
+#include "AbilitySystem/OWAbilitySet.h"
+
 //void UOWAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf<class UGameplayAbility>>& StartupAbilities)
 //{
 //	for (auto& AbilityClass : StartupAbilities)
@@ -16,10 +19,14 @@
 //	}
 //}
 
-void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag AbilityTag)
+void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag InputTag)
 {
-	for (FGameplayAbilitySpecHandle& SpecHandle : SpecHandles)
+	for (const FGameplayAbilitySpec& AbilitySpec : ActivatableAbilities.Items)
 	{
-		TryActivateAbility(SpecHandle);
+		if (AbilitySpec.Ability && AbilitySpec.GetDynamicSpecSourceTags().HasTag(InputTag))
+		{
+			TryActivateAbility(AbilitySpec.Handle);
+		}
+		
 	}
 }

@@ -74,7 +74,7 @@ public:
 	UOWAbilitySet(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 	void GiveToAbilitySystem(UOWAbilitySystemComponent* OWASC) const;
 
-protected:
+public:
 	UPROPERTY(EditDefaultsOnly, Category = "Gameplay Abilities", meta = (TitleProperty = Ability))
 	TArray<FOWAbilitySet_GameplayAbility> GrantedGameplayAbilities;
 

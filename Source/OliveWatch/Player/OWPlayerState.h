@@ -25,11 +25,13 @@ public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
 
-private:
+	virtual void BeginPlay() override;
+
+protected:
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<UOWAbilitySystemComponent> AbilitySystemComponent;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditDefaultsOnly, Category = "AbilitySet")
 	TObjectPtr<UOWAbilitySet> AbilitySet;
 
 };

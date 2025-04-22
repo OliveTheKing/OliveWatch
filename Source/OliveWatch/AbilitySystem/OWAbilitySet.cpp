@@ -4,7 +4,7 @@
 
 #include "AbilitySystem/OWAbilitySystemComponent.h"
 #include "AbilitySystem/Abilities/OWGameplayAbility.h"
-
+#include "OWLogChannels.h"
 
 UOWAbilitySet::UOWAbilitySet(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
@@ -16,6 +16,21 @@ void UOWAbilitySet::GiveToAbilitySystem(UOWAbilitySystemComponent* OWASC) const
 {
 	check(OWASC);
 
+	// Attribute
+	for (int32 i = 0; i < GrantedAttributes.Num(); i++)
+	{
+		const FOWAbilitySet_AttributeSet& SetToGrant = GrantedAttributes[i];
+
+		if (!IsValid(SetToGrant.AttributeSet))
+		{
+			UE_LOG(LogOW, Log, TEXT("GrantedAttributes[%d] on ability set [%s] is not valid"), i, *GetNameSafe(this));
+			continue;
+		}
+
+		UAttributeSet* NewSet = NewObject<UAttributeSet>(OWASC->GetOwner(), SetToGrant.AttributeSet);
+		OWASC->AddAttributeSetSubobject(NewSet);
+	}
+
 	// Ability
 	for (int32 i = 0; i < GrantedGameplayAbilities.Num(); i++)
 	{
@@ -23,7 +38,7 @@ void UOWAbilitySet::GiveToAbilitySystem(UOWAbilitySystemComponent* OWASC) const
 
 		if (!IsValid(AbilityToGrant.Ability))
 		{
-			//UE_LOG(LogLyraAbilitySystem, Error, TEXT("GrantedGameplayAbilities[%d] on ability set [%s] is not valid."), AbilityIndex, *GetNameSafe(this));
+			UE_LOG(LogOW, Log, TEXT("GrantedGameplayAbilities[%d] on ability set [%s] is not valid."), i, *GetNameSafe(this));
 			continue;
 		}
 
@@ -42,26 +57,11 @@ void UOWAbilitySet::GiveToAbilitySystem(UOWAbilitySystemComponent* OWASC) const
 
 		if (!IsValid(EffectToGrant.GameplayEffect))
 		{
-			//UE_LOG(LogLyraAbilitySystem, Error, TEXT("GrantedGameplayEffects[%d] on ability set [%s] is not valid"), EffectIndex, *GetNameSafe(this));
+			UE_LOG(LogOW, Log, TEXT("GrantedGameplayEffects[%d] on ability set [%s] is not valid"), i, *GetNameSafe(this));
 			continue;
 		}
 
 		const UGameplayEffect* GameplayEffect = EffectToGrant.GameplayEffect->GetDefaultObject<UGameplayEffect>();
 		const FActiveGameplayEffectHandle GameplayEffectHandle = OWASC->ApplyGameplayEffectToSelf(GameplayEffect, EffectToGrant.EffectLevel, OWASC->MakeEffectContext());
-	}
-
-	// Attribute
-	for (int32 i = 0; i < GrantedAttributes.Num(); i++)
-	{
-		const FOWAbilitySet_AttributeSet& SetToGrant = GrantedAttributes[i];
-
-		if (!IsValid(SetToGrant.AttributeSet))
-		{
-			//UE_LOG(LogLyraAbilitySystem, Error, TEXT("GrantedAttributes[%d] on ability set [%s] is not valid"), SetIndex, *GetNameSafe(this));
-			continue;
-		}
-
-		UAttributeSet* NewSet = NewObject<UAttributeSet>(OWASC->GetOwner(), SetToGrant.AttributeSet);
-		OWASC->AddAttributeSetSubobject(NewSet);
 	}
 }

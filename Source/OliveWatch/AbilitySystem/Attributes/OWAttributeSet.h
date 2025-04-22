@@ -29,6 +29,8 @@ public:
 	ATTRIBUTE_ACCESSORS(ThisClass, Bullets);
 	ATTRIBUTE_ACCESSORS(ThisClass, Speed);
 
+public:
+	virtual void PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue) override;
 
 private:
 	UPROPERTY(EditDefaultsOnly, meta = (AllowPrivateAccess = "true"))

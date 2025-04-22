@@ -5,6 +5,8 @@
 #include "AbilitySystem/OWAbilitySystemComponent.h"
 #include "AbilitySystem/OWAbilitySet.h"
 #include "OWPlayerState.h"
+#include "OWGameplayTags.h"
+#include "OWLogChannels.h"
 
 
 AOWPlayerState::AOWPlayerState(const FObjectInitializer& ObjectInitializer)
@@ -14,8 +16,8 @@ AOWPlayerState::AOWPlayerState(const FObjectInitializer& ObjectInitializer)
 	AbilitySystemComponent->SetIsReplicated(true);
 	AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
-	AbilitySet = ObjectInitializer.CreateDefaultSubobject<UOWAbilitySet>(this, TEXT("AbilitySet"));
-	AbilitySet->GiveToAbilitySystem(AbilitySystemComponent);
+	//AbilitySet = ObjectInitializer.CreateDefaultSubobject<UOWAbilitySet>(this, TEXT("AbilitySet"));
+	//AbilitySet->GiveToAbilitySystem(AbilitySystemComponent);
 }
 
 UAbilitySystemComponent* AOWPlayerState::GetAbilitySystemComponent() const
@@ -26,4 +28,13 @@ UAbilitySystemComponent* AOWPlayerState::GetAbilitySystemComponent() const
 UOWAbilitySystemComponent* AOWPlayerState::GetOWAbilitySystemComponent()
 {
 	return AbilitySystemComponent;
+}
+
+void AOWPlayerState::BeginPlay()
+{
+	AbilitySet->GiveToAbilitySystem(AbilitySystemComponent);
+	//for (const FGameplayAbilitySpec& AbilitySpec : AbilitySystemComponent->GetActivatableAbilities())
+	//{
+	//	AbilitySystemComponent->ActivateAbility(OWGameplayTags::Input_Action_MainFire);
+	//}
 }
