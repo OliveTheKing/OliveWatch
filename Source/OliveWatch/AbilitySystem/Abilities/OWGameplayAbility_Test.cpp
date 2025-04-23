@@ -28,9 +28,12 @@ void UOWGameplayAbility_Test::ActivateAbility(const FGameplayAbilitySpecHandle H
 	GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Attack!"));
 	AOliveWatchCharacter* Player = Cast<AOliveWatchCharacter>(ActorInfo->AvatarActor);
 	Player->Jump();
+
 }
 
 void UOWGameplayAbility_Test::EndAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, bool bReplicateEndAbility, bool bWasCancelled)
 {
 	Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
+
+	//GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, TEXT("Ability End"));
 }

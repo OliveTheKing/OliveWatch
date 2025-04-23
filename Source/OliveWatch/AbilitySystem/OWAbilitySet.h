@@ -33,6 +33,8 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	FGameplayTag InputTag;
 
+	UPROPERTY(EditDefaultsOnly)
+	TArray<FGameplayTag> EffectsTags;
 };
 
 // Effect 정보를 구조체로 저장
