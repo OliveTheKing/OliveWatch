@@ -23,6 +23,9 @@ class OLIVEWATCH_API UOWAttributeSet : public UAttributeSet
 	GENERATED_BODY()
 
 public:
+	UOWAttributeSet();
+
+public:
 	ATTRIBUTE_ACCESSORS(ThisClass, MaxHP);
 	ATTRIBUTE_ACCESSORS(ThisClass, HP);
 	ATTRIBUTE_ACCESSORS(ThisClass, MaxBullets);
@@ -30,15 +33,21 @@ public:
 	ATTRIBUTE_ACCESSORS(ThisClass, Speed);
 
 public:
-
-	virtual void PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue) override;
-
 	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	UFUNCTION()
 	void OnRep_HP(const FGameplayAttributeData& OldValue);
 	UFUNCTION()
 	void OnRep_Bullets(const FGameplayAttributeData& OldValue);
+
+	virtual bool PreGameplayEffectExecute(FGameplayEffectModCallbackData& Data) override;
+	virtual void PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data) override;
+
+	virtual void PreAttributeBaseChange(const FGameplayAttribute& Attribute, float& NewValue) const override;
+	virtual void PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue) override;
+	virtual void PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue) override;
+
+	void ClampAttribute(const FGameplayAttribute& Attribute, float& NewValue) const;
 
 private:
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
