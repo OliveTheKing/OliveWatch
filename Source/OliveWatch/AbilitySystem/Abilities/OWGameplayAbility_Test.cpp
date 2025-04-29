@@ -7,10 +7,10 @@
 #include "OWLogChannels.h"
 
 
-UOWGameplayAbility_Test::UOWGameplayAbility_Test(const FObjectInitializer& ObjectInitializer)
-	: Super(ObjectInitializer)
-{
-}
+//UOWGameplayAbility_Test::UOWGameplayAbility_Test(const FObjectInitializer& ObjectInitializer)
+//	: Super(ObjectInitializer)
+//{
+//}
 
 bool UOWGameplayAbility_Test::CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, FGameplayTagContainer* OptionalRelevantTags) const
 {

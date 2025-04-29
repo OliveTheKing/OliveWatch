@@ -15,7 +15,7 @@ class OLIVEWATCH_API UOWGameplayAbility_Test : public UOWGameplayAbility
 	GENERATED_BODY()
 	
 public:
-	UOWGameplayAbility_Test(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+	//UOWGameplayAbility_Test(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
 
 protected:
 	virtual bool CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, FGameplayTagContainer* OptionalRelevantTags) const override;
