@@ -92,7 +92,7 @@ void AOWPlayerController::Input_Jump(const FInputActionValue& Value)
 
 void AOWPlayerController::Input_Curl(const FInputActionValue& Value)
 {
-	OWPlayer->Curl();
+	OWPlayer->ActivateAbility(OWGameplayTags::Input_Action_Curl);
 }
 
 void AOWPlayerController::Input_MeleeAttack(const FInputActionValue& Value)
