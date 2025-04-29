@@ -23,8 +23,18 @@ public:
 
 protected:
 	virtual void SetupInputComponent() override;
-	virtual void Input_Move(const FInputActionValue& InputValue);
-	virtual void Input_Jump(const FInputActionValue& InputValue);
+
+private:
+    void Input_Move(const FInputActionValue& InputValue);
+    void Input_Jump(const FInputActionValue& InputValue);
+    void Input_Curl(const FInputActionValue& InputValue);
+    void Input_MeleeAttack(const FInputActionValue& InputValue);
+    void Input_MainFire(const FInputActionValue& InputValue);
+    void Input_SubFire(const FInputActionValue& InputValue);
+    void Input_Skill1(const FInputActionValue& InputValue);
+    void Input_Skill2(const FInputActionValue& InputValue);
+    void Input_Skill3(const FInputActionValue& InputValue);
+    void Input_Reload(const FInputActionValue& InputValue);
 
 public:
 	UPROPERTY(EditAnywhere)
