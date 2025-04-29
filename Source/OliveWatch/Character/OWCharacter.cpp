@@ -2,6 +2,8 @@
 
 
 #include "Character/OWCharacter.h"
+#include "Player/OWPlayerState.h"
+#include "AbilitySystem/OWAbilitySystemComponent.h"
 
 // Sets default values
 AOWCharacter::AOWCharacter()
@@ -18,9 +20,24 @@ void AOWCharacter::BeginPlay()
 	
 }
 
+void AOWCharacter::PossessedBy(AController* NewController)
+{
+	Super::PossessedBy(NewController);
+
+	if (AOWPlayerState* State = GetPlayerState<AOWPlayerState>()) {
+		AbilitySystemComponent = Cast<UOWAbilitySystemComponent>(State->GetOWAbilitySystemComponent());
+		AbilitySystemComponent->InitAbilityActorInfo(State, this);
+	}
+}
+
 void AOWCharacter::Move(const FVector2D& direction, const float& speed)
 {
-	//�𸮾�� ��ǥ(Y, X, Z)
+	//언리얼 좌표 기준으로 변경(Y, X, Z)
 	AddMovementInput(FVector(direction.Y, direction.X, 0.f).GetSafeNormal(), speed);
+}
+
+void AOWCharacter::ActivateAbility(FGameplayTag AbilityTag)
+{
+	AbilitySystemComponent->ActivateAbility(AbilityTag);
 }
 

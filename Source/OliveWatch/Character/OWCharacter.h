@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "GameplayTagContainer.h"
 #include "OWCharacter.generated.h"
 
 UCLASS()
@@ -19,7 +20,15 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	//봇을 구현할 시 OWPlayer 와 같은 자식 클래스로 이동할 것
+	virtual void PossessedBy(AController* NewController) override;
+
 public:	
 	void Move(const FVector2D& direction, const float& speed = 1.f);
+	void ActivateAbility(FGameplayTag AbilityTag);
+
+protected:
+	UPROPERTY()
+	TObjectPtr<class UOWAbilitySystemComponent> AbilitySystemComponent;
 
 };
