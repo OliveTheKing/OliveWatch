@@ -38,3 +38,37 @@ void AOWPlayerState::BeginPlay()
 	//	AbilitySystemComponent->ActivateAbility(OWGameplayTags::Input_Action_MainFire);
 	//}
 }
+
+TArray<FGameplayTag> AOWPlayerState::GetCurrentStateTag()
+{
+	return States;
+}
+
+void AOWPlayerState::AddStateTag(FGameplayTag Tag)
+{
+	if (!Tag.IsValid())
+	{
+		return;
+	}
+
+	// States 안에 이미 Tag가 존재하는지 확인
+	for (FGameplayTag& T : States)
+	{
+		if (T == Tag)
+		{
+			return;
+		}
+	}
+
+	States.Add(Tag);
+}
+
+void AOWPlayerState::RemoveStateTag(FGameplayTag Tag)
+{
+	if (!Tag.IsValid())
+	{
+		return;
+	}
+
+	States.Remove(Tag);
+}

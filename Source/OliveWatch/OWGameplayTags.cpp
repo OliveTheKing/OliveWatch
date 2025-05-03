@@ -19,4 +19,9 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill2, "Input.Action.Skill2");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill3, "Input.Action.Skill3");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Reload, "Input.Action.Reload");
+
+	//ป๓ลย
+	UE_DEFINE_GAMEPLAY_TAG(State_Death, "State.Death");
+	UE_DEFINE_GAMEPLAY_TAG(State_Healing, "State.Healing");
+	UE_DEFINE_GAMEPLAY_TAG(State_HealBan, "State.HealBan");
 }
