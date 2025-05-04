@@ -1,0 +1,14 @@
+<map id="Source/OliveWatch/AbilitySystem/Effects/OWCooldownGameplayEffect.h" name="Source/OliveWatch/AbilitySystem/Effects/OWCooldownGameplayEffect.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="69,5,347,60"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,196,123,221"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,62,141,84,115,110,91,147,75,184,70,182,87,145,111,106,137,80,165,58"/>
+<area shape="rect" id="Node000003" href="$OWGameplayEffect_8h.html" title=" " alt="" coords="125,108,291,148"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,60,211,94,205,94,205,60"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="315,115,610,141"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="281,58,420,108,418,113,279,63"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="175,150,98,192,96,187,172,146"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="147,196,285,221"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="213,148,216,182,211,182,207,148"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="310,196,541,221"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="261,146,381,189,380,194,259,151"/>
+</map>
