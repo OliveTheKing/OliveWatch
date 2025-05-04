@@ -1,0 +1,14 @@
+PROJECT_NAME           = "OliveWatch"
+PROJECT_BRIEF		= "OverWatch Savage"
+OUTPUT_LANGUAGE	= "Korean"
+OUTPUT_DIRECTORY       = "Docs"
+RECURSIVE              = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+INPUT                  = Source/          # C++ 코드가 위치한 폴더
+FILE_PATTERNS          = *.h *.cpp
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO              # PDF 문서가 필요 없으면 꺼두세요
+HAVE_DOT               = YES             # 클래스 다이어그램
+UML_LOOK               = YES
+DOT_IMAGE_FORMAT       = svg
