@@ -1,0 +1,78 @@
+name: Generate Doxygen Docs
+
+# Grant write permissions so the action can push to gh-pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to build docs from'
+        required: true
+        default: 'main'
+
+jobs:
+  preview-docs:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Verify Doxyfile presence
+        run: |
+          ls -R .
+          if [ ! -f Doxyfile ]; then echo "Error: Doxyfile not found!"; exit 1; fi
+
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Generate docs
+        run: doxygen Doxyfile
+
+      - name: Deploy PR preview to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # Use a PAT stored as DEPLOY_TOKEN for forked PR write access
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          publish_dir: ./Docs/html
+          publish_branch: gh-pages
+          destination_dir: pr/${{ github.head_ref }}
+
+  publish-docs:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target branch
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref_name }}
+
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Generate docs
+        run: doxygen Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GITHUB_TOKEN has write access on non-forks
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Docs/html
+          publish_branch: gh-pages
+          # No destination_dir => root site
+          clean: true
