@@ -19,4 +19,7 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill2, "Input.Action.Skill2");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill3, "Input.Action.Skill3");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Reload, "Input.Action.Reload");
+
+	// 애니메이션 Notify
+	UE_DEFINE_GAMEPLAY_TAG(Notify_Fire, "Notiy.Fire");
 }

@@ -21,4 +21,7 @@ namespace OWGameplayTags
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill2);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill3);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Reload);
+
+	//애니메이션 Notify
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Notify_Fire);
 }

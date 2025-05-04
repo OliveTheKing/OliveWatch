@@ -26,7 +26,11 @@ void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag InputTag)
 		if (AbilitySpec.Ability && AbilitySpec.GetDynamicSpecSourceTags().HasTag(InputTag))
 		{
 			TryActivateAbility(AbilitySpec.Handle);	
+			if (GEngine)
+			{
+				FString DebugText = FString::Printf(TEXT("½ÇÇàµÊ try activate"));
+				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
+			}
 		}
-		
 	}
 }
