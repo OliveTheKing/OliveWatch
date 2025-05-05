@@ -41,9 +41,9 @@
 <text text-anchor="start" x="5" y="-181.5" font-family="Helvetica,sans-Serif" font-size="10.00">APlayerState</text>
 <text text-anchor="start" x="35" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="35" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="0,-176.5 0,-176.5 74,-176.5 74,-176.5 0,-176.5"/>
-<polygon fill="#666666" stroke="#666666" points="0,-161.5 0,-161.5 74,-161.5 74,-161.5 0,-161.5"/>
-<polygon fill="none" stroke="#666666" points="0,-145 0,-194 74,-194 74,-145 0,-145"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-176.5 0,-176.5 74,-176.5 74,-176.5 0,-176.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-161.5 0,-161.5 74,-161.5 74,-161.5 0,-161.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="0,-145 0,-194 74,-194 74,-145 0,-145"/>
 </a>
 </g>
 </g>
@@ -64,9 +64,9 @@
 <text text-anchor="start" x="98" y="-181.5" font-family="Helvetica,sans-Serif" font-size="10.00">IAbilitySystemInterface</text>
 <text text-anchor="start" x="153.5" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="153.5" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="93,-176.5 93,-176.5 218,-176.5 218,-176.5 93,-176.5"/>
-<polygon fill="#666666" stroke="#666666" points="93,-161.5 93,-161.5 218,-161.5 218,-161.5 93,-161.5"/>
-<polygon fill="none" stroke="#666666" points="92.5,-145 92.5,-194 217.5,-194 217.5,-145 92.5,-145"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="93,-176.5 93,-176.5 218,-176.5 218,-176.5 93,-176.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="93,-161.5 93,-161.5 218,-161.5 218,-161.5 93,-161.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="92.5,-145 92.5,-194 217.5,-194 217.5,-145 92.5,-145"/>
 </a>
 </g>
 </g>

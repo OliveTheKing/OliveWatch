@@ -35,9 +35,9 @@
 <text text-anchor="start" x="38" y="-136.5" font-family="Helvetica,sans-Serif" font-size="10.00">UDataAsset</text>
 <text text-anchor="start" x="65" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="65" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="33,-131.5 33,-131.5 101,-131.5 101,-131.5 33,-131.5"/>
-<polygon fill="#666666" stroke="#666666" points="33,-116.5 33,-116.5 101,-116.5 101,-116.5 33,-116.5"/>
-<polygon fill="none" stroke="#666666" points="33,-100 33,-149 101,-149 101,-100 33,-100"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="33,-131.5 33,-131.5 101,-131.5 101,-131.5 33,-131.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="33,-116.5 33,-116.5 101,-116.5 101,-116.5 33,-116.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="33,-100 33,-149 101,-149 101,-100 33,-100"/>
 </a>
 </g>
 </g>

@@ -31,9 +31,9 @@
 <text text-anchor="start" x="39" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">UOWGameplayEffect</text>
 <text text-anchor="start" x="88.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="88.5" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="34,-116.5 34,-116.5 147,-116.5 147,-116.5 34,-116.5"/>
-<polygon fill="#666666" stroke="#666666" points="34,-101.5 34,-101.5 147,-101.5 147,-101.5 34,-101.5"/>
-<polygon fill="none" stroke="#666666" points="33.5,-85 33.5,-134 146.5,-134 146.5,-85 33.5,-85"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="34,-116.5 34,-116.5 147,-116.5 147,-116.5 34,-116.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="34,-101.5 34,-101.5 147,-101.5 147,-101.5 34,-101.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="33.5,-85 33.5,-134 146.5,-134 146.5,-85 33.5,-85"/>
 </a>
 </g>
 </g>
@@ -54,9 +54,9 @@
 <text text-anchor="start" x="47" y="-206.5" font-family="Helvetica,sans-Serif" font-size="10.00">UGameplayEffect</text>
 <text text-anchor="start" x="88" y="-191.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="88" y="-176.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="42,-201.5 42,-201.5 138,-201.5 138,-201.5 42,-201.5"/>
-<polygon fill="#666666" stroke="#666666" points="42,-186.5 42,-186.5 138,-186.5 138,-186.5 42,-186.5"/>
-<polygon fill="none" stroke="#666666" points="42,-170 42,-219 138,-219 138,-170 42,-170"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="42,-201.5 42,-201.5 138,-201.5 138,-201.5 42,-201.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="42,-186.5 42,-186.5 138,-186.5 138,-186.5 42,-186.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="42,-170 42,-219 138,-219 138,-170 42,-170"/>
 </a>
 </g>
 </g>

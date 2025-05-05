@@ -40,9 +40,9 @@
 <text text-anchor="start" x="66" y="-151.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="4" y="-136.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-136.5" font-family="Helvetica,sans-Serif" font-size="10.00">UOWGameplayAbility()</text>
-<polygon fill="#666666" stroke="#666666" points="0,-161.5 0,-161.5 136,-161.5 136,-161.5 0,-161.5"/>
-<polygon fill="#666666" stroke="#666666" points="0,-146.5 0,-146.5 136,-146.5 136,-146.5 0,-146.5"/>
-<polygon fill="none" stroke="#666666" points="0,-130 0,-179 136,-179 136,-130 0,-130"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-161.5 0,-161.5 136,-161.5 136,-161.5 0,-161.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="0,-146.5 0,-146.5 136,-146.5 136,-146.5 0,-146.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="0,-130 0,-179 136,-179 136,-130 0,-130"/>
 </a>
 </g>
 </g>
@@ -63,9 +63,9 @@
 <text text-anchor="start" x="23" y="-251.5" font-family="Helvetica,sans-Serif" font-size="10.00">UGameplayAbility</text>
 <text text-anchor="start" x="66" y="-236.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="66" y="-221.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="18,-246.5 18,-246.5 118,-246.5 118,-246.5 18,-246.5"/>
-<polygon fill="#666666" stroke="#666666" points="18,-231.5 18,-231.5 118,-231.5 118,-231.5 18,-231.5"/>
-<polygon fill="none" stroke="#666666" points="18,-215 18,-264 118,-264 118,-215 18,-215"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="18,-246.5 18,-246.5 118,-246.5 118,-246.5 18,-246.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="18,-231.5 18,-231.5 118,-231.5 118,-231.5 18,-231.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="18,-215 18,-264 118,-264 118,-215 18,-215"/>
 </a>
 </g>
 </g>

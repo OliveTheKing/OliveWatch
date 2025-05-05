@@ -31,9 +31,9 @@
 <text text-anchor="start" x="23" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">UGameplayAbility</text>
 <text text-anchor="start" x="66" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="66" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="18,-116.5 18,-116.5 118,-116.5 118,-116.5 18,-116.5"/>
-<polygon fill="#666666" stroke="#666666" points="18,-101.5 18,-101.5 118,-101.5 118,-101.5 18,-101.5"/>
-<polygon fill="none" stroke="#666666" points="18,-85 18,-134 118,-134 118,-85 18,-85"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="18,-116.5 18,-116.5 118,-116.5 118,-116.5 18,-116.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="18,-101.5 18,-101.5 118,-101.5 118,-101.5 18,-101.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="18,-85 18,-134 118,-134 118,-85 18,-85"/>
 </a>
 </g>
 </g>

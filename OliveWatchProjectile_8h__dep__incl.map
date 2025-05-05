@@ -1,9 +1,0 @@
-<map id="Source/OliveWatch/OliveWatchProjectile.h" name="Source/OliveWatch/OliveWatchProjectile.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="252,5,475,45"/>
-<area shape="rect" id="Node000002" href="$OliveWatchCharacter_8cpp.html" title=" " alt="" coords="5,93,228,133"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="297,52,172,96,170,91,295,47"/>
-<area shape="rect" id="Node000003" href="$OliveWatchProjectile_8cpp.html" title=" " alt="" coords="252,93,475,133"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="366,59,366,93,361,93,361,59"/>
-<area shape="rect" id="Node000004" href="$OliveWatchWeaponComponent_8cpp.html" title=" " alt="" coords="499,93,721,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="431,47,557,91,555,96,430,52"/>
-</map>

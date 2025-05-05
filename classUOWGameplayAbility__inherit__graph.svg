@@ -67,9 +67,9 @@
 <text text-anchor="start" x="143" y="-74" font-family="Helvetica,sans-Serif" font-size="10.00">UOWGA_Passive</text>
 <text text-anchor="start" x="182" y="-59" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="182" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="138,-69 138,-69 230,-69 230,-69 138,-69"/>
-<polygon fill="#666666" stroke="#666666" points="138,-54 138,-54 230,-54 230,-54 138,-54"/>
-<polygon fill="none" stroke="#666666" points="138,-37.5 138,-86.5 230,-86.5 230,-37.5 138,-37.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="138,-69 138,-69 230,-69 230,-69 138,-69"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="138,-54 138,-54 230,-54 230,-54 138,-54"/>
+<polygon fill="none" stroke="#bfbfbf" points="138,-37.5 138,-86.5 230,-86.5 230,-37.5 138,-37.5"/>
 </a>
 </g>
 </g>
@@ -127,9 +127,9 @@
 <text text-anchor="start" x="410" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ActivateAbility()</text>
 <text text-anchor="start" x="391.5" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
 <text text-anchor="start" x="410" y="-29" font-family="Helvetica,sans-Serif" font-size="10.00">EndAbility()</text>
-<polygon fill="#666666" stroke="#666666" points="382,-84 382,-84 524,-84 524,-84 382,-84"/>
-<polygon fill="#666666" stroke="#666666" points="382,-69 382,-69 524,-69 524,-69 382,-69"/>
-<polygon fill="none" stroke="#666666" points="382,-22.5 382,-101.5 524,-101.5 524,-22.5 382,-22.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="382,-84 382,-84 524,-84 524,-84 382,-84"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="382,-69 382,-69 524,-69 524,-69 382,-69"/>
+<polygon fill="none" stroke="#bfbfbf" points="382,-22.5 382,-101.5 524,-101.5 524,-22.5 382,-22.5"/>
 </a>
 </g>
 </g>
@@ -150,9 +150,9 @@
 <text text-anchor="start" x="200" y="-281.5" font-family="Helvetica,sans-Serif" font-size="10.00">UGameplayAbility</text>
 <text text-anchor="start" x="243" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="243" y="-251.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="195,-276.5 195,-276.5 295,-276.5 295,-276.5 195,-276.5"/>
-<polygon fill="#666666" stroke="#666666" points="195,-261.5 195,-261.5 295,-261.5 295,-261.5 195,-261.5"/>
-<polygon fill="none" stroke="#666666" points="195,-245 195,-294 295,-294 295,-245 195,-245"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="195,-276.5 195,-276.5 295,-276.5 295,-276.5 195,-276.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="195,-261.5 195,-261.5 295,-261.5 295,-261.5 195,-261.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="195,-245 195,-294 295,-294 295,-245 195,-245"/>
 </a>
 </g>
 </g>

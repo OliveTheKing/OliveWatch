@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['canactivateability_0',['canactivateability',['../classUOWGA__Active.html#a7c2193a762b425907c48e4139d638a5e',1,'UOWGA_Active::CanActivateAbility()'],['../classUOWGameplayAbility__Test.html#a0fe98146b55bdef3b16bc1c98eb982df',1,'UOWGameplayAbility_Test::CanActivateAbility()']]],
-  ['checkcost_1',['CheckCost',['../classUOWGA__Ultimate.html#a48aa2aee311bddc56153ee2e132faf3f',1,'UOWGA_Ultimate']]],
-  ['cooldownduration_2',['CooldownDuration',['../classUOWGA__Active.html#aca29586c254c8cb6574a81aaea3cdbdc',1,'UOWGA_Active']]],
-  ['cooldowntags_3',['CooldownTags',['../classUOWGA__Active.html#a749fb6ce590e86560bfe6bf22360e077',1,'UOWGA_Active']]]
+  ['getcollisioncomp_0',['GetCollisionComp',['../classAOliveWatchProjectile.html#a0ff40d16e70855fa67f9f65966646a11',1,'AOliveWatchProjectile']]],
+  ['getfirstpersoncameracomponent_1',['GetFirstPersonCameraComponent',['../classAOliveWatchCharacter.html#aaf5654cec02223fdfafa15e265967880',1,'AOliveWatchCharacter']]],
+  ['getmesh1p_2',['GetMesh1P',['../classAOliveWatchCharacter.html#a1bef6e59ab7ddf736f49fdf46c939555',1,'AOliveWatchCharacter']]],
+  ['getprojectilemovement_3',['GetProjectileMovement',['../classAOliveWatchProjectile.html#aa0cf9b4304bcde217102b0eee84eefd7',1,'AOliveWatchProjectile']]]
 ];

@@ -33,9 +33,9 @@
 <text text-anchor="start" x="13.5" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">UAbilitySystemComponent</text>
 <text text-anchor="start" x="78" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="78" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="8.5,-116.5 8.5,-116.5 151.5,-116.5 151.5,-116.5 8.5,-116.5"/>
-<polygon fill="#666666" stroke="#666666" points="8.5,-101.5 8.5,-101.5 151.5,-101.5 151.5,-101.5 8.5,-101.5"/>
-<polygon fill="none" stroke="#666666" points="8,-85 8,-134 151,-134 151,-85 8,-85"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="8.5,-116.5 8.5,-116.5 151.5,-116.5 151.5,-116.5 8.5,-116.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="8.5,-101.5 8.5,-101.5 151.5,-101.5 151.5,-101.5 8.5,-101.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="8,-85 8,-134 151,-134 151,-85 8,-85"/>
 </a>
 </g>
 </g>

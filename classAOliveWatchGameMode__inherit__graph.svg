@@ -31,9 +31,9 @@
 <text text-anchor="start" x="30" y="-121.5" font-family="Helvetica,sans-Serif" font-size="10.00">AGameModeBase</text>
 <text text-anchor="start" x="72" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="72" y="-91.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="25,-116.5 25,-116.5 123,-116.5 123,-116.5 25,-116.5"/>
-<polygon fill="#666666" stroke="#666666" points="25,-101.5 25,-101.5 123,-101.5 123,-101.5 25,-101.5"/>
-<polygon fill="none" stroke="#666666" points="25,-85 25,-134 123,-134 123,-85 25,-85"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="25,-116.5 25,-116.5 123,-116.5 123,-116.5 25,-116.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="25,-101.5 25,-101.5 123,-101.5 123,-101.5 25,-101.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="25,-85 25,-134 123,-134 123,-85 25,-85"/>
 </a>
 </g>
 </g>

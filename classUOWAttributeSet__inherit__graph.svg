@@ -49,9 +49,9 @@
 <text text-anchor="start" x="50" y="-256.5" font-family="Helvetica,sans-Serif" font-size="10.00">UAttributeSet</text>
 <text text-anchor="start" x="81.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 <text text-anchor="start" x="81.5" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polygon fill="#666666" stroke="#666666" points="45,-251.5 45,-251.5 122,-251.5 122,-251.5 45,-251.5"/>
-<polygon fill="#666666" stroke="#666666" points="45,-236.5 45,-236.5 122,-236.5 122,-236.5 45,-236.5"/>
-<polygon fill="none" stroke="#666666" points="44.5,-220 44.5,-269 121.5,-269 121.5,-220 44.5,-220"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="45,-251.5 45,-251.5 122,-251.5 122,-251.5 45,-251.5"/>
+<polygon fill="#bfbfbf" stroke="#bfbfbf" points="45,-236.5 45,-236.5 122,-236.5 122,-236.5 45,-236.5"/>
+<polygon fill="none" stroke="#bfbfbf" points="44.5,-220 44.5,-269 121.5,-269 121.5,-220 44.5,-220"/>
 </a>
 </g>
 </g>
