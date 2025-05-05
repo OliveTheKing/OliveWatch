@@ -82,7 +82,7 @@ void AOWPlayerController::Input_Move(const FInputActionValue& InputValue)
 {
 	FVector2D Direction = InputValue.Get<FVector2D>();
 
-	OWPlayer->Move(Direction);
+	OWPlayer->Move(FVector(Direction.X, Direction.Y, 0.f));
 }
 
 void AOWPlayerController::Input_Jump(const FInputActionValue& Value)
