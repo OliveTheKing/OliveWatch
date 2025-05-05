@@ -15,27 +15,27 @@ UOWGameplayAbility::UOWGameplayAbility()
 
 void UOWGameplayAbility::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 {
-	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
+	/*Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
-	ApplyCooldown(Handle, ActorInfo, ActivationInfo);
+	ApplyCooldown(Handle, ActorInfo, ActivationInfo);*/
 }
 
 void UOWGameplayAbility::ApplyCooldown(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo) const
 {
-	Super::ApplyCooldown(Handle, ActorInfo, ActivationInfo);
+	//Super::ApplyCooldown(Handle, ActorInfo, ActivationInfo);
 
-	if (UGameplayEffect* Effect = GetCooldownGameplayEffect()) {
+	//if (UGameplayEffect* Effect = GetCooldownGameplayEffect()) {
 
-		FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(Effect->GetClass(), GetAbilityLevel());
+	//	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(Effect->GetClass(), GetAbilityLevel());
 
-		if (SpecHandle.IsValid())
-		{
-			SpecHandle.Data->DynamicGrantedTags.AppendTags(CooldownTags);
-			SpecHandle.Data->SetDuration(CooldownDuration.GetValueAtLevel(GetAbilityLevel()), true);
-			GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, FString::Printf(TEXT("Cooldown Duration: %f"), SpecHandle.Data->GetDuration()));
-			ApplyGameplayEffectSpecToOwner(Handle, ActorInfo, ActivationInfo, SpecHandle);
-		}
-	}
+	//	if (SpecHandle.IsValid())
+	//	{
+	//		SpecHandle.Data->DynamicGrantedTags.AppendTags(CooldownTags);
+	//		SpecHandle.Data->SetDuration(CooldownDuration.GetValueAtLevel(GetAbilityLevel()), true);
+	//		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, FString::Printf(TEXT("Cooldown Duration: %f"), SpecHandle.Data->GetDuration()));
+	//		ApplyGameplayEffectSpecToOwner(Handle, ActorInfo, ActivationInfo, SpecHandle);
+	//	}
+	//}
 }
 
 bool UOWGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayTagContainer* SourceTags, const FGameplayTagContainer* TargetTags, OUT FGameplayTagContainer* OptionalRelevantTags) const

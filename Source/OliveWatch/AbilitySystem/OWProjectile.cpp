@@ -52,7 +52,7 @@ void AOWProjectile::FireInDirection(const FVector& Direction)
 	if (ProjectileMovement)
 	{
 		// 발사 방향으로 속도 설정
-		ProjectileMovement->Velocity = Direction * ProjectileMovement->InitialSpeed;
+		//ProjectileMovement->Velocity = Direction * ProjectileMovement->InitialSpeed;
 	}
 }
 

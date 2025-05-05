@@ -4,7 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystem/Abilities/OWGameplayAbility.h"
-#include "AbilitySystem/OWProjectile.h"
+#include "OliveWatchProjectile.h"
+//#include "AbilitySystem/OWProjectile.h"
 #include "OWGameplayAbility_GunFire.generated.h"
 
 /**
@@ -23,7 +24,7 @@ public:
 
 	// Projectile을 쓸 경우 사용할 Projectile 클래스
 	UPROPERTY(EditDefaultsOnly, Category = "GunFire")
-	TSubclassOf<AOWProjectile> ProjectileClass;
+	TSubclassOf<AOliveWatchProjectile> ProjectileClass;
 
 	// Raytrace를 쓸 경우 최대 사거리
 	UPROPERTY(EditDefaultsOnly, Category = "GunFire")

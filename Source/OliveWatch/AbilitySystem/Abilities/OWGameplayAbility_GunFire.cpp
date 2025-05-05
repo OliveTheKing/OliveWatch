@@ -1,10 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+Ôªø// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "AbilitySystem/Abilities/OWGameplayAbility_GunFire.h"
 #include "Abilities/Tasks/AbilityTask_PlayMontageAndWait.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "OWGameplayTags.h"
+#include "OliveWatchProjectile.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemComponent.h"
 
@@ -17,23 +18,22 @@ UOWGameplayAbility_GunFire::UOWGameplayAbility_GunFire()
 	ActivationOwnedTags.AddTag(Ability1Tag);
 
 	//ActivationBlockedTags.AddTag(FGameplayTag::RequestGameplayTag(FName("Ability.Skill")));
-
+	
 	Range = 1000.0f;
 	Damage = 12.0f;
 }
 
 void UOWGameplayAbility_GunFire::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 {
-	UE_LOG(LogTemp, Warning, TEXT("GunFire Ω««‡µ "));
-
 	if (!CommitAbility(Handle, ActorInfo, ActivationInfo))
 	{
 		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
 	}
-
+	
 	FireProjectile();
+	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
 
-	//// 2) ∏˘≈∏¡÷ + ¿Ã∫•∆Æ ¥Î±‚ Task
+	//// 2) Î™ΩÌÉÄÏ£º + Ïù¥Î≤§Ìä∏ ÎåÄÍ∏∞ Task
 	//auto* Task = UAbilityTask_PlayMontageAndWait::CreatePlayMontageAndWaitProxy(
 	//	this, NAME_None, FireProjectilepMontage);
 
@@ -44,7 +44,7 @@ void UOWGameplayAbility_GunFire::ActivateAbility(const FGameplayAbilitySpecHandl
 
 	//Task->ReadyForActivation();
 
-	//// 2) GameplayEvent µ®∏Æ∞‘¿Ã∆Æ µ˚∑Œ πŸ¿Œµ˘
+	//// 2) GameplayEvent Îç∏Î¶¨Í≤åÏù¥Ìä∏ Îî∞Î°ú Î∞îÏù∏Îî©
 	//UAbilitySystemComponent* ASC = GetAbilitySystemComponentFromActorInfo();
 	//ASC->GenericGameplayEventCallbacks.FindOrAdd(OWGameplayTags::Notify_Fire)
 	//	.AddUObject(this, &ThisClass::OnFireNotify);
@@ -54,48 +54,56 @@ void UOWGameplayAbility_GunFire::OnFireNotify(const FGameplayEventData* Data) { 
 
 void UOWGameplayAbility_GunFire::FireProjectile()
 {
-	if (!ProjectileClass || !CurrentActorInfo)
+	if (!ProjectileClass|| !CurrentActorInfo)
 	{
 		return;
 	}
 
-	// ƒ≥∏Ø≈Õ ∞°¡Æø¿±‚
+	// Ï∫êÎ¶≠ÌÑ∞ Í∞ÄÏ†∏Ïò§Í∏∞
 	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
 	if (!Character)
 	{
 		return;
 	}
 
-	// ƒ´∏ﬁ∂Û ¿ßƒ°øÕ πÊ«‚ ∞°¡Æø¿±‚
+	// Ïπ¥Î©îÎùº ÏúÑÏπòÏôÄ Î∞©Ìñ• Í∞ÄÏ†∏Ïò§Í∏∞
 	FVector MuzzleLocation;
 	FRotator MuzzleRotation;
 	Character->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
 
-	// «¡∑Œ¡ß≈∏¿œ Ω∫∆˘
+	// ÌîÑÎ°úÏ†ùÌÉÄÏùº Ïä§Ìè∞
 	FActorSpawnParameters SpawnParams;
 	SpawnParams.Owner = Character;
 	SpawnParams.Instigator = Character;
+	SpawnParams.SpawnCollisionHandlingOverride =
+		ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
-	AOWProjectile* SpawnedProjectile = GetWorld()->SpawnActor<AOWProjectile>(
+	AOliveWatchProjectile* SpawnedProjectile = GetWorld()->SpawnActor<AOliveWatchProjectile>(
 		ProjectileClass, MuzzleLocation, MuzzleRotation, SpawnParams);
 
 	if (SpawnedProjectile)
 	{
-		// «¡∑Œ¡ß≈∏¿œø° µ•πÃ¡ˆ »ø∞˙ ¡§∫∏ ¿¸¥ﬁ (« ø‰«— ∞ÊøÏ)
+		UE_LOG(LogTemp, Warning, TEXT("GunFire Ïã§ÌñâÎê®"));
+
+		{
+			FString DebugText = FString::Printf(TEXT("Ïã§ÌñâÎê® try activate"));
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
+		}
+		// ÌîÑÎ°úÏ†ùÌÉÄÏùºÏóê Îç∞ÎØ∏ÏßÄ Ìö®Í≥º Ï†ïÎ≥¥ Ï†ÑÎã¨
 		// SpawnedProjectile->SetDamageEffectClass(DamageEffectClass);
-		SpawnedProjectile->FireInDirection(MuzzleRotation.Vector());
+		//SpawnedProjectile->FireInDirection(MuzzleRotation.Vector());
 	}
 }
 
 void UOWGameplayAbility_GunFire::OnCancelled(FGameplayTag EventTag, FGameplayEventData EventData)
 {
-	/*FString DebugText = FString::Printf(TEXT("√Îº“√Îº“µ "));
+	/*FString DebugText = FString::Printf(TEXT("Ï∑®ÏÜåÏ∑®ÏÜåÎê®"));
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);*/
 }
 
 void UOWGameplayAbility_GunFire::OnCompleted(FGameplayTag EventTag, FGameplayEventData EventData)
 {
-	FString DebugText = FString::Printf(TEXT("≥°≥≤"));
+	FString DebugText = FString::Printf(TEXT("ÎÅùÎÇ®"));
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, false, false);
@@ -103,7 +111,7 @@ void UOWGameplayAbility_GunFire::OnCompleted(FGameplayTag EventTag, FGameplayEve
 
 void UOWGameplayAbility_GunFire::EventReceived(FGameplayTag EventTag, FGameplayEventData EventData)
 {
-	FString DebugText = FString::Printf(TEXT("¿Ã∫•∆Æ received"));
+	FString DebugText = FString::Printf(TEXT("Ïù¥Î≤§Ìä∏ received"));
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
 }
 
