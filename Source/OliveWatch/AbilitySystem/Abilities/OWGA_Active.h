@@ -7,7 +7,7 @@
 #include "OWGA_Active.generated.h"
 
 /**
- * 
+ * 쿨타임이 존재하는 능력입니다.
  */
 UCLASS()
 class OLIVEWATCH_API UOWGA_Active : public UOWGameplayAbility
