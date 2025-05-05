@@ -1,9 +1,0 @@
-<map id="Source/OliveWatch/OliveWatchWeaponComponent.h" name="Source/OliveWatch/OliveWatchWeaponComponent.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="177,5,399,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,123,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,48,111,91,109,86,233,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="147,93,429,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="291,46,291,79,285,79,285,46"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="454,93,759,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="365,43,547,87,546,93,364,48"/>
-</map>

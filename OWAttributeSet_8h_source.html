@@ -110,40 +110,45 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classUOWAttributeSet.html#af4181c032ab21dae4074395462b0b4f9">   28</a></span>    <a class="code hl_function" href="classUOWAttributeSet.html#af4181c032ab21dae4074395462b0b4f9">ATTRIBUTE_ACCESSORS</a>(ThisClass, MaxBullets);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classUOWAttributeSet.html#a454d5ff7bd0078ae7c2feb84011b3bff">   29</a></span>    <a class="code hl_function" href="classUOWAttributeSet.html#a454d5ff7bd0078ae7c2feb84011b3bff">ATTRIBUTE_ACCESSORS</a>(ThisClass, Bullets);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classUOWAttributeSet.html#a1d41fb69f9d984c34bb77a93ddbac4cb">   30</a></span>    <a class="code hl_function" href="classUOWAttributeSet.html#a1d41fb69f9d984c34bb77a93ddbac4cb">ATTRIBUTE_ACCESSORS</a>(ThisClass, Speed);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> PostAttributeChange(<span class="keyword">const</span> FGameplayAttribute&amp; Attribute, <span class="keywordtype">float</span> OldValue, <span class="keywordtype">float</span> NewValue) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps(TArray&lt;FLifetimeProperty&gt;&amp; OutLifetimeProps) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    UFUNCTION()</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    void OnRep_HP(const FGameplayAttributeData&amp; OldValue);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    UFUNCTION()</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> OnRep_Bullets(const FGameplayAttributeData&amp; OldValue);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>private:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    FGameplayAttributeData MaxHP;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;), ReplicatedUsing = OnRep_HP)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    FGameplayAttributeData HP;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    FGameplayAttributeData MaxBullets;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;), ReplicatedUsing = OnRep_Bullets)</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    FGameplayAttributeData Bullets;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    FGameplayAttributeData Speed;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classUOWAttributeSet.html#a5877f8212b69176b174750105d04213b">   31</a></span>    <a class="code hl_function" href="classUOWAttributeSet.html#a5877f8212b69176b174750105d04213b">ATTRIBUTE_ACCESSORS</a>(ThisClass, UltimateCost);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> PostAttributeChange(<span class="keyword">const</span> FGameplayAttribute&amp; Attribute, <span class="keywordtype">float</span> OldValue, <span class="keywordtype">float</span> NewValue) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> GetLifetimeReplicatedProps(TArray&lt;FLifetimeProperty&gt;&amp; OutLifetimeProps) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    UFUNCTION()</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    void OnRep_HP(const FGameplayAttributeData&amp; OldValue);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    UFUNCTION()</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> OnRep_Bullets(const FGameplayAttributeData&amp; OldValue);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>private:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    FGameplayAttributeData MaxHP;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;), ReplicatedUsing = OnRep_HP)</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    FGameplayAttributeData HP;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    FGameplayAttributeData MaxBullets;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;), ReplicatedUsing = OnRep_Bullets)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    FGameplayAttributeData Bullets;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    FGameplayAttributeData Speed;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = &quot;true&quot;))</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    FGameplayAttributeData UltimateCost;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
 </div>
 <div class="ttc" id="aclassUOWAttributeSet_html"><div class="ttname"><a href="classUOWAttributeSet.html">UOWAttributeSet</a></div><div class="ttdef"><b>Definition</b> OWAttributeSet.h:22</div></div>
 <div class="ttc" id="aclassUOWAttributeSet_html_a1d41fb69f9d984c34bb77a93ddbac4cb"><div class="ttname"><a href="classUOWAttributeSet.html#a1d41fb69f9d984c34bb77a93ddbac4cb">UOWAttributeSet::ATTRIBUTE_ACCESSORS</a></div><div class="ttdeci">ATTRIBUTE_ACCESSORS(ThisClass, Speed)</div></div>
 <div class="ttc" id="aclassUOWAttributeSet_html_a454d5ff7bd0078ae7c2feb84011b3bff"><div class="ttname"><a href="classUOWAttributeSet.html#a454d5ff7bd0078ae7c2feb84011b3bff">UOWAttributeSet::ATTRIBUTE_ACCESSORS</a></div><div class="ttdeci">ATTRIBUTE_ACCESSORS(ThisClass, Bullets)</div></div>
 <div class="ttc" id="aclassUOWAttributeSet_html_a4ccd67f97307ed8e99bebdaac32b6409"><div class="ttname"><a href="classUOWAttributeSet.html#a4ccd67f97307ed8e99bebdaac32b6409">UOWAttributeSet::ATTRIBUTE_ACCESSORS</a></div><div class="ttdeci">ATTRIBUTE_ACCESSORS(ThisClass, MaxHP)</div></div>
 <div class="ttc" id="aclassUOWAttributeSet_html_a4d02f52261e6ca9a8ed277fae57e1366"><div class="ttname"><a href="classUOWAttributeSet.html#a4d02f52261e6ca9a8ed277fae57e1366">UOWAttributeSet::ATTRIBUTE_ACCESSORS</a></div><div class="ttdeci">ATTRIBUTE_ACCESSORS(ThisClass, HP)</div></div>
+<div class="ttc" id="aclassUOWAttributeSet_html_a5877f8212b69176b174750105d04213b"><div class="ttname"><a href="classUOWAttributeSet.html#a5877f8212b69176b174750105d04213b">UOWAttributeSet::ATTRIBUTE_ACCESSORS</a></div><div class="ttdeci">ATTRIBUTE_ACCESSORS(ThisClass, UltimateCost)</div></div>
 <div class="ttc" id="aclassUOWAttributeSet_html_af4181c032ab21dae4074395462b0b4f9"><div class="ttname"><a href="classUOWAttributeSet.html#af4181c032ab21dae4074395462b0b4f9">UOWAttributeSet::ATTRIBUTE_ACCESSORS</a></div><div class="ttdeci">ATTRIBUTE_ACCESSORS(ThisClass, MaxBullets)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

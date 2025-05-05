@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "abcdefgilmnopsu",
+  0: "abcdefgilmnopsu목할",
   1: "afu",
   2: "o",
   3: "o",
   4: "abcdefgilmnopsu",
-  5: "acegios",
-  6: "a"
+  5: "acegiosu",
+  6: "a",
+  7: "목할"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "defines"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "파일들",
   4: "함수",
   5: "변수",
-  6: "매크로"
+  6: "매크로",
+  7: "페이지들"
 };
 
