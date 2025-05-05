@@ -5,6 +5,7 @@
 
 #include "Net/UnrealNetwork.h"
 #include "GameplayEffectExtension.h"
+#include "OWGameplayTags.h"
 
 UOWAttributeSet::UOWAttributeSet()
 {
@@ -70,6 +71,16 @@ void UOWAttributeSet::PostAttributeChange(const FGameplayAttribute& Attribute, f
 {
 	Super::PostAttributeChange(Attribute, OldValue, NewValue);
 
+	if (ExecuteUpdateData.IsBound())
+	{
+		if (Attribute == GetHPAttribute() && NewValue <= 0)
+		{
+			// HP 0일 때
+			ExecuteUpdateData.Execute(OWGameplayTags::State_Death);
+		}
+
+		// TODO: Player 상태 변할 때 더 추가
+	}
 
 }
 

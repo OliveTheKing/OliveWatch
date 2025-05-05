@@ -5,19 +5,22 @@
 
 #include "AbilitySystem/Abilities/OWGameplayAbility.h"
 #include "AbilitySystem/OWAbilitySet.h"
+#include "AbilitySystem/Attributes/OWAttributeSet.h"
+#include "Player/OWPlayerState.h"
 
-//void UOWAbilitySystemComponent::AddCharacterAbilities(const TArray<TSubclassOf<class UGameplayAbility>>& StartupAbilities)
-//{
-//	for (auto& AbilityClass : StartupAbilities)
-//	{
-//		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
-//		FGameplayAbilitySpecHandle SpecHandle = GiveAbility(AbilitySpec);
-//
-//		auto& a = ActivatableAbilities;
-//
-//		SpecHandles.Add(SpecHandle);
-//	}
-//}
+
+UOWAbilitySystemComponent::UOWAbilitySystemComponent()
+{
+	AttributeSet = GetSet<UOWAttributeSet>();
+	AttributeSet->ExecuteUpdateData.BindUObject(this, &ThisClass::UpdatePlayerState);
+}
+
+void UOWAbilitySystemComponent::UpdatePlayerState(FGameplayTag StateTag)
+{
+	AOWPlayerState* PS = Cast<AOWPlayerState>(GetWorld()->GetFirstPlayerController()->PlayerState);
+	PS->AddStateTag(StateTag);
+
+}
 
 void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag InputTag)
 {

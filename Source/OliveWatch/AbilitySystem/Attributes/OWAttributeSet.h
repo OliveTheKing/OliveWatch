@@ -13,6 +13,8 @@
 	GAMEPLAYATTRIBUTE_VALUE_SETTER(PropertyName)				\
 	GAMEPLAYATTRIBUTE_VALUE_INITTER(PropertyName)
 
+DECLARE_DELEGATE_OneParam(OWDelegate, FGameplayTag);
+
 /**
  * 
  */
@@ -64,4 +66,8 @@ private:
 
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	FGameplayAttributeData Speed;
+
+public:
+	mutable OWDelegate ExecuteUpdateData;
+
 };
