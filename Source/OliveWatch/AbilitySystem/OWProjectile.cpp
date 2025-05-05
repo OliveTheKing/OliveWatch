@@ -34,7 +34,7 @@ AOWProjectile::AOWProjectile()
 	ProjectileMovement->MaxSpeed = 3000.f;
 	ProjectileMovement->bRotationFollowsVelocity = true;
 	ProjectileMovement->bShouldBounce = false;
-	ProjectileMovement->ProjectileGravityScale = 0.0f; // 중력 없음(직선 이동)
+	ProjectileMovement->ProjectileGravityScale = 1.0f; // 중력 있음(직선 이동)
 
 	// 수명 설정 (3초 후 자동 파괴)
 	InitialLifeSpan = 3.0f;
@@ -52,7 +52,7 @@ void AOWProjectile::FireInDirection(const FVector& Direction)
 	if (ProjectileMovement)
 	{
 		// 발사 방향으로 속도 설정
-		//ProjectileMovement->Velocity = Direction * ProjectileMovement->InitialSpeed;
+		ProjectileMovement->Velocity = Direction * ProjectileMovement->InitialSpeed;
 	}
 }
 

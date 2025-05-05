@@ -1,11 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "AbilitySystem/Abilities/OWGameplayAbility.h"
-#include "OliveWatchProjectile.h"
-//#include "AbilitySystem/OWProjectile.h"
+#include "AbilitySystem/OWProjectile.h"
 #include "OWGameplayAbility_GunFire.generated.h"
 
 /**
@@ -22,11 +21,11 @@ public:
 	UPROPERTY(BlueprintReadOnly, EditAnywhere)
 	UAnimMontage* FireProjectilepMontage;
 
-	// ProjectileÀ» ¾µ °æ¿ì »ç¿ëÇÒ Projectile Å¬·¡½º
+	// Projectileì„ ì“¸ ê²½ìš° ì‚¬ìš©í•  Projectile í´ë˜ìŠ¤
 	UPROPERTY(EditDefaultsOnly, Category = "GunFire")
-	TSubclassOf<AOliveWatchProjectile> ProjectileClass;
+	TSubclassOf<AOWProjectile> ProjectileClass;
 
-	// Raytrace¸¦ ¾µ °æ¿ì ÃÖ´ë »ç°Å¸®
+	// Raytraceë¥¼ ì“¸ ê²½ìš° ìµœëŒ€ ì‚¬ê±°ë¦¬
 	UPROPERTY(EditDefaultsOnly, Category = "GunFire")
 	float MaxTraceDistance = 10000.0f;
 

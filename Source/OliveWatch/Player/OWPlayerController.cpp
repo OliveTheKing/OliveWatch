@@ -58,7 +58,7 @@ void AOWPlayerController::SetupInputComponent()
                 EnhancedInputComponent->BindAction(ActionMeleeAttack, ETriggerEvent::Triggered, this, &ThisClass::Input_MeleeAttack);
 
             if (ActionMainFire)
-                EnhancedInputComponent->BindAction(ActionMainFire, ETriggerEvent::Triggered, this, &ThisClass::Input_MainFire);
+                EnhancedInputComponent->BindAction(ActionMainFire, ETriggerEvent::Started, this, &ThisClass::Input_MainFire);
 
             if (ActionSubFire)
                 EnhancedInputComponent->BindAction(ActionSubFire, ETriggerEvent::Triggered, this, &ThisClass::Input_SubFire);

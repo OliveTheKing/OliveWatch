@@ -5,7 +5,6 @@
 #include "Abilities/Tasks/AbilityTask_PlayMontageAndWait.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "OWGameplayTags.h"
-#include "OliveWatchProjectile.h"
 #include "GameFramework/Character.h"
 #include "AbilitySystemComponent.h"
 
@@ -78,7 +77,7 @@ void UOWGameplayAbility_GunFire::FireProjectile()
 	SpawnParams.SpawnCollisionHandlingOverride =
 		ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
 
-	AOliveWatchProjectile* SpawnedProjectile = GetWorld()->SpawnActor<AOliveWatchProjectile>(
+	AOWProjectile* SpawnedProjectile = GetWorld()->SpawnActor<AOWProjectile>(
 		ProjectileClass, MuzzleLocation, MuzzleRotation, SpawnParams);
 
 	if (SpawnedProjectile)
