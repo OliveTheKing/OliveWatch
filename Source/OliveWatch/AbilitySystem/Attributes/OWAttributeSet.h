@@ -28,6 +28,7 @@ public:
 	ATTRIBUTE_ACCESSORS(ThisClass, MaxBullets);
 	ATTRIBUTE_ACCESSORS(ThisClass, Bullets);
 	ATTRIBUTE_ACCESSORS(ThisClass, Speed);
+	ATTRIBUTE_ACCESSORS(ThisClass, UltimateCost);
 
 public:
 
@@ -55,4 +56,7 @@ private:
 
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
 	FGameplayAttributeData Speed;
+
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	FGameplayAttributeData UltimateCost;
 };
