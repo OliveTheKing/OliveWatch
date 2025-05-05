@@ -17,7 +17,7 @@ bool UOWGA_Ultimate::CheckCost(const FGameplayAbilitySpecHandle Handle, const FG
 	if (!bFound) {
 		return false;
 	}
-	else if (CurrentUltCost > UltCost.GetValue()) {
+	else if (CurrentUltCost >= UltCost.GetValue()) {
 		return true;
 	}
 	return false;
