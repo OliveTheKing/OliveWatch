@@ -38,6 +38,6 @@ void AOWCharacter::Move(const FVector2D& direction, const float& speed)
 
 void AOWCharacter::ActivateAbility(FGameplayTag AbilityTag)
 {
-	AbilitySystemComponent->ActivateAbility(AbilityTag);
+	//AbilitySystemComponent->ActivateAbility(AbilityTag);
 }
 

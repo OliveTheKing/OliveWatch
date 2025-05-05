@@ -16,7 +16,7 @@ class OLIVEWATCH_API UOWAbilitySystemComponent : public UAbilitySystemComponent
 	
 public:
 	//void AddCharacterAbilities(const TArray<TSubclassOf<class UGameplayAbility>>& StartupAbilities);
-	void ActivateAbility(FGameplayTag AbilityTag);
+	//void ActivateAbility(FGameplayTag AbilityTag);
 
 	TArray<FGameplayAbilitySpecHandle> SpecHandles;
 };

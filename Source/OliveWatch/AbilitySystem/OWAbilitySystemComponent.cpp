@@ -18,19 +18,19 @@
 //		SpecHandles.Add(SpecHandle);
 //	}
 //}
-
-void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag InputTag)
-{
-	for (const FGameplayAbilitySpec& AbilitySpec : ActivatableAbilities.Items)
-	{
-		if (AbilitySpec.Ability && AbilitySpec.GetDynamicSpecSourceTags().HasTag(InputTag))
-		{
-			TryActivateAbility(AbilitySpec.Handle);	
-			if (GEngine)
-			{
-				FString DebugText = FString::Printf(TEXT("½ÇÇàµÊ try activate"));
-				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
-			}
-		}
-	}
-}
+//
+//void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag InputTag)
+//{
+//	for (const FGameplayAbilitySpec& AbilitySpec : ActivatableAbilities.Items)
+//	{
+//		if (AbilitySpec.Ability && AbilitySpec.GetDynamicSpecSourceTags().HasTag(InputTag))
+//		{
+//			TryActivateAbility(AbilitySpec.Handle);	
+//			if (GEngine)
+//			{
+//				FString DebugText = FString::Printf(TEXT("½ÇÇàµÊ try activate"));
+//				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
+//			}
+//		}
+//	}
+//}
