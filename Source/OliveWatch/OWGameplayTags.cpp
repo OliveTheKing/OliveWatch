@@ -21,5 +21,5 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Reload, "Input.Action.Reload");
 
 	// 애니메이션 Notify
-	UE_DEFINE_GAMEPLAY_TAG(Notify_Fire, "Notiy.Fire");
+	UE_DEFINE_GAMEPLAY_TAG(Notify_Fire, "Notify.Fire");
 }

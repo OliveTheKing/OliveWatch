@@ -2,7 +2,8 @@
 
 
 #include "AbilitySystem/Abilities/OWGameplayAbility_GunFire.h"
-#include "Abilities/Tasks/AbilityTask_PlayMontageAndWait.h"
+//#include "Abilities/Tasks/AbilityTask_PlayMontageAndWait.h"
+#include "Animation/AnimMontage.h"
 #include "AbilitySystemBlueprintLibrary.h"
 #include "OWGameplayTags.h"
 #include "GameFramework/Character.h"
@@ -29,9 +30,15 @@ void UOWGameplayAbility_GunFire::ActivateAbility(const FGameplayAbilitySpecHandl
 		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
 	}
 	
-	FireProjectile();
-	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
-
+	ACharacter* Character = Cast<ACharacter>(ActorInfo->AvatarActor.Get());
+	if (Character)
+	{
+		UAnimInstance* AnimInstance = Character->GetMesh()->GetAnimInstance();
+		if (AnimInstance && FireProjectilepMontage)
+		{
+			AnimInstance->Montage_Play(FireProjectilepMontage);
+		}
+	}
 	//// 2) 몽타주 + 이벤트 대기 Task
 	//auto* Task = UAbilityTask_PlayMontageAndWait::CreatePlayMontageAndWaitProxy(
 	//	this, NAME_None, FireProjectilepMontage);
@@ -44,12 +51,20 @@ void UOWGameplayAbility_GunFire::ActivateAbility(const FGameplayAbilitySpecHandl
 	//Task->ReadyForActivation();
 
 	//// 2) GameplayEvent 델리게이트 따로 바인딩
-	//UAbilitySystemComponent* ASC = GetAbilitySystemComponentFromActorInfo();
-	//ASC->GenericGameplayEventCallbacks.FindOrAdd(OWGameplayTags::Notify_Fire)
-	//	.AddUObject(this, &ThisClass::OnFireNotify);
+	UAbilitySystemComponent* ASC = GetAbilitySystemComponentFromActorInfo();
+	ASC->GenericGameplayEventCallbacks.FindOrAdd(OWGameplayTags::Notify_Fire)
+		.AddUObject(this, &ThisClass::OnFireNotify);
 }
 
-void UOWGameplayAbility_GunFire::OnFireNotify(const FGameplayEventData* Data) { FireProjectile(); }
+void UOWGameplayAbility_GunFire::OnFireNotify(const FGameplayEventData* Data) 
+{
+	{
+		FString DebugText = FString::Printf(TEXT("실행됨 발사! activate"));
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
+	}
+	FireProjectile();
+	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
+}
 
 void UOWGameplayAbility_GunFire::FireProjectile()
 {
@@ -84,10 +99,6 @@ void UOWGameplayAbility_GunFire::FireProjectile()
 	{
 		UE_LOG(LogTemp, Warning, TEXT("GunFire 실행됨"));
 
-		{
-			FString DebugText = FString::Printf(TEXT("실행됨 try activate"));
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, DebugText);
-		}
 		// 프로젝타일에 데미지 효과 정보 전달
 		// SpawnedProjectile->SetDamageEffectClass(DamageEffectClass);
 		//SpawnedProjectile->FireInDirection(MuzzleRotation.Vector());

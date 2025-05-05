@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "Animation/OWAnimNotify_Temp.h"
@@ -14,15 +14,21 @@ void UOWAnimNotify_Temp::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceB
     Super::Notify(MeshComp, Animation);
 
     if (!MeshComp) return;
-    AActor* Owner = MeshComp->GetOwner();
-    if (!Owner)   return;
 
-    // ¨ç ÅÂ±×¿Í ÆäÀÌ·Îµå ÁØºñ
+    // â‘  AnimInstanceê°€ ë¶™ì€ Pawn â†’ PlayerState ì–»ê¸°
+    ACharacter* Character = Cast<ACharacter>(MeshComp->GetOwner());
+    if (!Character) return;
+
+    AOWPlayerState* PS = Character->GetPlayerState<AOWPlayerState>();
+    if (!PS)     return;
+
+    // â‘¡ í˜ì´ë¡œë“œ êµ¬ì„±
     FGameplayEventData Payload;
-    Payload.EventTag = OWGameplayTags::Notify_Fire;   // ex) GameplayEvent.Notify.Fire
-    Payload.Instigator = Owner;
-    // ÇÊ¿äÇÏ¸é Payload.TargetData = ¡¦
+    Payload.EventTag = OWGameplayTags::Notify_Fire;
+    Payload.Instigator = Character;
 
-    // ¨è ÇÑ ÁÙ·Î ASC¿¡°Ô ÀÌº¥Æ® Àü¼Û
-    UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(Owner, Payload.EventTag, Payload);
+    // â‘¢ PlayerStateì— ì´ë²¤íŠ¸ ì „ì†¡
+    UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(PS, Payload.EventTag, Payload);
+    // (ë””ë²„ê·¸)
+    GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, TEXT("Notify ì‹¤í–‰ë¨"));
 }

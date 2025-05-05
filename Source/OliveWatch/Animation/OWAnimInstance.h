@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimInstance.h"
+#include "GameFramework/Character.h" 
+#include "GameFramework/CharacterMovementComponent.h"
 #include "OWAnimInstance.generated.h"
 
 /**
@@ -13,10 +15,20 @@ UCLASS()
 class OLIVEWATCH_API UOWAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
-	
+
+public:
+	UOWAnimInstance();
+
+protected:
 	//// 틱마다 애니메이션 업데이트
-	//virtual void NativeUpdateAnimation(float DeltaSeconds) override;
+	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 	//// 초기화
-	//virtual void NativeInitializeAnimation() override;
+	virtual void NativeInitializeAnimation() override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
+	TObjectPtr<class ACharacter> Owner;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Character)
+	TObjectPtr<class UCharacterMovementComponent> Movement;
 };

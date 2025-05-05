@@ -2,4 +2,28 @@
 
 
 #include "Animation/OWAnimInstance.h"
+#include "GameFramework/Character.h" 
+#include "GameFramework/CharacterMovementComponent.h"
+
+UOWAnimInstance::UOWAnimInstance()
+{
+}
+
+void UOWAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
+{
+}
+
+void UOWAnimInstance::NativeInitializeAnimation()
+{
+	Super::NativeInitializeAnimation();
+
+	Owner = Cast<ACharacter>(GetOwningActor());
+	if (Owner)
+	{
+		Movement = Owner->GetCharacterMovement();
+	}
+}
+
+
+
 
