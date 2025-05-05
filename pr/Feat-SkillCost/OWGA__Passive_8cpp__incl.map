@@ -1,0 +1,16 @@
+<map id="Source/OliveWatch/AbilitySystem/Abilities/OWGA_Passive.cpp" name="Source/OliveWatch/AbilitySystem/Abilities/OWGA_Passive.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="102,5,359,45"/>
+<area shape="rect" id="Node000002" href="$OWGA__Passive_8h.html" title=" " alt="" coords="145,93,316,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="233,46,233,79,228,79,228,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,269,123,295"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,136,166,157,135,183,103,222,79,259,75,256,99,218,131,179,163,153,195,131"/>
+<area shape="rect" id="Node000004" href="$OWGameplayAbility_8h.html" title=" " alt="" coords="145,181,316,221"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="233,134,233,167,228,167,228,134"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="340,189,543,214"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="278,131,402,181,400,186,276,136"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="192,224,102,266,100,261,190,219"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="146,269,345,295"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="237,221,243,255,238,256,232,222"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="368,269,603,295"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="292,219,436,263,434,268,291,224"/>
+</map>
