@@ -30,7 +30,7 @@ void AOWCharacter::PossessedBy(AController* NewController)
 	}
 }
 
-void AOWCharacter::Move(const FVector2D& direction, const float& speed)
+void AOWCharacter::Move(const FVector& direction, const float& speed)
 {
 	//언리얼 좌표 기준으로 변경(Y, X, Z)
 	AddMovementInput(FVector(direction.Y, direction.X, 0.f).GetSafeNormal(), speed);

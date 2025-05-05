@@ -24,7 +24,7 @@ protected:
 	virtual void PossessedBy(AController* NewController) override;
 
 public:	
-	void Move(const FVector2D& direction, const float& speed = 1.f);
+	void Move(const FVector& direction, const float& speed = 1.f);
 	void ActivateAbility(FGameplayTag AbilityTag);
 
 protected:
