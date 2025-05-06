@@ -1,8 +1,9 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "OliveWatchProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
+#include "AbilitySystemComponent.h"
 
 AOliveWatchProjectile::AOliveWatchProjectile() 
 {
@@ -31,13 +32,28 @@ AOliveWatchProjectile::AOliveWatchProjectile()
 	InitialLifeSpan = 3.0f;
 }
 
+// 게임 시작 또는 스폰 시 호출
+void AOliveWatchProjectile::BeginPlay()
+{
+	Super::BeginPlay();
+	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Projectile Spawned"));
+}
+
 void AOliveWatchProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	// Only add impulse and destroy projectile if we hit a physics
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComp != nullptr) && OtherComp->IsSimulatingPhysics())
+	if (!OtherActor || OtherActor == this) return;
+
+	UAbilitySystemComponent* ASC = OtherActor->FindComponentByClass<UAbilitySystemComponent>();
+	if (ASC && DamageSpecHandle.IsValid())
+	{
+		ASC->ApplyGameplayEffectSpecToSelf(*DamageSpecHandle.Data.Get());
+		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Damage Applied"));
+	}
+
+	if (OtherComp && OtherComp->IsSimulatingPhysics())
 	{
 		OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
-
-		Destroy();
 	}
+
+	Destroy();
 }
