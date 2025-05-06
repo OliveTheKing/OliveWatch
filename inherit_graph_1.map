@@ -1,7 +1,5 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,31,100,56"/>
-<area shape="rect" id="Node000001" href="$classAOWCharacter.html" title=" " alt="" coords="173,5,291,31"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="114,32,173,24,174,29,114,37"/>
-<area shape="rect" id="Node000002" href="$classAOliveWatchCharacter.html" title=" " alt="" coords="148,55,316,80"/>
-<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="114,49,148,53,147,59,113,54"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,141,31"/>
+<area shape="rect" id="Node000001" href="$classAOWPlayerController.html" title=" " alt="" coords="189,5,348,31"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="155,15,189,15,189,21,155,21"/>
 </map>
