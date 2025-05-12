@@ -19,6 +19,9 @@ class OLIVEWATCH_API AOWProjectile : public AActor
 public:
 	AOWProjectile();
 
+	UPROPERTY(BlueprintReadWrite, Meta = (ExposeOnSpawn = true))
+	FGameplayEffectSpecHandle DamageSpecHandle;
+
 protected:
 	virtual void BeginPlay() override;
 
@@ -29,9 +32,6 @@ protected:
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
-
-	UPROPERTY()
-	FGameplayEffectSpecHandle DamageSpecHandle;
 
 	/** called when projectile hits something */
 	UFUNCTION()

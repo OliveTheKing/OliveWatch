@@ -19,4 +19,8 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill2, "Input.Action.Skill2");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill3, "Input.Action.Skill3");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Reload, "Input.Action.Reload");
+
+	//몽타주 알람
+	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_EndAbility, "Event.Montage.EndAbility");
+	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_SpawnProjectile, "Event.Montage.SpawnProjectile");
 }

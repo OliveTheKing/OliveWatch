@@ -21,4 +21,8 @@ namespace OWGameplayTags
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill2);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill3);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Reload);
+
+	//Anim notify
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_SpawnProjectile);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_EndAbility);
 }

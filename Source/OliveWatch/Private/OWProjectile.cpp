@@ -30,12 +30,14 @@ AOWProjectile::AOWProjectile()
 
     // Die after 3 seconds by default
     InitialLifeSpan = 3.0f;
+    PrimaryActorTick.bCanEverTick = false;
 }
 
 // 게임 시작 또는 스폰 시 호출
 void AOWProjectile::BeginPlay()
 {
     Super::BeginPlay();
+    ProjectileMovement->Velocity = GetActorForwardVector() * ProjectileMovement->InitialSpeed;
     GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Projectile Spawned"));
 }
 
@@ -52,8 +54,9 @@ void AOWProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPri
 
     if (OtherComp && OtherComp->IsSimulatingPhysics())
     {
+        GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Speeding~"));
         OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
     }
 
-    Destroy();
+    // Destroy();
 }
