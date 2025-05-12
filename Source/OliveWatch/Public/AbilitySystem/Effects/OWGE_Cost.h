@@ -19,15 +19,8 @@ class OLIVEWATCH_API UOWGE_Cost : public UOWGameplayEffect
 	GENERATED_BODY()
 
 public:
+
 	UOWGE_Cost() {
 		DurationPolicy = EGameplayEffectDurationType::Instant;
-
-		FGameplayModifierInfo ModInfo;
-		ModInfo.Attribute = UOWAttributeSet::GetUltimateCostAttribute();
-		ModInfo.ModifierOp = EGameplayModOp::Override;
-		ModInfo.ModifierMagnitude = FScalableFloat(0.0f);
-
-		Modifiers.Add(ModInfo);
 	}
-	
 };
