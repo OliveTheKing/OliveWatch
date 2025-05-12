@@ -19,9 +19,12 @@ class OLIVEWATCH_API AOWProjectile : public AActor
 public:
 	AOWProjectile();
 
+<<<<<<< HEAD
 	UPROPERTY(BlueprintReadWrite, Meta = (ExposeOnSpawn = true))
 	FGameplayEffectSpecHandle DamageSpecHandle;
 
+=======
+>>>>>>> 8c9d331 (Feat: Projectile 파일 재생성)
 protected:
 	virtual void BeginPlay() override;
 
@@ -33,6 +36,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
 
+<<<<<<< HEAD
+=======
+	UPROPERTY()
+	FGameplayEffectSpecHandle DamageSpecHandle;
+
+>>>>>>> 8c9d331 (Feat: Projectile 파일 재생성)
 	/** called when projectile hits something */
 	UFUNCTION()
 	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);

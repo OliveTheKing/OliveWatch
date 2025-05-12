@@ -9,8 +9,12 @@
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
+<<<<<<< HEAD
 				"Engine",
 				"GameplayAbilities"
+=======
+				"Engine"
+>>>>>>> 8c9d331 (Feat: Projectile 파일 재생성)
 			]
 		}
 	],

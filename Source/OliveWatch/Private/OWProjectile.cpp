@@ -30,14 +30,20 @@ AOWProjectile::AOWProjectile()
 
     // Die after 3 seconds by default
     InitialLifeSpan = 3.0f;
+<<<<<<< HEAD
     PrimaryActorTick.bCanEverTick = false;
+=======
+>>>>>>> 8c9d331 (Feat: Projectile íŒŒì¼ ì¬ìƒì„±)
 }
 
 // °ÔÀÓ ½ÃÀÛ ¶Ç´Â ½ºÆù ½Ã È£Ãâ
 void AOWProjectile::BeginPlay()
 {
     Super::BeginPlay();
+<<<<<<< HEAD
     ProjectileMovement->Velocity = GetActorForwardVector() * ProjectileMovement->InitialSpeed;
+=======
+>>>>>>> 8c9d331 (Feat: Projectile íŒŒì¼ ì¬ìƒì„±)
     GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Projectile Spawned"));
 }
 
@@ -54,9 +60,16 @@ void AOWProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPri
 
     if (OtherComp && OtherComp->IsSimulatingPhysics())
     {
+<<<<<<< HEAD
         GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Speeding~"));
         OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
     }
 
     // Destroy();
+=======
+        OtherComp->AddImpulseAtLocation(GetVelocity() * 100.0f, GetActorLocation());
+    }
+
+    Destroy();
+>>>>>>> 8c9d331 (Feat: Projectile íŒŒì¼ ì¬ìƒì„±)
 }
