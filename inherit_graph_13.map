@@ -1,5 +1,13 @@
 <map id="그래픽컬한 클래스 계통도" name="그래픽컬한 클래스 계통도">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,156,31"/>
-<area shape="rect" id="Node000001" href="$classUOWAbilitySet.html" title=" " alt="" coords="204,5,321,31"/>
-<area shape="poly" id="edge16_Node000000_Node000001" title=" " alt="" coords="170,15,204,15,204,21,170,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,55,147,80"/>
+<area shape="rect" id="Node000001" href="$classUOWGameplayAbility.html" title=" " alt="" coords="195,55,359,80"/>
+<area shape="poly" id="edge12_Node000000_Node000001" title=" " alt="" coords="161,65,195,65,195,70,161,70"/>
+<area shape="rect" id="Node000002" href="$classUOWGA__Active.html" title=" " alt="" coords="415,5,537,31"/>
+<area shape="poly" id="edge13_Node000001_Node000002" title=" " alt="" coords="341,49,423,28,424,33,342,54"/>
+<area shape="rect" id="Node000004" href="$classUOWGA__Passive.html" title=" " alt="" coords="411,55,541,80"/>
+<area shape="poly" id="edge15_Node000001_Node000004" title=" " alt="" coords="372,65,411,65,411,70,372,70"/>
+<area shape="rect" id="Node000005" href="$classUOWGA__Ultimate.html" title=" " alt="" coords="407,104,545,129"/>
+<area shape="poly" id="edge16_Node000001_Node000005" title=" " alt="" coords="342,81,424,101,423,107,341,86"/>
+<area shape="rect" id="Node000003" href="$classUOWGA__Active__GunFire.html" title=" " alt="" coords="593,5,772,31"/>
+<area shape="poly" id="edge14_Node000002_Node000003" title=" " alt="" coords="551,15,593,15,593,21,551,21"/>
 </map>
