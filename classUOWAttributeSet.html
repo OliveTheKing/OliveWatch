@@ -78,12 +78,12 @@ $(function() {
 <div class="dynheader">
 UOWAttributeSet에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWAttributeSet__inherit__graph.svg" width="232" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWAttributeSet__inherit__graph.svg" width="232" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 UOWAttributeSet에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWAttributeSet__coll__graph.svg" width="232" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWAttributeSet__coll__graph.svg" width="232" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -106,9 +106,6 @@ Public 멤버 함수</h2></td></tr>
 <tr class="memitem:a5877f8212b69176b174750105d04213b" id="r_a5877f8212b69176b174750105d04213b"><td class="memItemLeft" align="right" valign="top"><a id="a5877f8212b69176b174750105d04213b" name="a5877f8212b69176b174750105d04213b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ATTRIBUTE_ACCESSORS</b> (ThisClass, UltimateCost)</td></tr>
 <tr class="separator:a5877f8212b69176b174750105d04213b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a281f17bb3f1eec35086fbd13578348b4" id="r_a281f17bb3f1eec35086fbd13578348b4"><td class="memItemLeft" align="right" valign="top"><a id="a281f17bb3f1eec35086fbd13578348b4" name="a281f17bb3f1eec35086fbd13578348b4"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PostAttributeChange</b> (const FGameplayAttribute &amp;Attribute, float OldValue, float NewValue) override</td></tr>
-<tr class="separator:a281f17bb3f1eec35086fbd13578348b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea9be67dd254248d4e20cae8f3067f6e" id="r_aea9be67dd254248d4e20cae8f3067f6e"><td class="memItemLeft" align="right" valign="top"><a id="aea9be67dd254248d4e20cae8f3067f6e" name="aea9be67dd254248d4e20cae8f3067f6e"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>GetLifetimeReplicatedProps</b> (TArray&lt; FLifetimeProperty &gt; &amp;OutLifetimeProps) const override</td></tr>
 <tr class="separator:aea9be67dd254248d4e20cae8f3067f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +115,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRep_HP</b> (const F
 <tr class="memitem:a66d8d5eab7acb2715712bf03a8944508" id="r_a66d8d5eab7acb2715712bf03a8944508"><td class="memItemLeft" align="right" valign="top"><a id="a66d8d5eab7acb2715712bf03a8944508" name="a66d8d5eab7acb2715712bf03a8944508"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnRep_Bullets</b> (const FGameplayAttributeData &amp;OldValue)</td></tr>
 <tr class="separator:a66d8d5eab7acb2715712bf03a8944508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2d92a59cfbbe12e68de1b94a120592" id="r_abb2d92a59cfbbe12e68de1b94a120592"><td class="memItemLeft" align="right" valign="top"><a id="abb2d92a59cfbbe12e68de1b94a120592" name="abb2d92a59cfbbe12e68de1b94a120592"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>PreGameplayEffectExecute</b> (FGameplayEffectModCallbackData &amp;Data) override</td></tr>
+<tr class="separator:abb2d92a59cfbbe12e68de1b94a120592"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496fda0cd63039c59392d61599bc2f6d" id="r_a496fda0cd63039c59392d61599bc2f6d"><td class="memItemLeft" align="right" valign="top"><a id="a496fda0cd63039c59392d61599bc2f6d" name="a496fda0cd63039c59392d61599bc2f6d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PostGameplayEffectExecute</b> (const FGameplayEffectModCallbackData &amp;Data) override</td></tr>
+<tr class="separator:a496fda0cd63039c59392d61599bc2f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b522dbcab9a25b3dd60e7a8abdf1e7" id="r_ad3b522dbcab9a25b3dd60e7a8abdf1e7"><td class="memItemLeft" align="right" valign="top"><a id="ad3b522dbcab9a25b3dd60e7a8abdf1e7" name="ad3b522dbcab9a25b3dd60e7a8abdf1e7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PreAttributeBaseChange</b> (const FGameplayAttribute &amp;Attribute, float &amp;NewValue) const override</td></tr>
+<tr class="separator:ad3b522dbcab9a25b3dd60e7a8abdf1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4abecc2a9882227cf43ba427663c3312" id="r_a4abecc2a9882227cf43ba427663c3312"><td class="memItemLeft" align="right" valign="top"><a id="a4abecc2a9882227cf43ba427663c3312" name="a4abecc2a9882227cf43ba427663c3312"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PreAttributeChange</b> (const FGameplayAttribute &amp;Attribute, float &amp;NewValue) override</td></tr>
+<tr class="separator:a4abecc2a9882227cf43ba427663c3312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a281f17bb3f1eec35086fbd13578348b4" id="r_a281f17bb3f1eec35086fbd13578348b4"><td class="memItemLeft" align="right" valign="top"><a id="a281f17bb3f1eec35086fbd13578348b4" name="a281f17bb3f1eec35086fbd13578348b4"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PostAttributeChange</b> (const FGameplayAttribute &amp;Attribute, float OldValue, float NewValue) override</td></tr>
+<tr class="separator:a281f17bb3f1eec35086fbd13578348b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dfb082cd82dce83945693b4d2feb3be" id="r_a8dfb082cd82dce83945693b4d2feb3be"><td class="memItemLeft" align="right" valign="top"><a id="a8dfb082cd82dce83945693b4d2feb3be" name="a8dfb082cd82dce83945693b4d2feb3be"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>ClampAttribute</b> (const FGameplayAttribute &amp;Attribute, float &amp;NewValue) const</td></tr>
+<tr class="separator:a8dfb082cd82dce83945693b4d2feb3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
 <li>Source/OliveWatch/Public/AbilitySystem/Attributes/<a class="el" href="OWAttributeSet_8h_source.html">OWAttributeSet.h</a></li>

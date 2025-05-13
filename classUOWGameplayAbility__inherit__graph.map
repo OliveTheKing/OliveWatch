@@ -1,15 +1,17 @@
 <map id="UOWGameplayAbility" name="UOWGameplayAbility">
-<area shape="rect" id="Node000001" title=" " alt="" coords="273,119,454,184"/>
-<area shape="rect" id="Node000003" href="$classUOWGA__Active.html" title=" " alt="" coords="118,232,278,397"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="323,195,280,237,276,233,320,192"/>
-<area shape="rect" id="Node000006" href="$classUOWGA__Passive.html" title=" " alt="" coords="302,282,425,347"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="366,198,366,282,361,282,361,198"/>
-<area shape="rect" id="Node000007" href="$classUOWGA__Ultimate.html" title=" " alt="" coords="449,252,603,377"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="406,192,465,250,461,253,403,195"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="297,5,430,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="366,84,366,119,361,119,361,84"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="374,119,555,184"/>
+<area shape="rect" id="Node000003" href="$classUOWGA__Active.html" title=" " alt="" coords="214,232,374,397"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="423,195,376,240,372,236,419,192"/>
+<area shape="rect" id="Node000006" href="$classUOWGA__Passive.html" title=" " alt="" coords="403,282,526,347"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="467,198,467,282,462,282,462,198"/>
+<area shape="rect" id="Node000008" href="$classUOWGA__Ultimate.html" title=" " alt="" coords="550,252,705,377"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="508,192,567,250,563,253,504,195"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="398,5,531,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="467,84,467,119,462,119,462,84"/>
 <area shape="rect" id="Node000004" href="$classUOWGA__Active__GunFire.html" title=" " alt="" coords="5,445,201,691"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="165,411,152,446,147,444,160,409"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="226,410,198,447,194,444,222,407"/>
 <area shape="rect" id="Node000005" href="$classUOWGA__FastZoom.html" title=" " alt="" coords="225,525,363,611"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="237,409,281,524,276,526,232,411"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="297,411,297,525,291,525,291,411"/>
+<area shape="rect" id="Node000007" href="$classUOWGA__Reload.html" title=" " alt="" coords="387,495,553,641"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="468,361,471,495,466,495,463,361"/>
 </map>
