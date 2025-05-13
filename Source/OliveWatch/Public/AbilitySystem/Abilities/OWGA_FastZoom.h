@@ -23,7 +23,6 @@ public:
         bool bReplicateEndAbility, bool bWasCancelled) override;
 
 protected:
-    // 줌 시 사용할 FOV 값
     UPROPERTY(EditDefaultsOnly, Category = "FastZoom")
     float ZoomFOV = 40.f;
 
