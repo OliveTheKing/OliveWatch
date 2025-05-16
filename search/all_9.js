@@ -13,8 +13,9 @@ var searchData=
   ['uowga_5fultimate_10',['UOWGA_Ultimate',['../classUOWGA__Ultimate.html',1,'']]],
   ['uowgameplayability_11',['UOWGameplayAbility',['../classUOWGameplayAbility.html',1,'']]],
   ['uowgameplayeffect_12',['UOWGameplayEffect',['../classUOWGameplayEffect.html',1,'']]],
-  ['uowge_5fcost_13',['UOWGE_Cost',['../classUOWGE__Cost.html',1,'']]],
-  ['uowgt_5fplaymontageandwaitforevent_14',['UOWGT_PlayMontageAndWaitForEvent',['../classUOWGT__PlayMontageAndWaitForEvent.html',1,'']]],
-  ['uowinputdata_15',['UOWInputData',['../classUOWInputData.html',1,'']]],
-  ['uowreloadoverride_16',['UOWReloadOverride',['../classUOWReloadOverride.html',1,'']]]
+  ['uowgameplaytask_13',['UOWGameplayTask',['../classUOWGameplayTask.html',1,'']]],
+  ['uowge_5fcost_14',['UOWGE_Cost',['../classUOWGE__Cost.html',1,'']]],
+  ['uowgt_5fplaymontageandwaitforevent_15',['UOWGT_PlayMontageAndWaitForEvent',['../classUOWGT__PlayMontageAndWaitForEvent.html',1,'']]],
+  ['uowinputdata_16',['UOWInputData',['../classUOWInputData.html',1,'']]],
+  ['uowreloadoverride_17',['UOWReloadOverride',['../classUOWReloadOverride.html',1,'']]]
 ];
