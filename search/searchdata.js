@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "acefgoprsu목할",
   1: "afu",
   2: "goprs",
-  3: "ceopu",
+  3: "ceop",
   4: "목할"
 };
 
