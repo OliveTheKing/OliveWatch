@@ -25,4 +25,7 @@ namespace OWGameplayTags
 	//Anim notify
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_SpawnProjectile);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_EndAbility);
+
+	//ตฅภฬลอ
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Data_Damage);
 }

@@ -23,4 +23,8 @@ namespace OWGameplayTags
 	//몽타주 알람
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_EndAbility, "Event.Montage.EndAbility");
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_SpawnProjectile, "Event.Montage.SpawnProjectile");
+
+	// 데이터
+	UE_DEFINE_GAMEPLAY_TAG(Data_Damage, "Data.Damage");
+	
 }
