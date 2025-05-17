@@ -45,4 +45,8 @@ namespace OWGameplayTags
 
 	//Ability
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_GunFire);
+
+	// ĳ���� �����̻�
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_SkillBlocked);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_MovementBlocked);
 }

@@ -44,4 +44,8 @@ namespace OWGameplayTags
 
 	//Ability
 	UE_DEFINE_GAMEPLAY_TAG(Ability_GunFire, "Ability.GunFire");
+
+	// ĳ���� �����̻�
+	UE_DEFINE_GAMEPLAY_TAG(Status_SkillBlocked, "Status.SkillBlocked");
+	UE_DEFINE_GAMEPLAY_TAG(Status_MovementBlocked, "Status.MovementBlocked");
 }
