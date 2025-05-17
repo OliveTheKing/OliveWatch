@@ -74,6 +74,12 @@ bool UOWGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Han
 		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
 		return false;
 	}
+	// 로그 구분을 위해 else if로 분리해두었으나 추후 통합 가능
+	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
+		return false;
+	}
 
 	return Super::CanActivateAbility(Handle, ActorInfo, SourceTags, TargetTags, OptionalRelevantTags);
 }
