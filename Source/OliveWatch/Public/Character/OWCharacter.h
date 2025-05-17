@@ -31,6 +31,10 @@ public:
 	 */
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
+	void Jump() override;
+
+private:
+	bool CanMoveOrJump();
 
 protected:
 	UPROPERTY()

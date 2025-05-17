@@ -7,6 +7,7 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "OWGameplayTags.h"
 
 UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 TObjectPtr<USpringArmComponent> CameraBoom;
@@ -55,6 +56,9 @@ void AOWCharacter::PossessedBy(AController* NewController)
 
 void AOWCharacter::Move(const FVector& direction, const float& speed)
 {
+	if (!CanMoveOrJump()) {
+		return;
+	}
 	//언리얼 좌표 기준으로 변경(Y, X, Z)
 	AddMovementInput(FVector(direction.Y, direction.X, 0.f).GetSafeNormal(), speed);
 }
@@ -68,5 +72,27 @@ void AOWCharacter::Look(const FVector& direction)
 void AOWCharacter::ActivateAbility(FGameplayTag AbilityTag)
 {
 	AbilitySystemComponent->ActivateAbility(AbilityTag);
+}
+
+void AOWCharacter::Jump()
+{
+	if (!CanMoveOrJump()) {
+		return;
+	}
+	Super::Jump();
+}
+
+bool AOWCharacter::CanMoveOrJump()
+{
+	const FGameplayAbilityActorInfo* ActorInfo = nullptr;
+	if (AbilitySystemComponent) {
+		ActorInfo = AbilitySystemComponent->AbilityActorInfo.Get();
+	}
+	if (ActorInfo && ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_MovementBlocked))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Movement Blocked"));
+		return false;
+	}
+	return true;
 }
 
