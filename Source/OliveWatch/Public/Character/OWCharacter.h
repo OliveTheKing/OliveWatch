@@ -26,6 +26,10 @@ protected:
 public:	
 	void Move(const FVector& direction, const float& speed = 1.f);
 	void ActivateAbility(FGameplayTag AbilityTag);
+	void Jump() override;
+
+private:
+	bool CanMoveOrJump();
 
 protected:
 	UPROPERTY()

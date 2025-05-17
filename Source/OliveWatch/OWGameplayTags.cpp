@@ -23,4 +23,8 @@ namespace OWGameplayTags
 	//몽타주 알람
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_EndAbility, "Event.Montage.EndAbility");
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_SpawnProjectile, "Event.Montage.SpawnProjectile");
+
+	// 캐릭터 상태이상
+	UE_DEFINE_GAMEPLAY_TAG(Status_SkillBlocked, "Status.SkillBlocked");
+	UE_DEFINE_GAMEPLAY_TAG(Status_MovementBlocked, "Status.MovementBlocked");
 }

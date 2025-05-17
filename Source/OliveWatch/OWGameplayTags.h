@@ -25,4 +25,8 @@ namespace OWGameplayTags
 	//Anim notify
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_SpawnProjectile);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_EndAbility);
+
+	// 캐릭터 상태이상
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_SkillBlocked);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_MovementBlocked);
 }
