@@ -33,6 +33,10 @@ public:
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
 	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
+	void Jump() override;
+
+private:
+	bool CanMoveOrJump();
 
 protected:
 	UPROPERTY()
