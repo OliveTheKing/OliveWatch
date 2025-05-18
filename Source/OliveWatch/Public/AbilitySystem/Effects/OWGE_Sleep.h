@@ -16,6 +16,4 @@ class OLIVEWATCH_API UOWGE_Sleep : public UOWGameplayEffect
 	
 public:
 	UOWGE_Sleep(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
-
-	void InitSleepEffect(float SleepDuration);
 };
