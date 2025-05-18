@@ -6,16 +6,16 @@
 
 namespace OWGameplayTags
 {
-	//±âº» ÀÌµ¿
+	//ï¿½âº» ï¿½Ìµï¿½
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Move);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Look);
 	
-	//°øÅë ¾×¼Ç
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½×¼ï¿½
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Jump);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Curl);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MeleeAttack);
 
-	//½ºÅ³
+	//ï¿½ï¿½Å³
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MainFire);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_SubFire);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill1);
@@ -27,6 +27,9 @@ namespace OWGameplayTags
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_SpawnProjectile);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_EndAbility);
 
-	//µ¥ÀÌÅÍ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Data_Damage);
+
+	//Player State
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_Dead);
 }

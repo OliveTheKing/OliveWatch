@@ -8,12 +8,12 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Move, "Input.Action.Move");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Look, "Input.Action.Look");
 
-	//°øÅë ¾×¼Ç
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½×¼ï¿½
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Jump, "Input.Action.Jump");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Curl, "Input.Action.Curl");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_MeleeAttack, "Input.Action.MeleeAttack");
 
-	//½ºÅ³
+	//ï¿½ï¿½Å³
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_MainFire, "Input.Action.MainFire");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_SubFire, "Input.Action.SubFire");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill1, "Input.Action.Skill1");
@@ -21,11 +21,14 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill3, "Input.Action.Skill3");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Reload, "Input.Action.Reload");
 
-	//¸ùÅ¸ÁÖ ¾Ë¶÷
+	//ï¿½ï¿½Å¸ï¿½ï¿½ ï¿½Ë¶ï¿½
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_EndAbility, "Event.Montage.EndAbility");
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_SpawnProjectile, "Event.Montage.SpawnProjectile");
 
-	// µ¥ÀÌÅÍ
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	UE_DEFINE_GAMEPLAY_TAG(Data_Damage, "Data.Damage");
 	
+
+	//Player State
+	UE_DEFINE_GAMEPLAY_TAG(State_Dead, "State.Dead");
 }
