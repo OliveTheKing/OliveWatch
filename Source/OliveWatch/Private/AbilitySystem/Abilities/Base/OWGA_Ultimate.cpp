@@ -8,4 +8,5 @@
 UOWGA_Ultimate::UOWGA_Ultimate()
 {
 	CostGameplayEffectClass = UOWGE_Cost::StaticClass();
+	ActivationRequiredTags.AddTag(FGameplayTag::RequestGameplayTag(TEXT("State.UltimateReady")));
 }
