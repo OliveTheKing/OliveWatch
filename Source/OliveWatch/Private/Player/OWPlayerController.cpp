@@ -77,7 +77,7 @@ void AOWPlayerController::SetupInputComponent()
                 EnhancedInputComponent->BindAction(ActionReload, ETriggerEvent::Completed, this, &ThisClass::Input_Reload);
 
             if (ActionLook)
-                EnhancedInputComponent->BindAction(ActionLook, ETriggerEvent::Completed, this, &ThisClass::Input_Look);
+                EnhancedInputComponent->BindAction(ActionLook, ETriggerEvent::Triggered, this, &ThisClass::Input_Look);
         }
 	}
 }
