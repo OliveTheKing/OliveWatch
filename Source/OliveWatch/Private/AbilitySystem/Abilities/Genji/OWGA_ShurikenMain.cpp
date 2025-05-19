@@ -7,8 +7,6 @@
 
 UOWGA_ShurikenMain::UOWGA_ShurikenMain()
 {
-	TotalShuriken = 3;
-	CountShuriken = 0;
 }
 
 void UOWGA_ShurikenMain::SetCurrentMontage(UAnimMontage* InCurrentMontage)
@@ -31,7 +29,7 @@ void UOWGA_ShurikenMain::ActivateAbility(const FGameplayAbilitySpecHandle Handle
 
 	// Animation event에서 실행
 	// 지금은 test용으로 여기서 실행
-	ThrowFirstShuriken();
+	ShurikenMain();
 	
 }
 
@@ -40,26 +38,10 @@ void UOWGA_ShurikenMain::EndAbility(const FGameplayAbilitySpecHandle Handle, con
 	Super::EndAbility(Handle, ActorInfo, ActivationInfo, bReplicateEndAbility, bWasCancelled);
 }
 
-//void UOWGA_ShurikenMain::ShurikenMain()
-//{
-//	if (CountShuriken < TotalShuriken) {
-//		SpawnProjectile();
-//
-//		// 이펙트 실행
-//		FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
-//		ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
-//		 
-//		// 다음 표창까지 딜레이
-//		DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 0.1f);
-//		DelayTask->OnFinish.AddDynamic(this, &UOWGA_ShurikenMain::ShurikenMain);
-//		DelayTask->ReadyForActivation();
-//
-//		CountShuriken++;
-//	}
-//	else {
-//		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
-//	}
-//}
+void UOWGA_ShurikenMain::ShurikenMain()
+{
+	ThrowFirstShuriken();
+}
 
 void UOWGA_ShurikenMain::ThrowFirstShuriken()
 {

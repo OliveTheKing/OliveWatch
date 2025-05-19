@@ -29,7 +29,9 @@ public:
 	/**
 	* @brief 겐지 수리검(좌클릭) 공격 함수 -> animation event에서 실행
 	*/
-	//void ShurikenMain();
+	UFUNCTION()
+	void ShurikenMain();
+
 	UFUNCTION()
 	void ThrowFirstShuriken();
 
@@ -45,11 +47,4 @@ private:
 
 	UPROPERTY()
 	UAbilityTask_WaitDelay* DelayTask;
-
-	UPROPERTY()
-	int TotalShuriken;
-
-	UPROPERTY()
-	int CountShuriken;
-	
 };
