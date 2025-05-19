@@ -25,6 +25,7 @@ protected:
 
 public:	
 	void Move(const FVector& direction, const float& speed = 1.f);
+	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
 
 protected:

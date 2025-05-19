@@ -36,6 +36,12 @@ void AOWCharacter::Move(const FVector& direction, const float& speed)
 	AddMovementInput(FVector(direction.Y, direction.X, 0.f).GetSafeNormal(), speed);
 }
 
+void AOWCharacter::Look(const FVector& direction)
+{
+	AddControllerYawInput(direction.X);
+	AddControllerPitchInput(direction.Y);
+}
+
 void AOWCharacter::ActivateAbility(FGameplayTag AbilityTag)
 {
 	AbilitySystemComponent->ActivateAbility(AbilityTag);

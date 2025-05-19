@@ -43,6 +43,7 @@ void AOWPlayerController::SetupInputComponent()
             auto ActionSkill2 = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Skill2);
             auto ActionSkill3 = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Skill3);
             auto ActionReload = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Reload);
+            auto ActionLook = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Look);
 
             // BindAction 호출
             if (ActionMove)
@@ -74,6 +75,9 @@ void AOWPlayerController::SetupInputComponent()
 
             if (ActionReload)
                 EnhancedInputComponent->BindAction(ActionReload, ETriggerEvent::Completed, this, &ThisClass::Input_Reload);
+
+            if (ActionLook)
+                EnhancedInputComponent->BindAction(ActionLook, ETriggerEvent::Completed, this, &ThisClass::Input_Look);
         }
 	}
 }
@@ -128,4 +132,11 @@ void AOWPlayerController::Input_Skill3(const FInputActionValue& Value)
 void AOWPlayerController::Input_Reload(const FInputActionValue& Value)
 {
 	OWPlayer->ActivateAbility(OWGameplayTags::Input_Action_Reload);
+}
+
+void AOWPlayerController::Input_Look(const FInputActionValue& InputValue)
+{
+    FVector2D Direction = InputValue.Get<FVector2D>();
+
+    OWPlayer->Look(FVector(Direction.X, Direction.Y, 0.f));
 }
