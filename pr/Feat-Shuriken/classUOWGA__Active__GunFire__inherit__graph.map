@@ -1,0 +1,13 @@
+<map id="UOWGA_Active_GunFire" name="UOWGA_Active_GunFire">
+<area shape="rect" id="Node000001" title=" " alt="" coords="100,445,296,691"/>
+<area shape="rect" id="Node000005" href="$classUOWGA__ShurikenMain.html" title=" " alt="" coords="5,739,191,964"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="153,704,140,739,135,738,148,703"/>
+<area shape="rect" id="Node000006" href="$classUOWGA__ShurikenSub.html" title=" " alt="" coords="215,769,381,934"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="248,703,271,768,266,769,243,705"/>
+<area shape="rect" id="Node000002" href="$classUOWGA__Active.html" title=" " alt="" coords="118,232,278,397"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,411,201,445,195,445,195,411"/>
+<area shape="rect" id="Node000003" href="$classUOWGameplayAbility.html" title=" " alt="" coords="107,119,289,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,197,201,232,195,232,195,197"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="131,5,265,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="201,84,201,119,195,119,195,84"/>
+</map>
