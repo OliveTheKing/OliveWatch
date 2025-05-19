@@ -28,7 +28,8 @@ public:
 	ATTRIBUTE_ACCESSORS(ThisClass, MaxBullets);
 	ATTRIBUTE_ACCESSORS(ThisClass, Bullets);
 	ATTRIBUTE_ACCESSORS(ThisClass, Speed);
-	ATTRIBUTE_ACCESSORS(ThisClass, UltimateCost);
+	ATTRIBUTE_ACCESSORS(ThisClass, UltimateGauge);
+	ATTRIBUTE_ACCESSORS(ThisClass, MaxUltimateGauge);
 
 public:
 	UOWAttributeSet();
@@ -67,5 +68,8 @@ private:
 	FGameplayAttributeData Speed;
 
 	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	FGameplayAttributeData UltimateCost;
+	FGameplayAttributeData UltimateGauge;
+
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	FGameplayAttributeData MaxUltimateGauge;
 };
