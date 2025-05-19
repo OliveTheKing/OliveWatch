@@ -59,6 +59,10 @@ void AOWCharacter::Move(const FVector& direction, const float& speed)
 	AddMovementInput(FVector(direction.Y, direction.X, 0.f).GetSafeNormal(), speed);
 }
 
+/**
+	 * 캐릭터의 카메라를 마우스 인풋에 따라 회전시킵니다. 
+	 * @param direction 회전 방향
+	 */
 void AOWCharacter::Look(const FVector& direction)
 {
 	AddControllerYawInput(direction.X);
