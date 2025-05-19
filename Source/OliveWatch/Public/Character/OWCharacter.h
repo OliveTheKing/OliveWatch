@@ -25,6 +25,10 @@ protected:
 
 public:	
 	void Move(const FVector& direction, const float& speed = 1.f);
+	/**
+	 * 캐릭터의 카메라를 마우스 인풋에 따라 회전시킵니다.
+	 * @param direction 회전 방향
+	 */
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
 
