@@ -8,6 +8,7 @@ namespace OWGameplayTags
 {
 	//기본 이동
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Move);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Look);
 	
 	//공통 액션
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Jump);

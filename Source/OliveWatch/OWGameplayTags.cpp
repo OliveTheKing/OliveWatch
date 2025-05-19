@@ -6,6 +6,7 @@
 namespace OWGameplayTags
 {
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Move, "Input.Action.Move");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Look, "Input.Action.Look");
 
 	//공통 액션
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Jump, "Input.Action.Jump");
