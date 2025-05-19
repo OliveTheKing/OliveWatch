@@ -21,6 +21,14 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill3, "Input.Action.Skill3");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Reload, "Input.Action.Reload");
 
+	//override
+	UE_DEFINE_GAMEPLAY_TAG(Input_Override_MainFire, "Input.Override.MainFire");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Override_SubFire, "Input.Override.SubFire");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Override_Skill1, "Input.Override.Skill1");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Override_Skill2, "Input.Override.Skill2");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Override_Skill3, "Input.Override.Skill3");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Override_Reload, "Input.Override.Reload");
+
 	//��Ÿ�� �˶�
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_EndAbility, "Event.Montage.EndAbility");
 	UE_DEFINE_GAMEPLAY_TAG(Event_Montage_SpawnProjectile, "Event.Montage.SpawnProjectile");
