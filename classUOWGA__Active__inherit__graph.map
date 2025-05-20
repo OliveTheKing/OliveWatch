@@ -1,11 +1,15 @@
 <map id="UOWGA_Active" name="UOWGA_Active">
-<area shape="rect" id="Node000001" title=" " alt="" coords="129,352,267,417"/>
-<area shape="rect" id="Node000004" href="$classUOWGA__Active__GunFire.html" title=" " alt="" coords="5,465,201,711"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="180,431,163,466,158,464,175,429"/>
-<area shape="rect" id="Node000005" href="$classUOWGA__FastZoom.html" title=" " alt="" coords="225,545,363,631"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="221,429,277,544,272,546,217,431"/>
-<area shape="rect" id="Node000002" href="$classUOWGameplayAbility.html" title=" " alt="" coords="107,119,289,304"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,318,201,352,195,352,195,318"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="131,5,265,71"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,85,201,119,195,119,195,85"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="223,352,362,417"/>
+<area shape="rect" id="Node000004" href="$classUOWGA__Active__GunFire.html" title=" " alt="" coords="100,465,296,711"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="274,431,258,466,253,464,270,429"/>
+<area shape="rect" id="Node000007" href="$classUOWGA__FastZoom.html" title=" " alt="" coords="320,545,457,631"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="316,429,371,544,366,546,311,431"/>
+<area shape="rect" id="Node000002" href="$classUOWGameplayAbility.html" title=" " alt="" coords="202,119,383,304"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="295,318,295,352,290,352,290,318"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="226,5,359,71"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="295,85,295,119,290,119,290,85"/>
+<area shape="rect" id="Node000005" href="$classUOWGA__ShurikenMain.html" title=" " alt="" coords="5,759,191,984"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="153,724,140,759,135,758,148,723"/>
+<area shape="rect" id="Node000006" href="$classUOWGA__ShurikenSub.html" title=" " alt="" coords="215,789,381,954"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="248,723,271,788,266,789,243,725"/>
 </map>
