@@ -37,7 +37,10 @@ AOWProjectile::AOWProjectile()
 void AOWProjectile::BeginPlay()
 {
     Super::BeginPlay();
-    ProjectileMovement->Velocity = GetActorForwardVector() * ProjectileMovement->InitialSpeed;
+    if (ProjectileMovement->Velocity == FVector::ZeroVector) {
+        ProjectileMovement->Velocity = GetActorForwardVector() * ProjectileMovement->InitialSpeed;
+    }
+
     GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Projectile Spawned"));
 }
 
@@ -59,4 +62,9 @@ void AOWProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPri
     }
 
     // Destroy();
+}
+
+void AOWProjectile::SetProjectileVelocity(FVector Rotation)
+{
+    ProjectileMovement->Velocity = Rotation * ProjectileMovement->InitialSpeed;
 }
