@@ -35,6 +35,7 @@ private:
     void Input_Skill2(const FInputActionValue& InputValue);
     void Input_Skill3(const FInputActionValue& InputValue);
     void Input_Reload(const FInputActionValue& InputValue);
+    void Input_Look(const FInputActionValue& InputValue);
 
 public:
 	UPROPERTY(EditAnywhere)
