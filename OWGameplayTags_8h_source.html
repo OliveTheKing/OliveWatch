@@ -91,24 +91,25 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">//기본 이동</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Move);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">//공통 액션</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Jump);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Curl);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MeleeAttack);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">//스킬</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MainFire);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_SubFire);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill1);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill2);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill3);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Reload);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">//Anim notify</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_SpawnProjectile);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_EndAbility);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Look);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">//공통 액션</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Jump);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Curl);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MeleeAttack);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">//스킬</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MainFire);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_SubFire);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill1);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill2);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill3);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Reload);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">//Anim notify</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_SpawnProjectile);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    UE_DECLARE_GAMEPLAY_TAG_EXTERN(Event_Montage_EndAbility);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
