@@ -4,7 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Weapon/OWWeaponComponent.h"
 #include "GameplayTagContainer.h"
+#include "Camera/CameraComponent.h"
 #include "OWCharacter.generated.h"
 
 UCLASS()
@@ -16,6 +18,9 @@ public:
 	// Sets default values for this character's properties
 	AOWCharacter();
 
+	UPROPERTY()
+	UOWWeaponComponent* WeaponComponent;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -24,7 +29,7 @@ protected:
 	virtual void PossessedBy(AController* NewController) override;
 	virtual void OnRep_PlayerState() override;
 
-public:	
+public:
 	void Move(const FVector& direction, const float& speed = 1.f);
 	/**
 	 * 캐릭터의 카메라를 마우스 인풋에 따라 회전시킵니다.
@@ -34,8 +39,13 @@ public:
 	void ActivateAbility(FGameplayTag AbilityTag);
 	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
 
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	TSubclassOf<UOWWeaponComponent> WeaponComponentClass;
+
 protected:
 	UPROPERTY()
 	TObjectPtr<class UOWAbilitySystemComponent> AbilitySystemComponent;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
+	UCameraComponent* FirstPersonCamera;
 };

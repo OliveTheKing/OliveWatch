@@ -5,7 +5,11 @@
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
-UOWAnimInstance::UOWAnimInstance() {}
+UOWAnimInstance::UOWAnimInstance() 
+{
+	MovingThreshold = 3.0f;
+	JumpingThreshold = 100.0f;
+}
 
 void UOWAnimInstance::NativeInitializeAnimation()
 {
@@ -21,4 +25,13 @@ void UOWAnimInstance::NativeInitializeAnimation()
 void UOWAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 {
 	Super::NativeUpdateAnimation(DeltaSeconds);
+
+	if (Movement)
+	{
+		Velocity = Movement->Velocity;
+		GroundSpeed = Velocity.Size2D();
+		bIsIdle = GroundSpeed < MovingThreshold;
+		bIsFalling = Movement->IsFalling();
+		bIsJumping = bIsFalling & (Velocity.Z > JumpingThreshold);
+	}
 }

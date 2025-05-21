@@ -24,7 +24,7 @@ bool UOWGA_ShurikenMain::CanActivateAbility(const FGameplayAbilitySpecHandle Han
 
 void UOWGA_ShurikenMain::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 {
-	//Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
+	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 	// Animation 실행
 
 	// Animation event에서 실행
@@ -45,7 +45,7 @@ void UOWGA_ShurikenMain::ShurikenMain()
 
 void UOWGA_ShurikenMain::ThrowFirstShuriken()
 {
-	SpawnProjectile();
+	Shoot();
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -60,7 +60,7 @@ void UOWGA_ShurikenMain::ThrowFirstShuriken()
 
 void UOWGA_ShurikenMain::ThrowSecondShuriken()
 {
-	SpawnProjectile();
+	Shoot();
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -74,7 +74,7 @@ void UOWGA_ShurikenMain::ThrowSecondShuriken()
 
 void UOWGA_ShurikenMain::ThrowThirdShuriken()
 {
-	SpawnProjectile();
+	Shoot();
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -82,3 +82,4 @@ void UOWGA_ShurikenMain::ThrowThirdShuriken()
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
 }
+//
