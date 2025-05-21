@@ -4,7 +4,6 @@
 #include "Character/OWCharacter.h"
 #include "Player/OWPlayerState.h"
 #include "AbilitySystem/OWAbilitySystemComponent.h"
-#include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
@@ -20,16 +19,9 @@ AOWCharacter::AOWCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	// SpringArm
-	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
-	CameraBoom->SetupAttachment(RootComponent);
-	CameraBoom->TargetArmLength = 300.f;
-	CameraBoom->bUsePawnControlRotation = true;
-
-	// FollowCamera
-	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
-	FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
-	FollowCamera->bUsePawnControlRotation = false;
+	FirstPersonCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
+	FirstPersonCamera->SetupAttachment(GetMesh(), TEXT("FX_Head"));
+	FirstPersonCamera->bUsePawnControlRotation = true;
 
 	bUseControllerRotationYaw = true;
 	bUseControllerRotationPitch = true;
@@ -40,7 +32,22 @@ AOWCharacter::AOWCharacter()
 void AOWCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	if (WeaponComponentClass)
+	{
+		WeaponComponent = NewObject<UOWWeaponComponent>(this, WeaponComponentClass);
+		WeaponComponent->RegisterComponent();  // World에 등록
+
+		FName MuzzleSocketName = TEXT("weaponMuzzle");
+
+		USkeletalMeshComponent* CharacterMesh = GetMesh();
+
+		if (CharacterMesh && CharacterMesh->DoesSocketExist(MuzzleSocketName))
+		{
+			FAttachmentTransformRules AttachRules(EAttachmentRule::SnapToTarget, false);
+			WeaponComponent->AttachToComponent(CharacterMesh, AttachRules, MuzzleSocketName);
+		}
+	}
 }
 
 void AOWCharacter::PossessedBy(AController* NewController)
