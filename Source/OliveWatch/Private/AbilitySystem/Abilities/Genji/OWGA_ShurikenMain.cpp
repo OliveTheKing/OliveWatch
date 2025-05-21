@@ -24,7 +24,7 @@ bool UOWGA_ShurikenMain::CanActivateAbility(const FGameplayAbilitySpecHandle Han
 
 void UOWGA_ShurikenMain::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 {
-	//Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
+	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 	// Animation 실행
 
 	// Animation event에서 실행
@@ -82,3 +82,4 @@ void UOWGA_ShurikenMain::ThrowThirdShuriken()
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
 }
+//
