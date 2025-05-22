@@ -40,11 +40,24 @@ bool UOWAttributeSet::PreGameplayEffectExecute(FGameplayEffectModCallbackData& D
 	return true;
 }
 
-// Instant GE로 BaseValue 변경 직후 실행
-void UOWAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)
-{
-	Super::PostGameplayEffectExecute(Data);
+void UOWAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallbackData& Data)  
+{  
+   Super::PostGameplayEffectExecute(Data);  
 
+   //HP 0 이하 시 사망처리
+   if (Data.EvaluatedData.Attribute == GetHPAttribute())  
+   {  
+       if (GetHP() <= 0.f)
+       {  
+           UAbilitySystemComponent* ASC = &Data.Target;
+           if (ASC && !ASC->HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag(TEXT("State.Dead"))))  
+           {  
+               static const FGameplayTag DeadTag = FGameplayTag::RequestGameplayTag(TEXT("State.Dead"));  
+               ASC->AddLooseGameplayTag(DeadTag);
+			   GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, TEXT("DEAD"));
+           }  
+       }  
+   }  
 }
 
 // BaseValue 변경 직전 실행
