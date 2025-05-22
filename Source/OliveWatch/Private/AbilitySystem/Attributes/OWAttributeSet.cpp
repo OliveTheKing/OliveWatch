@@ -1,4 +1,4 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "AbilitySystem/Attributes/OWAttributeSet.h"
@@ -58,6 +58,21 @@ void UOWAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallback
            }  
        }  
    }  
+	//궁극기 코스트 채워질 시 UltimateReady 태그 부착
+	if (Data.EvaluatedData.Attribute == GetUltimateGaugeAttribute())
+	{
+		const bool bWasReady = Data.Target.HasMatchingGameplayTag(FGameplayTag::RequestGameplayTag("State.UltimateReady"));
+		const bool bShouldBeReady = (UltimateGauge.GetCurrentValue() >= MaxUltimateGauge.GetCurrentValue());
+
+		if (!bWasReady && bShouldBeReady)
+		{
+			Data.Target.AddLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.UltimateReady"));
+		}
+		else if (bWasReady && !bShouldBeReady)
+		{
+			Data.Target.RemoveLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.UltimateReady"));
+		}
+	}
 }
 
 // BaseValue 변경 직전 실행

@@ -16,4 +16,9 @@ class OLIVEWATCH_API UOWGA_Ultimate : public UOWGameplayAbility
 
 public:
 	UOWGA_Ultimate();
+	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
+
+private:
+	UPROPERTY(EditDefaultsOnly, Category = "GameplayEffect")
+	TSubclassOf<UGameplayEffect> GaugeInitEffect;
 };
