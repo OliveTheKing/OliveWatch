@@ -1,9 +1,11 @@
 <map id="UOWGameplayEffect" name="UOWGameplayEffect">
-<area shape="rect" id="Node000001" title=" " alt="" coords="153,119,303,184"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="257,119,407,184"/>
 <area shape="rect" id="Node000003" href="$classUOWCooldownGameplayEffect.html" title=" " alt="" coords="5,232,245,297"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,196,157,234,153,230,188,192"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,193,185,234,183,229,260,188"/>
 <area shape="rect" id="Node000004" href="$classUOWGE__Cost.html" title=" " alt="" coords="269,232,395,297"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,192,304,230,300,234,265,196"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="164,5,292,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="231,84,231,119,225,119,225,84"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="335,198,335,232,329,232,329,198"/>
+<area shape="rect" id="Node000005" href="$classUOWGE__InitUltimateGauge.html" title=" " alt="" coords="419,232,637,297"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="401,189,474,230,471,234,398,193"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="268,5,396,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="335,84,335,119,329,119,329,84"/>
 </map>

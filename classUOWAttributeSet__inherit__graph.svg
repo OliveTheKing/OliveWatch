@@ -28,14 +28,14 @@
 <text text-anchor="start" x="4" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="17" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">ATTRIBUTE_ACCESSORS()</text>
 <text text-anchor="start" x="4" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">UOWAttributeSet()</text>
+<text text-anchor="start" x="17" y="-66.5" font-family="Helvetica,sans-Serif" font-size="10.00">ATTRIBUTE_ACCESSORS()</text>
 <text text-anchor="start" x="4" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLifetimeReplicatedProps()</text>
+<text text-anchor="start" x="17" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">UOWAttributeSet()</text>
 <text text-anchor="start" x="4" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">OnRep_HP()</text>
+<text text-anchor="start" x="17" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">GetLifetimeReplicatedProps()</text>
 <text text-anchor="start" x="4" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text text-anchor="start" x="17" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">OnRep_Bullets()</text>
-<text text-anchor="start" x="17" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">그리고 6개 더...</text>
+<text text-anchor="start" x="17" y="-21.5" font-family="Helvetica,sans-Serif" font-size="10.00">OnRep_HP()</text>
+<text text-anchor="start" x="17" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">그리고 7개 더...</text>
 <polygon fill="#666666" stroke="#666666" points="0,-181.5 0,-181.5 166,-181.5 166,-181.5 0,-181.5"/>
 <polygon fill="#666666" stroke="#666666" points="0,-166.5 0,-166.5 166,-166.5 166,-166.5 0,-166.5"/>
 <polygon fill="none" stroke="#666666" points="0,0 0,-199 166,-199 166,0 0,0"/>
