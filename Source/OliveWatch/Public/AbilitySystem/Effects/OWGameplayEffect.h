@@ -13,5 +13,4 @@ UCLASS()
 class OLIVEWATCH_API UOWGameplayEffect : public UGameplayEffect
 {
 	GENERATED_BODY()
-	
 };

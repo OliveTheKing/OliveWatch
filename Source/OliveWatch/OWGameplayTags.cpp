@@ -40,4 +40,8 @@ namespace OWGameplayTags
 	//Player State
 	UE_DEFINE_GAMEPLAY_TAG(State_Dead, "State.Dead");
 	UE_DEFINE_GAMEPLAY_TAG(State_UltimateReady, "State.UltimateReady");
+
+	// ĳ���� �����̻�
+	UE_DEFINE_GAMEPLAY_TAG(Status_SkillBlocked, "Status.SkillBlocked");
+	UE_DEFINE_GAMEPLAY_TAG(Status_MovementBlocked, "Status.MovementBlocked");
 }

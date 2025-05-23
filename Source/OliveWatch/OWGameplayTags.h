@@ -41,4 +41,8 @@ namespace OWGameplayTags
 	//Player State
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_Dead);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_UltimateReady);
+
+	// ĳ���� �����̻�
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_SkillBlocked);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Status_MovementBlocked);
 }
