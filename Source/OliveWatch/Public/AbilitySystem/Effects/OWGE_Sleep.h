@@ -16,4 +16,7 @@ class OLIVEWATCH_API UOWGE_Sleep : public UOWGameplayEffect
 	
 public:
 	UOWGE_Sleep(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+
+	UFUNCTION(BlueprintCallable, Category = "Tags")
+	void AddGrantedTag(FGameplayTag NewTag);
 };
