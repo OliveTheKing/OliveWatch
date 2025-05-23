@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Weapon/OWWeaponComponent.h"
 #include "GameplayTagContainer.h"
 #include "OWCharacter.generated.h"
 
@@ -32,8 +33,10 @@ public:
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
 
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	TSubclassOf<UOWWeaponComponent> WeaponComponentClass;
+
 protected:
 	UPROPERTY()
 	TObjectPtr<class UOWAbilitySystemComponent> AbilitySystemComponent;
-
 };

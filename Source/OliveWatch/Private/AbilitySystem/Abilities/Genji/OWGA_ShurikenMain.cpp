@@ -45,7 +45,7 @@ void UOWGA_ShurikenMain::ShurikenMain()
 
 void UOWGA_ShurikenMain::ThrowFirstShuriken()
 {
-	SpawnProjectile();
+	// SpawnProjectile();
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -60,7 +60,7 @@ void UOWGA_ShurikenMain::ThrowFirstShuriken()
 
 void UOWGA_ShurikenMain::ThrowSecondShuriken()
 {
-	SpawnProjectile();
+	// SpawnProjectile();
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -74,7 +74,7 @@ void UOWGA_ShurikenMain::ThrowSecondShuriken()
 
 void UOWGA_ShurikenMain::ThrowThirdShuriken()
 {
-	SpawnProjectile();
+	// SpawnProjectile();
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -82,3 +82,4 @@ void UOWGA_ShurikenMain::ThrowThirdShuriken()
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
 }
+//

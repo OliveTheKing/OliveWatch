@@ -40,7 +40,13 @@ AOWCharacter::AOWCharacter()
 void AOWCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
+	if (WeaponComponentClass)
+	{
+		UOWWeaponComponent* WeaponComponent = NewObject<UOWWeaponComponent>(this, WeaponComponentClass);
+		WeaponComponent->RegisterComponent();  // World에 등록
+		WeaponComponent->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+	}
 }
 
 void AOWCharacter::PossessedBy(AController* NewController)
