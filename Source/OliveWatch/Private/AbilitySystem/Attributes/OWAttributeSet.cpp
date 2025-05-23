@@ -6,6 +6,9 @@
 #include "Net/UnrealNetwork.h"
 #include "GameplayEffectExtension.h"
 #include "OWGameplayTags.h"
+#include "AbilitySystem/OWAbilitySystemComponent.h"
+#include "Player/OWPlayerState.h"
+#include "AbilitySystem/Abilities/Base/Reload/OWGA_Reload.h"
 
 UOWAttributeSet::UOWAttributeSet()
 {
@@ -71,6 +74,21 @@ void UOWAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallback
 		else if (bWasReady && !bShouldBeReady)
 		{
 			Data.Target.RemoveLooseGameplayTag(FGameplayTag::RequestGameplayTag("State.UltimateReady"));
+		}
+	}
+	if (Data.EvaluatedData.Attribute == GetBulletsAttribute())
+	{
+		// 탄창 0이면 재장전 스킬 발동
+		if (GetBullets() <= 0.0f)
+		{
+			AActor* Owner = GetOwningActor();
+			AOWPlayerState* PS = Cast<AOWPlayerState>(Owner);
+			if (PS) {
+				UOWAbilitySystemComponent* ASC = PS->GetOWAbilitySystemComponent();
+				if (ASC) {
+					ASC->ActivateAbility(OWGameplayTags::Input_Action_Reload);
+				}
+			}
 		}
 	}
 }
