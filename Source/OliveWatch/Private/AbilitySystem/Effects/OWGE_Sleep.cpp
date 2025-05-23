@@ -14,3 +14,8 @@ UOWGE_Sleep::UOWGE_Sleep(const FObjectInitializer& ObjectInitializer)
 	InheritableOwnedTagsContainer.AddTag(OWGameplayTags::Status_SkillBlocked);
 	InheritableOwnedTagsContainer.AddTag(OWGameplayTags::Status_MovementBlocked);
 }
+
+void UOWGE_Sleep::AddGrantedTag(FGameplayTag NewTag)
+{
+	InheritableOwnedTagsContainer.AddTag(NewTag);
+}
