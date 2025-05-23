@@ -47,8 +47,10 @@ void AOWTestActor::OnOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherA
 		FGameplayEffectSpecHandle SpecHandle = ASC->MakeOutgoingSpec(DamageGameplayEffect, 3.0f, Context);
 		if (SpecHandle.IsValid())
 		{
-			ASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Blue, TEXT("GE applied"));
+			FActiveGameplayEffectHandle Handle = ASC->ApplyGameplayEffectSpecToSelf(*SpecHandle.Data.Get());
+			if (Handle.WasSuccessfullyApplied()) {
+				GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Blue, TEXT("GE applied"));
+			}
 		}
 	}
 }
