@@ -8,9 +8,9 @@ UOWGE_Sleep::UOWGE_Sleep(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)
 {
 	DurationPolicy = EGameplayEffectDurationType::HasDuration;
-	DurationMagnitude = FScalableFloat(1.f);	// MakeOutGoingSpecï¿½ï¿½ ï¿½Î¹ï¿½Â° ï¿½ï¿½ï¿½ï¿½ levelï¿½ï¿½ scale ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	DurationMagnitude = FScalableFloat(1.f);	// MakeOutGoingSpecÀÇ µÎ¹øÂ° ÀÎÀÚ level·Î scale °ö¿¬»ê °¡´É
 
-	// ï¿½Â±ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ È¸ï¿½ï¿½(GEï¿½ï¿½ life cycleï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
+	// ÅÂ±× Ãß°¡ ¹× È¸¼ö(GEÀÇ life cycle°ú °°ÀÌ °¨)
 	InheritableOwnedTagsContainer.AddTag(OWGameplayTags::Status_SkillBlocked);
 	InheritableOwnedTagsContainer.AddTag(OWGameplayTags::Status_MovementBlocked);
 }
