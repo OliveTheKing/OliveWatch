@@ -109,8 +109,6 @@ bool AOWCharacter::CanMoveOrJump()
 	const FGameplayAbilityActorInfo* ActorInfo = nullptr;
 	if (AbilitySystemComponent) {
 		ActorInfo = AbilitySystemComponent->AbilityActorInfo.Get();
-		FString ASCAddress = FString::Printf(TEXT("ASC C++ Addr: %p"), AbilitySystemComponent);
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Magenta, ASCAddress);
 	}
 	if (ActorInfo && AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_MovementBlocked))
 	{
