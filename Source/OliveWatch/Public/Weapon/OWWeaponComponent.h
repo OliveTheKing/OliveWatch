@@ -10,7 +10,7 @@
 class UOWFireDataAsset;
 class UOWProjectileFactory;
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS(ClassGroup = (Custom), BlueprintType, Blueprintable, meta = (BlueprintSpawnableComponent))
 class OLIVEWATCH_API UOWWeaponComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -38,7 +38,7 @@ protected:
 
 private:	
     /** 발사 설정 데이터 */
-    UPROPERTY(EditAnywhere, Category = "Weapon")
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
     UOWFireDataAsset* FireData;
 
     ///** 실제 스폰은 이 컴포넌트에 위임 */

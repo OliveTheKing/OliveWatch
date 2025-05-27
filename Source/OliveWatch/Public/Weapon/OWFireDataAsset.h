@@ -36,7 +36,7 @@ public:
     UPROPERTY(EditDefaultsOnly) UAnimMontage* ReloadMontage;
 };
 
-UCLASS()
+UCLASS(BlueprintType)
 class OLIVEWATCH_API UOWFireDataAsset : public UPrimaryDataAsset
 {
     GENERATED_BODY()

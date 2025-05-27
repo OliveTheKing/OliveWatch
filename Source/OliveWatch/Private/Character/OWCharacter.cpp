@@ -43,9 +43,8 @@ void AOWCharacter::BeginPlay()
 
 	if (WeaponComponentClass)
 	{
-		UOWWeaponComponent* WeaponComponent = NewObject<UOWWeaponComponent>(this, WeaponComponentClass);
+		WeaponComponent = NewObject<UOWWeaponComponent>(this, WeaponComponentClass);
 		WeaponComponent->RegisterComponent();  // World에 등록
-		WeaponComponent->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
 	}
 }
 
