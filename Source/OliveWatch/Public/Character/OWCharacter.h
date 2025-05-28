@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "Weapon/OWWeaponComponent.h"
 #include "GameplayTagContainer.h"
 #include "OWCharacter.generated.h"
 
@@ -15,6 +16,9 @@ class OLIVEWATCH_API AOWCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	AOWCharacter();
+
+	UPROPERTY()
+	UOWWeaponComponent* WeaponComponent;
 
 protected:
 	// Called when the game starts or when spawned
@@ -32,8 +36,10 @@ public:
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
 
+	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
+	TSubclassOf<UOWWeaponComponent> WeaponComponentClass;
+
 protected:
 	UPROPERTY()
 	TObjectPtr<class UOWAbilitySystemComponent> AbilitySystemComponent;
-
 };

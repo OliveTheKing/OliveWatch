@@ -35,7 +35,7 @@ void UOWGA_ShurikenSub::EndAbility(const FGameplayAbilitySpecHandle Handle, cons
 
 void UOWGA_ShurikenSub::ShurikenSub()
 {
-	Super::SpawnProjectile();
+	// Super::SpawnProjectile();
 
 	FVector left(1.0f, -0.3f, 0.0f);
 	FVector right(1.0f, 0.3f, 0.0f);
@@ -70,22 +70,22 @@ void UOWGA_ShurikenSub::SpawnProjectile(FVector Direction)
 	FRotator MuzzleRotation;
 	Character->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
 
-	FGameplayEffectSpecHandle DamageEffectSpecHandle = MakeOutgoingGameplayEffectSpec(DamageGameplayEffect, GetAbilityLevel());
+	//FGameplayEffectSpecHandle DamageEffectSpecHandle = MakeOutgoingGameplayEffectSpec(DamageGameplayEffect, GetAbilityLevel());
 
-	// Pass the damage to the Damage Execution Calculation through a SetByCaller value on the GameplayEffectSpec
-	DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag(FName("Data.Damage")), Damage);
+	//// Pass the damage to the Damage Execution Calculation through a SetByCaller value on the GameplayEffectSpec
+	//DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag(FName("Data.Damage")), Damage);
 
-	AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
-		ProjectileClass,
-		FTransform(MuzzleRotation, MuzzleLocation + Direction),
-		GetOwningActorFromActorInfo(),
-		Character,
-		ESpawnActorCollisionHandlingMethod::AlwaysSpawn
-	);
+	//AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
+	//	ProjectileClass,
+	//	FTransform(MuzzleRotation, MuzzleLocation + Direction),
+	//	GetOwningActorFromActorInfo(),
+	//	Character,
+	//	ESpawnActorCollisionHandlingMethod::AlwaysSpawn
+	//);
 
-	Projectile->SetProjectileVelocity(Direction);
-	Projectile->DamageSpecHandle = DamageEffectSpecHandle;
-	// Projectile->Range = Range;
+	//Projectile->SetProjectileVelocity(Direction);
+	//Projectile->DamageSpecHandle = DamageEffectSpecHandle;
+	//// Projectile->Range = Range;
 
-	Projectile->FinishSpawning(FTransform(MuzzleRotation, MuzzleLocation));
+	//Projectile->FinishSpawning(FTransform(MuzzleRotation, MuzzleLocation));
 }
