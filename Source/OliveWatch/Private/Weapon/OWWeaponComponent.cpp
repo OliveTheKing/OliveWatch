@@ -17,7 +17,7 @@ UOWWeaponComponent::UOWWeaponComponent()
 void UOWWeaponComponent::BeginPlay()
 {
 	Super::BeginPlay();
-    BurstShotsRemaining = FireData->FirePattern.BurstCount;
+    BurstShotsRemaining = FireData->FirePattern.FullBullet;
     if (ACharacter* Ch = Cast<ACharacter>(GetOwner()))
     {
         Ch->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
@@ -49,12 +49,11 @@ void UOWWeaponComponent::StopFire()
 
 void UOWWeaponComponent::HandleFireTick()
 {
-    if (BurstShotsRemaining <= 0)
+    if (BurstShotsRemaining-- <= 0)
     {
         StartReload();
         return;
     }
-    --BurstShotsRemaining;
 
     SpawnProjectile();
 }
@@ -88,5 +87,5 @@ void UOWWeaponComponent::StartReload()
 
 void UOWWeaponComponent::FinishReload()
 {
-    BurstShotsRemaining = FireData->FirePattern.BurstCount;
+    BurstShotsRemaining = FireData->FirePattern.FullBullet;
 }

@@ -17,7 +17,7 @@ struct FOWFirePattern
     GENERATED_BODY()
 
 public: 
-
+    UPROPERTY(EditDefaultsOnly) int32 FullBullet = 10;   // 전체 탄창 수
     UPROPERTY(EditDefaultsOnly) int32 BurstCount = 1;   // 1 = 단발, 3 = 표창 3연사
     UPROPERTY(EditDefaultsOnly) float Interval = 0.12f; // 발사 간격
     UPROPERTY(EditDefaultsOnly) uint8 bFixed : 1; // 일정한 간격 ~ 산탄
