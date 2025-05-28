@@ -1,10 +1,11 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "OWProjectile.h"
+#include "GameplayEffect.h"
 #include "OWFireDataAsset.generated.h"
 
 /**
@@ -17,13 +18,14 @@ struct FOWFirePattern
 
 public: 
 
-    UPROPERTY(EditDefaultsOnly) int32 BurstCount = 1;   // 1 = ´Ü¹ß, 3 = Ç¥Ã¢ 3¿¬»ç
-    UPROPERTY(EditDefaultsOnly) float Interval = 0.12f; // ¹ß»ç °£°İ
-    UPROPERTY(EditDefaultsOnly) uint8 bFixed : 1; // ÀÏÁ¤ÇÑ °£°İ ~ »êÅº
-    UPROPERTY(EditDefaultsOnly) float Spread = 0.f;     // µµÆ® ÃÑÀÌ¸é 0, »êÅº Á¤µµ
+    UPROPERTY(EditDefaultsOnly) int32 BurstCount = 1;   // 1 = ë‹¨ë°œ, 3 = í‘œì°½ 3ì—°ì‚¬
+    UPROPERTY(EditDefaultsOnly) float Interval = 0.12f; // ë°œì‚¬ ê°„ê²©
+    UPROPERTY(EditDefaultsOnly) uint8 bFixed : 1; // ì¼ì •í•œ ê°„ê²© ~ ì‚°íƒ„
+    UPROPERTY(EditDefaultsOnly) float Spread = 0.f;     // ë„íŠ¸ ì´ì´ë©´ 0, ì‚°íƒ„ ì •ë„
+    UPROPERTY(EditDefaultsOnly) float MuzzleDelay = 0.03f; // ì• ë‹ˆ ì§€ì—° ë³´ì •
     UPROPERTY(EditDefaultsOnly) TSubclassOf<AOWProjectile> ProjectileClass;
-    UPROPERTY(EditDefaultsOnly) float MuzzleDelay = 0.03f; // ¾Ö´Ï Áö¿¬ º¸Á¤
-    UPROPERTY(EditDefaultsOnly) float Damage = 12.f;
+    UPROPERTY(EditDefaultsOnly) TSubclassOf<UGameplayEffect> DamageGameplayEffect;
+    UPROPERTY(EditDefaultsOnly) float Damage = 12.0f; // ì„ì‹œ ë°ë¯¸ì§€.geì— ë“¤ì–´ê°€ì•¼í•¨.
 };
 
 USTRUCT()

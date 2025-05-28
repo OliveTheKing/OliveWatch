@@ -17,22 +17,21 @@ UOWWeaponComponent::UOWWeaponComponent()
 void UOWWeaponComponent::BeginPlay()
 {
 	Super::BeginPlay();
-	// Actor에 붙어 있는 Factory 컴포넌트 참조
-	/*ProjectileFactory = GetOwner()->FindComponentByClass<UOWProjectileFactory>();*/
-}
-
-void UOWWeaponComponent::SetFireData(UOWFireDataAsset* NewData)
-{
-	FireData = NewData;
-}
-
-void UOWWeaponComponent::StartFire()
-{
-    /*if (!FireData || !ProjectileFactory)
-        return;*/
-
-    // BurstCount만큼 발사 준비
     BurstShotsRemaining = FireData->FirePattern.BurstCount;
+    if (ACharacter* Ch = Cast<ACharacter>(GetOwner()))
+    {
+        Ch->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
+    }
+}
+
+UOWFireDataAsset* UOWWeaponComponent::GetFireData()
+{
+    return FireData;
+}
+
+void UOWWeaponComponent::StartFire(const FGameplayEffectSpecHandle& InSpec)
+{
+    CurrentDamageSpec = InSpec;
     // 즉시 1발
     HandleFireTick();
     // 이후 Interval마다 발사
@@ -52,13 +51,27 @@ void UOWWeaponComponent::HandleFireTick()
 {
     if (BurstShotsRemaining <= 0)
     {
-        StopFire();
+        StartReload();
         return;
     }
     --BurstShotsRemaining;
-    
-    /* ? 프로젝트일 / 레이캐스트 스폰 ? */
-    // 예: SpawnProjectile(FireData->FirePattern, …);
+
+    SpawnProjectile();
+}
+
+void UOWWeaponComponent::SpawnProjectile()
+{
+    AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
+        FireData->FirePattern.ProjectileClass,
+        FTransform(MuzzleRotation, MuzzleLocation),
+        Cast<ACharacter>(GetOwner()),
+        nullptr,
+        ESpawnActorCollisionHandlingMethod::AlwaysSpawn
+    );
+    if (Projectile) {
+        Projectile->DamageSpecHandle = CurrentDamageSpec;
+        Projectile->FinishSpawning(FTransform(MuzzleRotation, MuzzleLocation));
+    }
 }
 
 void UOWWeaponComponent::StartReload()
@@ -75,4 +88,5 @@ void UOWWeaponComponent::StartReload()
 
 void UOWWeaponComponent::FinishReload()
 {
+    BurstShotsRemaining = FireData->FirePattern.BurstCount;
 }

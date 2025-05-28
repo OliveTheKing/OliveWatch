@@ -1,9 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "AbilitySystem/Abilities/OWGA_Active_GunFire.h"
 #include "AbilitySystem/Tasks/OWGT_PlayMontageAndWaitForEvent.h"
 #include "GameFramework/Character.h"
+#include "Weapon/OWFireDataAsset.h"
 #include "OWGameplayTags.h"
 #include "AbilitySystemComponent.h"
 #include "Weapon/OWWeaponComponent.h"
@@ -12,13 +11,7 @@ UOWGA_Active_GunFire::UOWGA_Active_GunFire()
 {
 	InstancingPolicy = EGameplayAbilityInstancingPolicy::InstancedPerActor;
 
-	// FGameplayTag Ability1Tag = FGameplayTag::RequestGameplayTag(FName("Input.Action.MainFire"));
-	// AbilityTags.AddTag(Ability1Tag);
-	// ActivationOwnedTags.AddTag(Ability1Tag);
 	SetAssetTags(FGameplayTagContainer(FGameplayTag::RequestGameplayTag("Input.Action.MainFire")));
-
-
-	// ActivationBlockedTags.AddTag(FGameplayTag::RequestGameplayTag(FName("Event.Montage.SpawnProjectile")));
 }
 
 
@@ -29,11 +22,20 @@ void UOWGA_Active_GunFire::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 	UOWWeaponComponent* WeaponComp =
 		ActorInfo->AvatarActor->FindComponentByClass<UOWWeaponComponent>();
 
-	if (!WeaponComp) { 
-		EndAbility(CurrentSpecHandle, ActorInfo, ActivationInfo, true, true); return; }
-	WeaponComp->StartFire();
+	if (!WeaponComp) 
+	{ 
+		EndAbility(CurrentSpecHandle, ActorInfo, ActivationInfo, true, true); 
+		return; 
+	}
+	
+	UOWFireDataAsset* FD = WeaponComp->GetFireData();
+	if (FD) 
+	{
+		FGameplayEffectSpecHandle DamageEffectSpecHandle = MakeOutgoingGameplayEffectSpec(FD->FirePattern.DamageGameplayEffect, GetAbilityLevel());
+		DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag("Input.Action.MainFire"), FD->FirePattern.Damage);
+		WeaponComp->StartFire(DamageEffectSpecHandle);
+	}
 
-	// ③ Ability 자체는 더 할 일 없으면 바로 종료해도 무방
 	EndAbility(CurrentSpecHandle, ActorInfo, ActivationInfo, false, false);
 }
 

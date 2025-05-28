@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "AbilitySystemComponent.h"
 #include "OWWeaponComponent.generated.h"
 
 
@@ -19,19 +20,15 @@ public:
 	UOWWeaponComponent();
 
     /** 시작: BurstCount만큼 Timer로 자동 발사 */
-    UFUNCTION(BlueprintCallable, Category = "Weapon")
-    void StartFire();
-
+    UFUNCTION(BlueprintCallable, Category = "Weapon") void StartFire(const FGameplayEffectSpecHandle& InSpec);
     /** 중단: 자동 사격 타이머 클리어 */
-    UFUNCTION(BlueprintCallable, Category = "Weapon")
-    void StopFire();
+    UFUNCTION(BlueprintCallable, Category = "Weapon") void StopFire();
 
     /** 탄창 재장전*/
     void StartReload();      // GA_Reload가 호출
     void FinishReload();     // Timer 콜백
 
-    /** 사용할 FireDataAsset 지정 */
-    void SetFireData(UOWFireDataAsset* NewData);
+    UOWFireDataAsset* GetFireData();
 
 protected:
     virtual void BeginPlay() override;
@@ -41,16 +38,16 @@ private:
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
     UOWFireDataAsset* FireData;
 
-    ///** 실제 스폰은 이 컴포넌트에 위임 */
-    //UPROPERTY()
-    //UOWProjectileFactory* ProjectileFactory;
-
     /** TimerHandle for auto‐fire */
     FTimerHandle TimerHandle_Fire;
+    FGameplayEffectSpecHandle CurrentDamageSpec;
 
     /** 남은 발사 횟수 */
     int32 BurstShotsRemaining;
+    FVector MuzzleLocation;
+    FRotator MuzzleRotation;
 
     /** Timer 콜백: 한 발씩 발사 */
     void HandleFireTick();	
+    void SpawnProjectile();
 };
