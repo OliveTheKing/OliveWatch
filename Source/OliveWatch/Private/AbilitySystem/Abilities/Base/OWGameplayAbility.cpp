@@ -58,7 +58,7 @@ bool UOWGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Han
 {
 	if (ActorInfo->AbilitySystemComponent->HasAnyMatchingGameplayTags(CooldownTags))
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Blocked"));
+		//GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Blocked"));
 		return false;
 	}
 

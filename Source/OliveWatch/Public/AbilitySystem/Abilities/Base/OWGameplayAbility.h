@@ -48,4 +48,7 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Cooldowns")
 	FGameplayTagContainer CooldownTags;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Ability|Effects")
+	TArray<TSubclassOf<UGameplayEffect>> GameplayEffectClasses;
 };
