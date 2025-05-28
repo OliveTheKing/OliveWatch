@@ -8,6 +8,7 @@
 #include "Data/OWInputData.h"
 #include "Character/OWCharacter.h"
 #include "InputActionValue.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 
@@ -91,7 +92,12 @@ void AOWPlayerController::Input_Move(const FInputActionValue& InputValue)
 
 void AOWPlayerController::Input_Jump(const FInputActionValue& Value)
 {
-	OWPlayer->Jump();
+    UCharacterMovementComponent* MoveComp = OWPlayer->GetCharacterMovement();
+
+    // 땅 위에 있을 시 기본 점프
+    if (MoveComp && !MoveComp->IsFalling()) OWPlayer->Jump();
+    // 공중에 있을 시 이단 점프(특정 태그를 가진 애들만 적용 - 겐지)
+    else OWPlayer->ActivateAbility(OWGameplayTags::Input_Action_Jump);
 }
 
 void AOWPlayerController::Input_Curl(const FInputActionValue& Value)
