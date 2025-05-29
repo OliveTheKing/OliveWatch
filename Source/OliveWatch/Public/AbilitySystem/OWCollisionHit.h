@@ -57,10 +57,10 @@ protected:
 	TObjectPtr<UPrimitiveComponent> CollisionComp;
 
 	//충돌 시 발생할 일을 정의한 컴포넌트
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Collision)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Collision", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UOWHitHandlerComponent> HitHandler;
 
 	//Trigger 시 발생할 일을 정의한 컴포넌트
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Collision)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Collision", meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<UOWOverlapHandlerComponent> OverlapHandler;
 };
