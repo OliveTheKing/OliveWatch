@@ -7,6 +7,7 @@
 #include "OWCollisionHit.generated.h"
 
 class UOWHitHandlerComponent;
+class UOWOverlapHandlerComponent;
 struct FGameplayEffectSpecHandle;
 class USphereComponent;
 
@@ -21,14 +22,16 @@ public:
 	AOWCollisionHit();
 
 	UPROPERTY(BlueprintReadWrite, Meta = (ExposeOnSpawn = true))
-	TArray<FGameplayEffectSpecHandle> EffectSpec;
+	TArray<FGameplayEffectSpecHandle> HitEffectSpec;
+	UPROPERTY(BlueprintReadWrite, Meta = (ExposeOnSpawn = true))
+	TArray<FGameplayEffectSpecHandle> OverlapEffectSpec;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	virtual void PostInitializeComponents() override;
 
-	//충돌을 감지하는 함수
+	//Trigger 감지 함수
 	UFUNCTION()
 	virtual void OnOverlapBegin(
 		UPrimitiveComponent* OverlappedComp,
@@ -39,10 +42,25 @@ protected:
 		const FHitResult& SweepResult
 	);
 
-	//충돌을 감지하기 위한 컴포넌트
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Collision)
-	USphereComponent* CollisionComp;
+	//충돌 감지 함수
+	UFUNCTION()
+	void OnHit(
+		UPrimitiveComponent* HitComponent,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		FVector NormalImpulse,
+		const FHitResult& Hit
+	);
 
-	UPROPERTY(EditAnywhere, Category = Collision)
-	UOWHitHandlerComponent* HitHandler;
+	//충돌/Trigger을 감지하기 위한 컴포넌트
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Collision)
+	TObjectPtr<UPrimitiveComponent> CollisionComp;
+
+	//충돌 시 발생할 일을 정의한 컴포넌트
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Collision)
+	TObjectPtr<UOWHitHandlerComponent> HitHandler;
+
+	//Trigger 시 발생할 일을 정의한 컴포넌트
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Collision)
+	TObjectPtr<UOWOverlapHandlerComponent> OverlapHandler;
 };
