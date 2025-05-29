@@ -5,22 +5,26 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "GameplayEffectTypes.h"
-#include "OWHitHandlerComponent.generated.h"
+#include "OWOverlapHandlerComponent.generated.h"
 
 class AOWCharacter;
 
-//충돌 시 어떻게 처리할지를 담당
+
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class OLIVEWATCH_API UOWHitHandlerComponent : public UActorComponent
+class OLIVEWATCH_API UOWOverlapHandlerComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
-	UOWHitHandlerComponent();
+	UOWOverlapHandlerComponent();
 
 	virtual void Initialize(AOWCharacter* InInstigator, const TArray<FGameplayEffectSpecHandle>& InEffectSpecs);
-	virtual void HitTarget(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+	virtual void OverlapTarget(UPrimitiveComponent* OverlappedComp,
+		AActor* OtherActor,
+		UPrimitiveComponent* OtherComp,
+		int32 OtherBodyIndex,
+		bool bFromSweep,
+		const FHitResult& SweepResult);
 
 protected:
 	// Called when the game starts
