@@ -1,22 +1,22 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "AbilitySystem/OWHitHandlerComponent.h"
+#include "AbilitySystem/OWOverlapHandlerComponent.h"
 #include "AbilitySystemComponent.h"
 #include "Character/OWCharacter.h"
 
 // Sets default values for this component's properties
-UOWHitHandlerComponent::UOWHitHandlerComponent()
+UOWOverlapHandlerComponent::UOWOverlapHandlerComponent()
 {
 }
 
-void UOWHitHandlerComponent::Initialize(AOWCharacter* InInstigator, const TArray<FGameplayEffectSpecHandle>& InEffectSpecs)
+void UOWOverlapHandlerComponent::Initialize(AOWCharacter* InInstigator, const TArray<FGameplayEffectSpecHandle>& InEffectSpecs)
 {
 	Instigator = InInstigator;
 	EffectSpecs = InEffectSpecs;
 }
 
-void UOWHitHandlerComponent::HitTarget(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void UOWOverlapHandlerComponent::OverlapTarget(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (Cast<AOWCharacter>(OtherActor) == Instigator) return;
 	UAbilitySystemComponent* ASC = OtherActor->FindComponentByClass<UAbilitySystemComponent>();
@@ -26,14 +26,16 @@ void UOWHitHandlerComponent::HitTarget(UPrimitiveComponent* HitComponent, AActor
 		if (Effect.IsValid())
 		{
 			ASC->ApplyGameplayEffectSpecToSelf(*Effect.Data.Get());
-			GEngine->AddOnScreenDebugMessage(12345, 3.0f, FColor::Red, TEXT("Hit Applied!!!"));
+			GEngine->AddOnScreenDebugMessage(12345, 3.0f, FColor::Red, TEXT("Overlap Applied!!!"));
 		}
 	}
 }
 
-
 // Called when the game starts
-void UOWHitHandlerComponent::BeginPlay()
+void UOWOverlapHandlerComponent::BeginPlay()
 {
 	Super::BeginPlay();
+
+	// ...
+	
 }
