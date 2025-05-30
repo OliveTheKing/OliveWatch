@@ -54,12 +54,12 @@ void AOWCollisionHit::PostInitializeComponents()
 
 void AOWCollisionHit::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (!OtherActor || !HitHandler) return;
+	if (!OtherActor || !OverlapHandler) return;
 	OverlapHandler->OverlapTarget(OverlappedComp, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
 }
 
 void AOWCollisionHit::OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	if (!OtherActor || !OverlapHandler) return;
+	if (!OtherActor || HitHandler) return;
 	HitHandler->HitTarget(HitComponent, OtherActor, OtherComp, NormalImpulse, Hit);
 }

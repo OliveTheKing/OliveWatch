@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "AbilitySystem/OWCollisionHit.h"
 #include "GameplayEffectTypes.h"
 #include "OWProjectile.generated.h"
 
@@ -12,7 +12,7 @@ class UProjectileMovementComponent;
 class UAbilitySystemComponent;
 
 UCLASS(config = Game)
-class OLIVEWATCH_API AOWProjectile : public AActor
+class OLIVEWATCH_API AOWProjectile : public AOWCollisionHit
 {
 	GENERATED_BODY()
 
@@ -26,16 +26,16 @@ protected:
 	virtual void BeginPlay() override;
 
 	/** Sphere collision component */
-	UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
-	USphereComponent* CollisionComp;
+	//UPROPERTY(VisibleDefaultsOnly, Category = Projectile)
+	//USphereComponent* CollisionComp;
 
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	UProjectileMovementComponent* ProjectileMovement;
 
 	/** called when projectile hits something */
-	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+	//UFUNCTION()
+	//virtual void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit) override;
 
 public:
 
@@ -44,7 +44,7 @@ public:
 
 
 	/** Returns CollisionComp subobject **/
-	USphereComponent* GetCollisionComp() const { return CollisionComp; }
+	//USphereComponent* GetCollisionComp() const { return CollisionComp; }
 	/** Returns ProjectileMovement subobject **/
 	UProjectileMovementComponent* GetProjectileMovement() const { return ProjectileMovement; }
 

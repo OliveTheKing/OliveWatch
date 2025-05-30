@@ -44,7 +44,7 @@ protected:
 
 	//충돌 감지 함수
 	UFUNCTION()
-	void OnHit(
+	virtual void OnHit(
 		UPrimitiveComponent* HitComponent,
 		AActor* OtherActor,
 		UPrimitiveComponent* OtherComp,
