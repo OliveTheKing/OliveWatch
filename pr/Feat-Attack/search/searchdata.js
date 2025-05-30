@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "acefgloprsu목할",
   1: "afu",
-  2: "gloprs",
+  2: "glprs",
   3: "ceop",
   4: "목할"
 };
