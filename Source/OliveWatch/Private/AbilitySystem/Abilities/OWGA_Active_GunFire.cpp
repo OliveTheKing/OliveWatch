@@ -39,3 +39,37 @@ void UOWGA_Active_GunFire::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 	EndAbility(CurrentSpecHandle, ActorInfo, ActivationInfo, false, false);
 }
 
+/// <summary>
+/// 해당 함수는 더이상 사용되지 않습니다.
+/// </summary>
+void UOWGA_Active_GunFire::SpawnProjectile()
+{
+	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
+	if (!Character)
+	{
+		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
+	}
+
+	//// 카메라 위치와 방향 가져오기
+	//FVector MuzzleLocation;
+	//FRotator MuzzleRotation;
+	//Character->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
+
+	//FGameplayEffectSpecHandle DamageEffectSpecHandle = MakeOutgoingGameplayEffectSpec(DamageGameplayEffect, GetAbilityLevel());
+
+	//// Pass the damage to the Damage Execution Calculation through a SetByCaller value on the GameplayEffectSpec
+	//DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag(FName("Data.Damage")), Damage);
+
+	//AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
+	//	ProjectileClass,
+	//	FTransform(MuzzleRotation, MuzzleLocation),
+	//	GetOwningActorFromActorInfo(),
+	//	Character,
+	//	ESpawnActorCollisionHandlingMethod::AlwaysSpawn
+	//);
+
+	//Projectile->DamageSpecHandle = DamageEffectSpecHandle;
+	//// Projectile->Range = Range;
+
+	//Projectile->FinishSpawning(FTransform(MuzzleRotation, MuzzleLocation));
+}

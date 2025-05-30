@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystem/Abilities/Base/OWGA_Active.h"
-// #include "AbilitySystem/OWTmpProjectile.h"
 #include "OWProjectile.h"
 #include "OWGA_Active_GunFire.generated.h"
 
@@ -20,4 +19,5 @@ public:
 	UOWGA_Active_GunFire();
 	
 	virtual void ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData) override;
+	virtual void SpawnProjectile();
 };

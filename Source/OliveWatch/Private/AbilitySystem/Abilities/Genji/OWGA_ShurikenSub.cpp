@@ -35,7 +35,7 @@ void UOWGA_ShurikenSub::EndAbility(const FGameplayAbilitySpecHandle Handle, cons
 
 void UOWGA_ShurikenSub::ShurikenSub()
 {
-	// Super::SpawnProjectile();
+	Super::SpawnProjectile();
 
 	FVector left(1.0f, -0.3f, 0.0f);
 	FVector right(1.0f, 0.3f, 0.0f);
