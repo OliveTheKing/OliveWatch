@@ -29,6 +29,12 @@ UOWAbilitySystemComponent* AOWPlayerState::GetOWAbilitySystemComponent()
 	return AbilitySystemComponent;
 }
 
+UOWAbilitySet* AOWPlayerState::GetOWAbilitySet()
+{
+	return AbilitySet;
+}
+
+
 void AOWPlayerState::BeginPlay()
 {
 	AbilitySet->GiveToAbilitySystem(AbilitySystemComponent);
