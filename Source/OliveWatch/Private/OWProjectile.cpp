@@ -5,7 +5,8 @@
 #include "Components/SphereComponent.h"
 #include "AbilitySystemComponent.h"
 #include "OWGameplayTags.h"
-#include "AbilitySystem/OWAbilitySystemComponent.h"
+#include "Character/OWCharacter.h"
+
 
 AOWProjectile::AOWProjectile()
 {
@@ -44,6 +45,30 @@ void AOWProjectile::BeginPlay()
     }
 
     GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("Projectile Spawned"));
+}
+
+void AOWProjectile::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+    //UAbilitySystemComponent* ASC = OtherActor->FindComponentByClass<UAbilitySystemComponent>();
+    UAbilitySystemComponent* ASC = Cast<AOWCharacter>(OtherActor)->GetOWAbilitySystemComponent();
+
+    if (ASC && ASC->HasMatchingGameplayTag(OWGameplayTags::State_Deflecting))
+    {
+        // 튕겨내기 로직
+        FVector DeflectDir = OtherActor->GetActorForwardVector();
+        SetActorRotation(DeflectDir.Rotation());
+        SetProjectileVelocity(DeflectDir);
+
+        // 주인 변경(겐지로)
+        SetOwner(OtherActor);
+
+        GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, TEXT("반사"));
+        return;
+    }
+    else
+    {
+        Super::OnOverlapBegin(OverlappedComp, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+    }
 }
 
 //void AOWProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)

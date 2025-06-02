@@ -22,6 +22,7 @@ protected:
 
 	//봇을 구현할 시 OWPlayer 와 같은 자식 클래스로 이동할 것
 	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
 
 public:	
 	void Move(const FVector& direction, const float& speed = 1.f);
@@ -31,6 +32,7 @@ public:
 	 */
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
+	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
 
 protected:
 	UPROPERTY()

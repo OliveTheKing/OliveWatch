@@ -53,6 +53,17 @@ void AOWCharacter::PossessedBy(AController* NewController)
 	}
 }
 
+void AOWCharacter::OnRep_PlayerState()
+{
+	Super::OnRep_PlayerState();
+
+	if (AOWPlayerState* State = GetPlayerState<AOWPlayerState>())
+	{
+		AbilitySystemComponent = Cast<UOWAbilitySystemComponent>(State->GetAbilitySystemComponent());
+		AbilitySystemComponent->InitAbilityActorInfo(State, this);
+	}
+}
+
 void AOWCharacter::Move(const FVector& direction, const float& speed)
 {
 	const FRotator YawRot(0, GetControlRotation().Yaw, 0);
@@ -74,5 +85,10 @@ void AOWCharacter::Look(const FVector& direction)
 void AOWCharacter::ActivateAbility(FGameplayTag AbilityTag)
 {
 	AbilitySystemComponent->ActivateAbility(AbilityTag);
+}
+
+UOWAbilitySystemComponent* AOWCharacter::GetOWAbilitySystemComponent()
+{
+	return AbilitySystemComponent;
 }
 
