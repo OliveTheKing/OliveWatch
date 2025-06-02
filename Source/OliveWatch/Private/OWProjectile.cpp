@@ -4,6 +4,8 @@
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 #include "AbilitySystemComponent.h"
+#include "OWGameplayTags.h"
+#include "AbilitySystem/OWAbilitySystemComponent.h"
 
 AOWProjectile::AOWProjectile()
 {
@@ -33,7 +35,7 @@ AOWProjectile::AOWProjectile()
     PrimaryActorTick.bCanEverTick = false;
 }
 
-// ���� ���� �Ǵ� ���� �� ȣ��
+// 게임 시작 또는 스폰 시 호출
 void AOWProjectile::BeginPlay()
 {
     Super::BeginPlay();
