@@ -81,12 +81,12 @@ $(function() {
 <div class="dynheader">
 AOWProjectile에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classAOWProjectile__inherit__graph.svg" width="216" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classAOWProjectile__inherit__graph.svg" width="216" height="583"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 AOWProjectile에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classAOWProjectile__coll__graph.svg" width="216" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classAOWProjectile__coll__graph.svg" width="216" height="583"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -116,13 +116,12 @@ TArray&lt; FGameplayEffectSpecHandle &gt;&#160;</td><td class="memItemRight" val
 Protected 멤버 함수</h2></td></tr>
 <tr class="memitem:aa1bea63828ab33189f83d8f2dbf13d64" id="r_aa1bea63828ab33189f83d8f2dbf13d64"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAOWProjectile.html#aa1bea63828ab33189f83d8f2dbf13d64">BeginPlay</a> () override</td></tr>
 <tr class="separator:aa1bea63828ab33189f83d8f2dbf13d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c88b8fc30f7c846c57e7fcbaaafdfbe" id="r_a1c88b8fc30f7c846c57e7fcbaaafdfbe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAOWProjectile.html#a1c88b8fc30f7c846c57e7fcbaaafdfbe">OnOverlapBegin</a> (UPrimitiveComponent *OverlappedComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &amp;SweepResult) override</td></tr>
+<tr class="separator:a1c88b8fc30f7c846c57e7fcbaaafdfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classAOWCollisionHit"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classAOWCollisionHit')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classAOWCollisionHit.html">AOWCollisionHit</a>(으)로부터 상속된 Protected 멤버 함수</td></tr>
 <tr class="memitem:a990b580c74ddfdc3f6bf4660a375f9a4 inherit pro_methods_classAOWCollisionHit" id="r_a990b580c74ddfdc3f6bf4660a375f9a4"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PostInitializeComponents</b> () override</td></tr>
 <tr class="separator:a990b580c74ddfdc3f6bf4660a375f9a4 inherit pro_methods_classAOWCollisionHit"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62887180f2d964fa7bdbc56f6fd30ac7 inherit pro_methods_classAOWCollisionHit" id="r_a62887180f2d964fa7bdbc56f6fd30ac7"><td class="memItemLeft" align="right" valign="top">
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnOverlapBegin</b> (UPrimitiveComponent *OverlappedComp, AActor *OtherActor, UPrimitiveComponent *OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &amp;SweepResult)</td></tr>
-<tr class="separator:a62887180f2d964fa7bdbc56f6fd30ac7 inherit pro_methods_classAOWCollisionHit"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87c629c4573c22b298121df222429583 inherit pro_methods_classAOWCollisionHit" id="r_a87c629c4573c22b298121df222429583"><td class="memItemLeft" align="right" valign="top">
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnHit</b> (UPrimitiveComponent *HitComponent, AActor *OtherActor, UPrimitiveComponent *OtherComp, FVector NormalImpulse, const FHitResult &amp;Hit)</td></tr>
 <tr class="separator:a87c629c4573c22b298121df222429583 inherit pro_methods_classAOWCollisionHit"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -193,6 +192,68 @@ TObjectPtr&lt; UOWOverlapHandlerComponent &gt;&#160;</td><td class="memItemRight
 </table>
 </div><div class="memdoc">
 <p>Returns CollisionComp subobject Returns ProjectileMovement subobject </p>
+
+</div>
+</div>
+<a id="a1c88b8fc30f7c846c57e7fcbaaafdfbe" name="a1c88b8fc30f7c846c57e7fcbaaafdfbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c88b8fc30f7c846c57e7fcbaaafdfbe">&#9670;&#160;</a></span>OnOverlapBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AOWProjectile::OnOverlapBegin </td>
+          <td>(</td>
+          <td class="paramtype">UPrimitiveComponent *&#160;</td>
+          <td class="paramname"><em>OverlappedComp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">AActor *&#160;</td>
+          <td class="paramname"><em>OtherActor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UPrimitiveComponent *&#160;</td>
+          <td class="paramname"><em>OtherComp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32&#160;</td>
+          <td class="paramname"><em>OtherBodyIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bFromSweep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FHitResult &amp;&#160;</td>
+          <td class="paramname"><em>SweepResult</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classAOWCollisionHit.html">AOWCollisionHit</a>(으)로부터 재구현되었습니다.</p>
 
 </div>
 </div>

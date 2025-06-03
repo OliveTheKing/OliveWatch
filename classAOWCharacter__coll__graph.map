@@ -1,5 +1,5 @@
 <map id="AOWCharacter" name="AOWCharacter">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,200,284"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="59,5,146,71"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,84,105,118,100,118,100,84"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,119,255,324"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="87,5,173,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,84,133,119,127,119,127,84"/>
 </map>
