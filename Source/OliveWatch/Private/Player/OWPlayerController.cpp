@@ -2,14 +2,12 @@
 
 
 #include "Player/OWPlayerController.h"
-#include "EnhancedInputComponent.h"
-#include "EnhancedInputSubsystems.h"
 #include "OWGameplayTags.h"
 #include "Data/OWInputData.h"
 #include "Character/OWCharacter.h"
 #include "InputActionValue.h"
 #include "GameFramework/CharacterMovementComponent.h"
-
+#include "Player/OWPlayerState.h"
 
 
 void AOWPlayerController::BeginPlay()
@@ -22,6 +20,7 @@ void AOWPlayerController::BeginPlay()
 		{
 			Subsystem->AddMappingContext(InputData->InputMappingContext, 0);
 		}
+
 	}
 
 	OWPlayer = Cast<AOWCharacter>(GetCharacter());
@@ -33,55 +32,31 @@ void AOWPlayerController::SetupInputComponent()
 
 	if (InputData) {
 
-		if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent)) {
-            auto ActionMove = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Move);
-            auto ActionJump = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Jump);
-            auto ActionCurl = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Curl);
-            auto ActionMeleeAttack = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_MeleeAttack);
-            auto ActionMainFire = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_MainFire);
-            auto ActionSubFire = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_SubFire);
-            auto ActionSkill1 = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Skill1);
-            auto ActionSkill2 = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Skill2);
-            auto ActionSkill3 = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Skill3);
-            auto ActionReload = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Reload);
-            auto ActionLook = InputData->FindInputActionByTag(OWGameplayTags::Input_Action_Look);
+        EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
+
+		if (EnhancedInputComponent) {
 
             // BindAction 호출
-            if (ActionMove)
-                EnhancedInputComponent->BindAction(ActionMove, ETriggerEvent::Triggered, this, &ThisClass::Input_Move);
+            // 모든 영웅 동일 기본 Action
+            BindNativeAction(OWGameplayTags::Input_Action_Move, this, &ThisClass::Input_Move);
+            BindNativeAction(OWGameplayTags::Input_Action_Curl, this, &ThisClass::Input_Curl);
+            BindNativeAction(OWGameplayTags::Input_Action_MeleeAttack, this, &ThisClass::Input_MeleeAttack);
+            BindNativeAction(OWGameplayTags::Input_Action_Look, this, &ThisClass::Input_Look);
+            
+			// 영웅별 스킬 Action
+			UOWAbilitySet* OWAS = GetPlayerState<AOWPlayerState>()->GetOWAbilitySet();
 
-            if (ActionJump)
-                EnhancedInputComponent->BindAction(ActionJump, ETriggerEvent::Triggered, this, &ThisClass::Input_Jump);
-
-            if (ActionCurl)
-                EnhancedInputComponent->BindAction(ActionCurl, ETriggerEvent::Triggered, this, &ThisClass::Input_Curl);
-
-            if (ActionMeleeAttack)
-                EnhancedInputComponent->BindAction(ActionMeleeAttack, ETriggerEvent::Triggered, this, &ThisClass::Input_MeleeAttack);
-
-            if (ActionMainFire)
-                EnhancedInputComponent->BindAction(ActionMainFire, ETriggerEvent::Completed, this, &ThisClass::Input_MainFire);
-
-            if (ActionSubFire)
-                EnhancedInputComponent->BindAction(ActionSubFire, ETriggerEvent::Completed, this, &ThisClass::Input_SubFire);
-
-            if (ActionSkill1)
-                EnhancedInputComponent->BindAction(ActionSkill1, ETriggerEvent::Triggered, this, &ThisClass::Input_Skill1);
-
-            if (ActionSkill2)
-                EnhancedInputComponent->BindAction(ActionSkill2, ETriggerEvent::Triggered, this, &ThisClass::Input_Skill2);
-
-            if (ActionSkill3)
-                EnhancedInputComponent->BindAction(ActionSkill3, ETriggerEvent::Triggered, this, &ThisClass::Input_Skill3);
-
-            if (ActionReload)
-                EnhancedInputComponent->BindAction(ActionReload, ETriggerEvent::Completed, this, &ThisClass::Input_Reload);
-
-            if (ActionLook)
-                EnhancedInputComponent->BindAction(ActionLook, ETriggerEvent::Triggered, this, &ThisClass::Input_Look);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Jump, this, &ThisClass::Input_Jump);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFire, this, &ThisClass::Input_MainFire);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_SubFire, this, &ThisClass::Input_SubFire);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill1, this, &ThisClass::Input_Skill1);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill2, this, &ThisClass::Input_Skill2);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill3, this, &ThisClass::Input_Skill3);
+            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Reload, this, &ThisClass::Input_Reload);
         }
 	}
 }
+
 
 void AOWPlayerController::Input_Move(const FInputActionValue& InputValue)
 {

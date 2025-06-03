@@ -24,6 +24,7 @@ public:
 public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
+	UOWAbilitySet* GetOWAbilitySet();
 
 	virtual void BeginPlay() override;
 

@@ -11,7 +11,19 @@ UOWAbilitySet::UOWAbilitySet(const FObjectInitializer& ObjectInitializer)
 {
 }
 
-// ASC�� ability, effect, attribute �����ϰ� Ȱ��ȭ
+const FOWAbilitySet_GameplayAbility UOWAbilitySet::FindAbilityByTag(const FGameplayTag& InputTag) const
+{
+	for (const FOWAbilitySet_GameplayAbility& GA : GrantedGameplayAbilities) {
+		if (GA.Ability && GA.InputTag == InputTag) {
+			return GA;
+		}
+	}
+
+	return FOWAbilitySet_GameplayAbility();
+}
+
+
+// ASC에 ability, effect, attribute 주입하기
 void UOWAbilitySet::GiveToAbilitySystem(UOWAbilitySystemComponent* OWASC) const
 {
 	check(OWASC);

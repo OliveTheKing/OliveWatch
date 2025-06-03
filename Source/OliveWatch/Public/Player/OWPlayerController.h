@@ -3,11 +3,15 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "EnhancedInputComponent.h"
+#include "EnhancedInputSubsystems.h"
 #include "GameFramework/PlayerController.h"
 #include "OWPlayerController.generated.h"
 
 class UOWInputData;
 class AOWCharacter;
+class UEnhancedInputComponent;
+class UOWAbilitySet;
 struct FInputActionValue;
 
 /**
@@ -20,6 +24,12 @@ class OLIVEWATCH_API AOWPlayerController : public APlayerController
 
 public:
 	virtual void BeginPlay() override;
+
+    template<class UserClass, typename FuncType>
+    void BindNativeAction(const FGameplayTag& InputTag, UserClass* Object, FuncType Func);
+
+    template<class UserClass, typename FuncType>
+    void BindSkillAction(UOWAbilitySet* OWAS, const FGameplayTag& InputTag, UserClass* Object, FuncType Func);
 
 protected:
 	virtual void SetupInputComponent() override;
@@ -43,4 +53,32 @@ public:
 
 	UPROPERTY(BlueprintReadOnly)
 	TObjectPtr<AOWCharacter> OWPlayer;
+
+    UPROPERTY()
+    UEnhancedInputComponent* EnhancedInputComponent;
 };
+
+template<class UserClass, typename FuncType>
+inline void AOWPlayerController::BindNativeAction(const FGameplayTag& InputTag, UserClass* Object, FuncType Func)
+{
+    if (const UInputAction* IA = InputData->FindInputActionByTag(InputTag))
+    {
+        EnhancedInputComponent->BindAction(IA, ETriggerEvent::Triggered, Object, Func);
+    }
+}
+
+template<class UserClass, typename FuncType>
+inline void AOWPlayerController::BindSkillAction(UOWAbilitySet* OWAS, const FGameplayTag& InputTag, UserClass* Object, FuncType Func)
+{
+    if (const UInputAction* IA = InputData->FindInputActionByTag(InputTag))
+    {
+        auto GA = OWAS->FindAbilityByTag(InputTag);
+
+        if (GA.Ability) {
+            EnhancedInputComponent->BindAction(IA, GA.TriggerType, Object, Func);
+        }
+        else {
+            EnhancedInputComponent->BindAction(IA, ETriggerEvent::Triggered, Object, Func);
+        }
+    }
+}

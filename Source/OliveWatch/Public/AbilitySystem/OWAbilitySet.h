@@ -1,12 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+Ôªø// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
 #include "GameplayTagContainer.h"
+#include "InputTriggers.h"
 #include "OWAbilitySet.generated.h"
 
+class AOWPlayerController;
 class UOWAbilitySystemComponent;
 class UOWGameplayAbility;
 class UGameplayEffect;
@@ -16,7 +18,7 @@ class UAttributeSet;
  * 
  */
 
-// Ability ¡§∫∏∏¶ ±∏¡∂√º∑Œ ¿˙¿Â
+// Ability Ï†ïÎ≥¥Î•º Íµ¨Ï°∞Ï≤¥Î°ú Ï†ÄÏû•
 USTRUCT()
 struct FOWAbilitySet_GameplayAbility
 {
@@ -34,10 +36,13 @@ public:
 	FGameplayTag InputTag;
 
 	UPROPERTY(EditDefaultsOnly)
+	ETriggerEvent TriggerType;
+
+	UPROPERTY(EditDefaultsOnly)
 	TArray<FGameplayTag> EffectsTags;
 };
 
-// Effect ¡§∫∏∏¶ ±∏¡∂√º∑Œ ¿˙¿Â
+// Effect Ï†ïÎ≥¥Î•º Íµ¨Ï°∞Ï≤¥Î°ú Ï†ÄÏû•
 USTRUCT()
 struct FOWAbilitySet_GameplayEffect
 {
@@ -54,7 +59,7 @@ public:
 
 };
 
-// Attribute Set¿ª ±∏¡∂√º∑Œ ¿˙¿Â
+// Attribute SetÏùÑ Íµ¨Ï°∞Ï≤¥Î°ú Ï†ÄÏû•
 USTRUCT()
 struct FOWAbilitySet_AttributeSet
 {
@@ -74,6 +79,11 @@ class OLIVEWATCH_API UOWAbilitySet : public UPrimaryDataAsset
 
 public:
 	UOWAbilitySet(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get());
+
+	UFUNCTION()
+	const FOWAbilitySet_GameplayAbility FindAbilityByTag(const FGameplayTag& InputTag) const;
+
+	UFUNCTION()
 	void GiveToAbilitySystem(UOWAbilitySystemComponent* OWASC) const;
 
 public:
