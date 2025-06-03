@@ -26,5 +26,5 @@ protected:
 	void OnDeflectEnd();
 
 	UPROPERTY(EditDefaultsOnly, Category = "Deflect")
-	float DeflectDuration = 3.0f;
+	float DeflectDuration = 2.0f;
 };
