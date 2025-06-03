@@ -41,4 +41,5 @@ namespace OWGameplayTags
 	//Player State
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_Dead);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_UltimateReady);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_Deflecting);
 }

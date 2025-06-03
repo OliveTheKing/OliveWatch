@@ -60,10 +60,10 @@ void AOWPlayerController::SetupInputComponent()
                 EnhancedInputComponent->BindAction(ActionMeleeAttack, ETriggerEvent::Triggered, this, &ThisClass::Input_MeleeAttack);
 
             if (ActionMainFire)
-                EnhancedInputComponent->BindAction(ActionMainFire, ETriggerEvent::Triggered, this, &ThisClass::Input_MainFire);
+                EnhancedInputComponent->BindAction(ActionMainFire, ETriggerEvent::Completed, this, &ThisClass::Input_MainFire);
 
             if (ActionSubFire)
-                EnhancedInputComponent->BindAction(ActionSubFire, ETriggerEvent::Triggered, this, &ThisClass::Input_SubFire);
+                EnhancedInputComponent->BindAction(ActionSubFire, ETriggerEvent::Completed, this, &ThisClass::Input_SubFire);
 
             if (ActionSkill1)
                 EnhancedInputComponent->BindAction(ActionSkill1, ETriggerEvent::Triggered, this, &ThisClass::Input_Skill1);
