@@ -37,6 +37,16 @@ void AOWCharacter::BeginPlay()
 	{
 		WeaponComponent = NewObject<UOWWeaponComponent>(this, WeaponComponentClass);
 		WeaponComponent->RegisterComponent();  // World에 등록
+
+		FName MuzzleSocketName = TEXT("weaponMuzzle");
+
+		USkeletalMeshComponent* CharacterMesh = GetMesh();
+
+		if (CharacterMesh && CharacterMesh->DoesSocketExist(MuzzleSocketName))
+		{
+			FAttachmentTransformRules AttachRules(EAttachmentRule::SnapToTarget, false);
+			WeaponComponent->AttachToComponent(CharacterMesh, AttachRules, MuzzleSocketName);
+		}
 	}
 }
 

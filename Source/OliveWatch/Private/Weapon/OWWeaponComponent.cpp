@@ -18,10 +18,6 @@ void UOWWeaponComponent::BeginPlay()
 {
 	Super::BeginPlay();
     BurstShotsRemaining = FireData->FirePattern.FullBullet;
-    if (ACharacter* Ch = Cast<ACharacter>(GetOwner()))
-    {
-        Ch->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
-    }
 }
 
 UOWFireDataAsset* UOWWeaponComponent::GetFireData()
@@ -60,6 +56,11 @@ void UOWWeaponComponent::HandleFireTick()
 
 void UOWWeaponComponent::SpawnProjectile()
 {
+    FTransform MuzzleWorldTransform = GetComponentTransform();
+    MuzzleLocation = MuzzleWorldTransform.GetLocation();
+    ACharacter* OwningCharacter = Cast<ACharacter>(GetOwner());
+    MuzzleRotation = OwningCharacter ? OwningCharacter->GetControlRotation() : GetComponentRotation();
+
     AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
         FireData->FirePattern.ProjectileClass,
         FTransform(MuzzleRotation, MuzzleLocation),

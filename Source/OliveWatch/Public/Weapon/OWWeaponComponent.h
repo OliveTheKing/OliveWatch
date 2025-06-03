@@ -12,7 +12,7 @@ class UOWFireDataAsset;
 class UOWProjectileFactory;
 
 UCLASS(ClassGroup = (Custom), BlueprintType, Blueprintable, meta = (BlueprintSpawnableComponent))
-class OLIVEWATCH_API UOWWeaponComponent : public UActorComponent
+class OLIVEWATCH_API UOWWeaponComponent : public USceneComponent
 {
 	GENERATED_BODY()
 
