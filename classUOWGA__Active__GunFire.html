@@ -71,8 +71,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public 멤버 함수</a> &#124;
-<a href="#pub-attribs">Public 속성</a> &#124;
-<a href="#pro-methods">Protected 멤버 함수</a> &#124;
 <a href="#pro-attribs">Protected 속성</a> &#124;
 <a href="classUOWGA__Active__GunFire-members.html">모든 멤버 목록</a>  </div>
   <div class="headertitle"><div class="title">UOWGA_Active_GunFire 클래스 참조</div></div>
@@ -81,18 +79,21 @@ $(function() {
 <div class="dynheader">
 UOWGA_Active_GunFire에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__Active__GunFire__inherit__graph.svg" width="387" height="1010"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__Active__GunFire__inherit__graph.svg" width="387" height="810"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 UOWGA_Active_GunFire에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__Active__GunFire__coll__graph.svg" width="207" height="736"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__Active__GunFire__coll__graph.svg" width="207" height="596"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public 멤버 함수</h2></td></tr>
 <tr class="memitem:a66158abbd24e3043d8d589ba1b390214" id="r_a66158abbd24e3043d8d589ba1b390214"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUOWGA__Active__GunFire.html#a66158abbd24e3043d8d589ba1b390214">ActivateAbility</a> (const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo *ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData *TriggerEventData) override</td></tr>
 <tr class="separator:a66158abbd24e3043d8d589ba1b390214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b9be8f9c5fbce3848b7e73054a55d2" id="r_ad3b9be8f9c5fbce3848b7e73054a55d2"><td class="memItemLeft" align="right" valign="top"><a id="ad3b9be8f9c5fbce3848b7e73054a55d2" name="ad3b9be8f9c5fbce3848b7e73054a55d2"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Shoot</b> (FVector Direction={ 1.0f, 0.0f, 0.0f })</td></tr>
+<tr class="separator:ad3b9be8f9c5fbce3848b7e73054a55d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUOWGameplayAbility"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUOWGameplayAbility')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classUOWGameplayAbility.html">UOWGameplayAbility</a>(으)로부터 상속된 Public 멤버 함수</td></tr>
 <tr class="memitem:a71fc7e80eef5ad6f982d146d477f97c5 inherit pub_methods_classUOWGameplayAbility" id="r_a71fc7e80eef5ad6f982d146d477f97c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUOWGameplayAbility.html#a71fc7e80eef5ad6f982d146d477f97c5">SetCooldownData</a> (const FScalableFloat &amp;Duration, const FGameplayTagContainer &amp;Tags)</td></tr>
 <tr class="separator:a71fc7e80eef5ad6f982d146d477f97c5 inherit pub_methods_classUOWGameplayAbility"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,41 +106,11 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ApplyCooldown
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>CanActivateAbility</b> (const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo *ActorInfo, const FGameplayTagContainer *SourceTags, const FGameplayTagContainer *TargetTags, OUT FGameplayTagContainer *OptionalRelevantTags) const override</td></tr>
 <tr class="separator:a976bed5dc65b52454b8d6b3571b89e2e inherit pub_methods_classUOWGameplayAbility"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public 속성</h2></td></tr>
-<tr class="memitem:a5d24f3999392d70ddc20b5c86bd519ad" id="r_a5d24f3999392d70ddc20b5c86bd519ad"><td class="memItemLeft" align="right" valign="top"><a id="a5d24f3999392d70ddc20b5c86bd519ad" name="a5d24f3999392d70ddc20b5c86bd519ad"></a>
-UAnimMontage *&#160;</td><td class="memItemRight" valign="bottom"><b>FireProjectilepMontage</b></td></tr>
-<tr class="separator:a5d24f3999392d70ddc20b5c86bd519ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a393b74b76c59ac0dc77731ebb9779a8e" id="r_a393b74b76c59ac0dc77731ebb9779a8e"><td class="memItemLeft" align="right" valign="top"><a id="a393b74b76c59ac0dc77731ebb9779a8e" name="a393b74b76c59ac0dc77731ebb9779a8e"></a>
-TSubclassOf&lt; UGameplayEffect &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DamageGameplayEffect</b></td></tr>
-<tr class="separator:a393b74b76c59ac0dc77731ebb9779a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72838d1c135260e1851a4bd13e58f4d6" id="r_a72838d1c135260e1851a4bd13e58f4d6"><td class="memItemLeft" align="right" valign="top"><a id="a72838d1c135260e1851a4bd13e58f4d6" name="a72838d1c135260e1851a4bd13e58f4d6"></a>
-TSubclassOf&lt; <a class="el" href="classAOWProjectile.html">AOWProjectile</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ProjectileClass</b></td></tr>
-<tr class="separator:a72838d1c135260e1851a4bd13e58f4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected 멤버 함수</h2></td></tr>
-<tr class="memitem:ac02d51d4b8fee330fb1bfb38739e0ad0" id="r_ac02d51d4b8fee330fb1bfb38739e0ad0"><td class="memItemLeft" align="right" valign="top"><a id="ac02d51d4b8fee330fb1bfb38739e0ad0" name="ac02d51d4b8fee330fb1bfb38739e0ad0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnCancelled</b> (FGameplayTag EventTag, FGameplayEventData EventData)</td></tr>
-<tr class="separator:ac02d51d4b8fee330fb1bfb38739e0ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3a0167f99495792226afc41e561c148" id="r_ad3a0167f99495792226afc41e561c148"><td class="memItemLeft" align="right" valign="top"><a id="ad3a0167f99495792226afc41e561c148" name="ad3a0167f99495792226afc41e561c148"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>OnCompleted</b> (FGameplayTag EventTag, FGameplayEventData EventData)</td></tr>
-<tr class="separator:ad3a0167f99495792226afc41e561c148"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0814baea6d5582fe3044f0604074370d" id="r_a0814baea6d5582fe3044f0604074370d"><td class="memItemLeft" align="right" valign="top"><a id="a0814baea6d5582fe3044f0604074370d" name="a0814baea6d5582fe3044f0604074370d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>EventReceived</b> (FGameplayTag EventTag, FGameplayEventData EventData)</td></tr>
-<tr class="separator:a0814baea6d5582fe3044f0604074370d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af4714ac1153b265af722c4e895a8fd4c" id="r_af4714ac1153b265af722c4e895a8fd4c"><td class="memItemLeft" align="right" valign="top"><a id="af4714ac1153b265af722c4e895a8fd4c" name="af4714ac1153b265af722c4e895a8fd4c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SpawnProjectile</b> ()</td></tr>
-<tr class="separator:af4714ac1153b265af722c4e895a8fd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 속성</h2></td></tr>
-<tr class="memitem:adef0152af4fb304daca9828ac8fbeb40" id="r_adef0152af4fb304daca9828ac8fbeb40"><td class="memItemLeft" align="right" valign="top"><a id="adef0152af4fb304daca9828ac8fbeb40" name="adef0152af4fb304daca9828ac8fbeb40"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>Range</b></td></tr>
-<tr class="separator:adef0152af4fb304daca9828ac8fbeb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7c6b4fb83562d2be1a24bcaca2954a5" id="r_aa7c6b4fb83562d2be1a24bcaca2954a5"><td class="memItemLeft" align="right" valign="top"><a id="aa7c6b4fb83562d2be1a24bcaca2954a5" name="aa7c6b4fb83562d2be1a24bcaca2954a5"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>Damage</b></td></tr>
-<tr class="separator:aa7c6b4fb83562d2be1a24bcaca2954a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0904340d9b2b9875d665d8612cdda8" id="r_a2b0904340d9b2b9875d665d8612cdda8"><td class="memItemLeft" align="right" valign="top"><a id="a2b0904340d9b2b9875d665d8612cdda8" name="a2b0904340d9b2b9875d665d8612cdda8"></a>
+UOWWeaponComponent *&#160;</td><td class="memItemRight" valign="bottom"><b>WeaponComp</b></td></tr>
+<tr class="separator:a2b0904340d9b2b9875d665d8612cdda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classUOWGameplayAbility"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classUOWGameplayAbility')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classUOWGameplayAbility.html">UOWGameplayAbility</a>(으)로부터 상속된 Protected 속성</td></tr>
 <tr class="memitem:ad020b1ca65fc734c2af3763190d611ff inherit pro_attribs_classUOWGameplayAbility" id="r_ad020b1ca65fc734c2af3763190d611ff"><td class="memItemLeft" align="right" valign="top">FScalableFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUOWGameplayAbility.html#ad020b1ca65fc734c2af3763190d611ff">CooldownDuration</a></td></tr>
 <tr class="separator:ad020b1ca65fc734c2af3763190d611ff inherit pro_attribs_classUOWGameplayAbility"><td class="memSeparator" colspan="2">&#160;</td></tr>
