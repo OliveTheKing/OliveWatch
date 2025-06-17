@@ -16,14 +16,25 @@ UOWWeaponComponent::UOWWeaponComponent()
 void UOWWeaponComponent::BeginPlay()
 {
 	Super::BeginPlay();
-    BurstShotsRemaining = FireData->FirePattern.FullBullet;
+    UOWFireDataAsset* CurrentFireData = GetFireData();
+    if (CurrentFireData)
+    {
+        BurstShotsRemaining = CurrentFireData->FirePattern.FullBullet;
+    }
+    else
+    {
+        BurstShotsRemaining = 0; // ±âº»°ª
+        UE_LOG(LogTemp, Error, TEXT("FireData asset could not be loaded!"));
+    }
 }
 
 UOWFireDataAsset* UOWWeaponComponent::GetFireData()
 {
-    if(!FireData)    
+    if (!FireData)
     {
         FString DefaultFireDataPath = TEXT("/Game/OliveWatch/Weapons/FireData.FireData");
+        UE_LOG(LogTemp, Warning, TEXT("Attempting to load FireData from: %s"), *DefaultFireDataPath);
+
         FireData = Cast<UOWFireDataAsset>(StaticLoadObject(UOWFireDataAsset::StaticClass(), nullptr, *DefaultFireDataPath));
     }
     return FireData;
