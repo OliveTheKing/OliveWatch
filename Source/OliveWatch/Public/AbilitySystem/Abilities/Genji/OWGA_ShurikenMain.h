@@ -8,14 +8,14 @@
 #include "OWGA_ShurikenMain.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class OLIVEWATCH_API UOWGA_ShurikenMain : public UOWGA_Active_GunFire
 {
 	GENERATED_BODY()
 
-public: 
+public:
 	UOWGA_ShurikenMain();
 
 public:
@@ -32,24 +32,19 @@ public:
 	UFUNCTION()
 	void ShurikenMain();
 
-	/*UFUNCTION()
+	UFUNCTION()
 	void ThrowFirstShuriken();
 
 	UFUNCTION()
 	void ThrowSecondShuriken();
 
 	UFUNCTION()
-	void ThrowThirdShuriken();*/
+	void ThrowThirdShuriken();
 
 private:
-	UFUNCTION()
-	void DoThrowLoop();
-
 	UPROPERTY(EditAnywhere, Category = "GAS")
 	TSubclassOf<class UOWGameplayEffect> UseBullet;
 
 	UPROPERTY()
 	UAbilityTask_WaitDelay* DelayTask;
-
-	int index;
 };

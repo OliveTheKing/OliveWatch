@@ -40,6 +40,12 @@ void UOWGA_Active_GunFire::ActivateAbility(const FGameplayAbilitySpecHandle Hand
 
 void UOWGA_Active_GunFire::Shoot(FVector Direction)
 {
+	if (!WeaponComp)
+	{
+		UE_LOG(LogTemp, Error, TEXT("WeaponComponent is nullptr!"));
+		return;
+	}
+
 	UOWFireDataAsset* FD = WeaponComp->GetFireData();
 	if (FD)
 	{
