@@ -37,6 +37,8 @@ private:
     /** 발사 설정 데이터 */
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Weapon", meta = (AllowPrivateAccess = "true"))
     UOWFireDataAsset* FireData;
+    UPROPERTY()
+    TObjectPtr<ACharacter> CachedOwningCharacter;
 
     /** TimerHandle for auto‐fire */
     FTimerHandle TimerHandle_Fire;
@@ -44,12 +46,9 @@ private:
 
     /** 남은 발사 횟수 */
     int32 BurstShotsRemaining;
-    FVector MuzzleLocation;
-    FRotator MuzzleRotation;
     FVector Direction;
 
     /** Timer 콜백: 한 발씩 발사 */
     void HandleFireTick();
-    void ShootRoutine();
     void SpawnProjectile();
 };
