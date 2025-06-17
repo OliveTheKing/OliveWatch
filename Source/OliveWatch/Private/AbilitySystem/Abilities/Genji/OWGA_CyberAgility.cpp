@@ -96,26 +96,35 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 	Character->GetCharacterMovement()->Velocity = FVector(0.0f, 0.0f, WallClimbSpeed); 
 
 	FTimerDelegate TimerDel;
-	TimerDel.BindUFunction(this, FName("StopWallClimb"), Character);
+	TimerDel.BindUFunction(this, FName("StopWallClimb"));
 
-	GetWorld()->GetTimerManager().SetTimer(
+	AActor* OwnerActor = GetAvatarActorFromActorInfo();
+	OwnerActor->GetWorldTimerManager().SetTimer(
 		WallClimbTimerHandle,
 		TimerDel,
 		MaxWallClimbDuration,
 		false
 	);
 
+	if (GetWorld()->GetTimerManager().IsTimerActive(WallClimbTimerHandle))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, TEXT("WallClimb timer successfully set."));
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, TEXT("Timer failed to set!"));
+	}
+
 }
 
-void UOWGA_CyberAgility::StopWallClimb(ACharacter* Character)
+void UOWGA_CyberAgility::StopWallClimb()
 {
 	bWallClimbActive = false;
 
-	if (Character && Character->GetCharacterMovement())
-	{
-		Character->GetCharacterMovement()->GravityScale = 1.0f;
-		Character->GetCharacterMovement()->Velocity = FVector::ZeroVector;
-	}
+	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
+
+	Character->GetCharacterMovement()->GravityScale = 1.0f;
+	Character->GetCharacterMovement()->Velocity = FVector::ZeroVector;
 
 	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT(">>> STOP WALL CLIMB <<<"));
 }
