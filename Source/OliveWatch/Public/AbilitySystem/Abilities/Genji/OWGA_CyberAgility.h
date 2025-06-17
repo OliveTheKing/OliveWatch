@@ -35,7 +35,8 @@ protected:
 	float WallClimbTimeElapsed = 0.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
-	float MaxWallClimbDuration = 1.0f;
+	// 임시로 설정
+	float MaxWallClimbDuration = 5.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
 	float WallClimbSpeed = 780.0f; // 7.8 m/s == 780 cm/s
@@ -49,8 +50,5 @@ protected:
 	void StartWallClimb(ACharacter* Character);
 
 	UFUNCTION()
-	void WallClimbTick(float DeltaTime);
-
-	UFUNCTION()
-	void WallClimbTickWrapper();
+	void StopWallClimb(ACharacter* Character);
 };

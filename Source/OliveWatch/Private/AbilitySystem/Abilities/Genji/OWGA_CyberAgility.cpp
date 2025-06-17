@@ -82,37 +82,40 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 	// 디버그용 라인
 	DrawDebugLine(GetWorld(), Start, End, bHitWall ? FColor::Green : FColor::Red, false, 1.0f, 0, 2.0f);
 
-
-	return GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
+	return bHitWall;
 }
 
 void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 {
+	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("~~~~~~~~~~~~~~~~~~~~~~~START WALL CLIMB~~~~~~~~~~~~~~~~~~~~~~~~~~~~"));
+
 	bWallClimbActive = true;
 	WallClimbTimeElapsed = 0.f;
 
-	GetWorld()->GetTimerManager().SetTimer(WallClimbTimerHandle, this, &UOWGA_CyberAgility::WallClimbTickWrapper, 0.01f, true);
-	Character->LandedDelegate.AddDynamic(this, &UOWGA_CyberAgility::OnLanded);
+	Character->GetCharacterMovement()->GravityScale = 0.0f;
+	Character->GetCharacterMovement()->Velocity = FVector(0.0f, 0.0f, WallClimbSpeed); 
+
+	FTimerDelegate TimerDel;
+	TimerDel.BindUFunction(this, FName("StopWallClimb"), Character);
+
+	GetWorld()->GetTimerManager().SetTimer(
+		WallClimbTimerHandle,
+		TimerDel,
+		MaxWallClimbDuration,
+		false
+	);
+
 }
 
-void UOWGA_CyberAgility::WallClimbTickWrapper()
+void UOWGA_CyberAgility::StopWallClimb(ACharacter* Character)
 {
-	WallClimbTick(0.01f); // deltaTime 고정값
-}
+	bWallClimbActive = false;
 
-void UOWGA_CyberAgility::WallClimbTick(float DeltaTime)
-{
-	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
-	if (!Character) return;
-
-	WallClimbTimeElapsed += DeltaTime;
-	if (WallClimbTimeElapsed >= MaxWallClimbDuration)
+	if (Character && Character->GetCharacterMovement())
 	{
-		bWallClimbActive = false;
-		GetWorld()->GetTimerManager().ClearTimer(WallClimbTimerHandle);
-		return;
+		Character->GetCharacterMovement()->GravityScale = 1.0f;
+		Character->GetCharacterMovement()->Velocity = FVector::ZeroVector;
 	}
 
-	FVector ClimbVelocity = FVector(0.0f, 0.0f, WallClimbSpeed * DeltaTime);
-	Character->AddActorWorldOffset(ClimbVelocity, true);
+	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT(">>> STOP WALL CLIMB <<<"));
 }
