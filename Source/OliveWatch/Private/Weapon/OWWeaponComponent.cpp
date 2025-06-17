@@ -1,21 +1,20 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Weapon/OWWeaponComponent.h"
 #include "Weapon/OWFireDataAsset.h"
 #include "GameFramework/Character.h"
+#include "Camera/CameraComponent.h"
 
 // Sets default values for this component's properties
 UOWWeaponComponent::UOWWeaponComponent()
 {
-	PrimaryComponentTick.bCanEverTick = false;
-	/*ProjectileFactory = nullptr;*/
-	BurstShotsRemaining = 0;
+    PrimaryComponentTick.bCanEverTick = false;
+    BurstShotsRemaining = 0;
 }
 
 void UOWWeaponComponent::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
+    CachedOwningCharacter = Cast<ACharacter>(GetOwner());
+
     UOWFireDataAsset* CurrentFireData = GetFireData();
     if (CurrentFireData)
     {
@@ -23,8 +22,8 @@ void UOWWeaponComponent::BeginPlay()
     }
     else
     {
-        BurstShotsRemaining = 0; // 기본값
-        UE_LOG(LogTemp, Error, TEXT("FireData asset could not be loaded!"));
+        BurstShotsRemaining = 10;
+        UE_LOG(LogTemp, Warning, TEXT("Using default BurstShotsRemaining value"));
     }
 }
 
@@ -44,14 +43,7 @@ void UOWWeaponComponent::StartFire(const FVector Dir, const FGameplayEffectSpecH
 {
     CurrentDamageSpec = InSpec;
     Direction = Dir;
-    // 즉시 1발
     HandleFireTick();
-    //// 이후 Interval마다 발사
-    //GetWorld()->GetTimerManager().SetTimer(
-    //    TimerHandle_Fire,
-    //    this, &UOWWeaponComponent::HandleFireTick,
-    //    FireData->FirePattern.Interval,
-    //    true);
 }
 
 void UOWWeaponComponent::StopFire()
@@ -70,28 +62,37 @@ void UOWWeaponComponent::HandleFireTick()
     SpawnProjectile();
 }
 
-void UOWWeaponComponent::ShootRoutine()
-{
-}
-
 void UOWWeaponComponent::SpawnProjectile()
 {
-    FTransform MuzzleWorldTransform = GetComponentTransform();
-    MuzzleLocation = MuzzleWorldTransform.GetLocation();
-    ACharacter* OwningCharacter = Cast<ACharacter>(GetOwner());
-    MuzzleRotation = OwningCharacter ? OwningCharacter->GetControlRotation() : GetComponentRotation();
+    FVector MuzzleLocation;
+    FRotator MuzzleRotation;
+    CachedOwningCharacter->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
+
+    FVector AdjustRotation =
+        (MuzzleRotation.Vector() * Direction.X) +  // 전방
+        (FRotationMatrix(MuzzleRotation).GetUnitAxis(EAxis::Y) * Direction.Y) +  // 오른쪽
+        (FRotationMatrix(MuzzleRotation).GetUnitAxis(EAxis::Z) * Direction.Z);
+    MuzzleRotation = AdjustRotation.Rotation();
 
     AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
         FireData->FirePattern.ProjectileClass,
         FTransform(MuzzleRotation, MuzzleLocation),
-        Cast<ACharacter>(GetOwner()),
-        nullptr,
+        CachedOwningCharacter,
+        CachedOwningCharacter,
         ESpawnActorCollisionHandlingMethod::AlwaysSpawn
     );
-    if (Projectile) {
-        Projectile->SetProjectileVelocity(Direction);
+
+    if (Projectile)
+    {
         Projectile->DamageSpecHandle = CurrentDamageSpec;
-        Projectile->FinishSpawning(FTransform(MuzzleRotation, MuzzleLocation));
+
+        Projectile->FinishSpawning(FTransform::Identity);  // 임시 트랜스폼으로 완료
+
+        Projectile->SetActorLocation(MuzzleLocation);
+        Projectile->SetActorRotation(MuzzleRotation);
+
+        FVector ProjectileDirection = MuzzleRotation.Vector();
+        Projectile->SetProjectileVelocity(ProjectileDirection);
     }
 }
 
@@ -111,3 +112,5 @@ void UOWWeaponComponent::FinishReload()
 {
     BurstShotsRemaining = FireData->FirePattern.FullBullet;
 }
+
+
