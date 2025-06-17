@@ -21,6 +21,18 @@ bool UOWGA_ShurikenSub::CanActivateAbility(const FGameplayAbilitySpecHandle Hand
 
 void UOWGA_ShurikenSub::ActivateAbility(const FGameplayAbilitySpecHandle Handle, const FGameplayAbilityActorInfo* ActorInfo, const FGameplayAbilityActivationInfo ActivationInfo, const FGameplayEventData* TriggerEventData)
 {
+	ACharacter* Character = Cast<ACharacter>(ActorInfo->AvatarActor);
+	if (!Character)
+	{
+		EndAbility(CurrentSpecHandle, ActorInfo, ActivationInfo, true, true);
+		return;
+	}
+	WeaponComp = ActorInfo->AvatarActor->FindComponentByClass<UOWWeaponComponent>();
+	if (!WeaponComp)
+	{
+		EndAbility(CurrentSpecHandle, ActorInfo, ActivationInfo, true, true);
+		return;
+	}
 	// Animation 실행
 
 	// Animation event에서 실행
@@ -35,12 +47,12 @@ void UOWGA_ShurikenSub::EndAbility(const FGameplayAbilitySpecHandle Handle, cons
 
 void UOWGA_ShurikenSub::ShurikenSub()
 {
-	Super::SpawnProjectile();
+	Super::Shoot();
 
 	FVector left(1.0f, -0.3f, 0.0f);
 	FVector right(1.0f, 0.3f, 0.0f);
-	SpawnProjectile(left);
-	SpawnProjectile(right);
+	Super::Shoot(left);
+	Super::Shoot(right);
 
 	// 이펙트 실행
 	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
@@ -49,43 +61,4 @@ void UOWGA_ShurikenSub::ShurikenSub()
 	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
-}
-
-void UOWGA_ShurikenSub::SpawnProjectile(FVector Direction)
-{
-	//GEngine->AddOnScreenDebugMessage(
-//	-1,               // Key: -1이면 새 메시지
-//	5.0f,             // 몇 초 보여줄지
-//	FColor::Green,    // 색깔
-//	TEXT("Hello, OliveWatch!")  // 내용
-//);
-	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
-	if (!Character)
-	{
-		EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, true);
-	}
-
-	// 카메라 위치와 방향 가져오기
-	FVector MuzzleLocation;
-	FRotator MuzzleRotation;
-	Character->GetActorEyesViewPoint(MuzzleLocation, MuzzleRotation);
-
-	FGameplayEffectSpecHandle DamageEffectSpecHandle = MakeOutgoingGameplayEffectSpec(DamageGameplayEffect, GetAbilityLevel());
-
-	// Pass the damage to the Damage Execution Calculation through a SetByCaller value on the GameplayEffectSpec
-	DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag(FName("Data.Damage")), Damage);
-
-	AOWProjectile* Projectile = GetWorld()->SpawnActorDeferred<AOWProjectile>(
-		ProjectileClass,
-		FTransform(MuzzleRotation, MuzzleLocation + Direction),
-		GetOwningActorFromActorInfo(),
-		Character,
-		ESpawnActorCollisionHandlingMethod::AlwaysSpawn
-	);
-
-	Projectile->SetProjectileVelocity(Direction);
-	Projectile->DamageSpecHandle = DamageEffectSpecHandle;
-	// Projectile->Range = Range;
-
-	Projectile->FinishSpawning(FTransform(MuzzleRotation, MuzzleLocation));
 }

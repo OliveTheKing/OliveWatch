@@ -1,4 +1,4 @@
-	#pragma once
+#pragma once
 
 #include "CoreMinimal.h"
 #include "AbilitySystem/Abilities/Base/OWGA_Active.h"
@@ -19,6 +19,8 @@ public:
 		const FGameplayEventData* TriggerEventData) override;
 
 protected:
+
+	// 이단점프
 	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
 	float DoubleJumpStrength = 600.f;
 
@@ -27,4 +29,26 @@ protected:
 
 	UFUNCTION()
 	void OnLanded(const FHitResult& Hit);
+
+	// 벽타기
+	bool bWallClimbActive = false;
+	float WallClimbTimeElapsed = 0.0f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
+	// 임시로 설정
+	float MaxWallClimbDuration = 1.0f;
+
+	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
+	float WallClimbSpeed = 780.0f; // 7.8 m/s == 780 cm/s
+
+	FTimerHandle WallClimbTimerHandle;
+
+	UFUNCTION()
+	bool IsNextToWall(ACharacter* Character);
+
+	UFUNCTION()
+	void StartWallClimb(ACharacter* Character);
+
+	UFUNCTION()
+	void StopWallClimb();
 };

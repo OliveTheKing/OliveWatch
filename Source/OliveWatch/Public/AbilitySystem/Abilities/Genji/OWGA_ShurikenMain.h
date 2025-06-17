@@ -8,14 +8,14 @@
 #include "OWGA_ShurikenMain.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class OLIVEWATCH_API UOWGA_ShurikenMain : public UOWGA_Active_GunFire
 {
 	GENERATED_BODY()
 
-public: 
+public:
 	UOWGA_ShurikenMain();
 
 public:

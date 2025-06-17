@@ -42,4 +42,7 @@ namespace OWGameplayTags
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_Dead);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_UltimateReady);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(State_Deflecting);
+
+	//Ability
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Ability_GunFire);
 }
