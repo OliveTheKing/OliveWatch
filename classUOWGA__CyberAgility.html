@@ -80,12 +80,12 @@ $(function() {
 <div class="dynheader">
 UOWGA_CyberAgility에 대한 상속 다이어그램 : </div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__CyberAgility__inherit__graph.svg" width="194" height="616"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__CyberAgility__inherit__graph.svg" width="194" height="776"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 UOWGA_CyberAgility에 대한 협력 다이어그램:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__CyberAgility__coll__graph.svg" width="194" height="616"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classUOWGA__CyberAgility__coll__graph.svg" width="194" height="776"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -109,6 +109,15 @@ Protected 멤버 함수</h2></td></tr>
 <tr class="memitem:a6bb255657d76a6619244d8e73e1ded23" id="r_a6bb255657d76a6619244d8e73e1ded23"><td class="memItemLeft" align="right" valign="top"><a id="a6bb255657d76a6619244d8e73e1ded23" name="a6bb255657d76a6619244d8e73e1ded23"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>OnLanded</b> (const FHitResult &amp;Hit)</td></tr>
 <tr class="separator:a6bb255657d76a6619244d8e73e1ded23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abba04d83d896ef131f4784dcff6bcef4" id="r_abba04d83d896ef131f4784dcff6bcef4"><td class="memItemLeft" align="right" valign="top"><a id="abba04d83d896ef131f4784dcff6bcef4" name="abba04d83d896ef131f4784dcff6bcef4"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsNextToWall</b> (ACharacter *Character)</td></tr>
+<tr class="separator:abba04d83d896ef131f4784dcff6bcef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27dbaf4195c233058737c1e506b5148" id="r_ad27dbaf4195c233058737c1e506b5148"><td class="memItemLeft" align="right" valign="top"><a id="ad27dbaf4195c233058737c1e506b5148" name="ad27dbaf4195c233058737c1e506b5148"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>StartWallClimb</b> (ACharacter *Character)</td></tr>
+<tr class="separator:ad27dbaf4195c233058737c1e506b5148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff90748fffb08373482e42b754ee8953" id="r_aff90748fffb08373482e42b754ee8953"><td class="memItemLeft" align="right" valign="top"><a id="aff90748fffb08373482e42b754ee8953" name="aff90748fffb08373482e42b754ee8953"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>StopWallClimb</b> ()</td></tr>
+<tr class="separator:aff90748fffb08373482e42b754ee8953"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected 속성</h2></td></tr>
@@ -118,6 +127,21 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>DoubleJumpStrength</
 <tr class="memitem:ad70fb4e1d540393411faab5a3d575867" id="r_ad70fb4e1d540393411faab5a3d575867"><td class="memItemLeft" align="right" valign="top"><a id="ad70fb4e1d540393411faab5a3d575867" name="ad70fb4e1d540393411faab5a3d575867"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>bDoubleJumpUsed</b> = false</td></tr>
 <tr class="separator:ad70fb4e1d540393411faab5a3d575867"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c558cc1c1fd2db7d17b222fa5db4977" id="r_a0c558cc1c1fd2db7d17b222fa5db4977"><td class="memItemLeft" align="right" valign="top"><a id="a0c558cc1c1fd2db7d17b222fa5db4977" name="a0c558cc1c1fd2db7d17b222fa5db4977"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>bWallClimbActive</b> = false</td></tr>
+<tr class="separator:a0c558cc1c1fd2db7d17b222fa5db4977"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91e3f895241a17145761e16ae1d31eb2" id="r_a91e3f895241a17145761e16ae1d31eb2"><td class="memItemLeft" align="right" valign="top"><a id="a91e3f895241a17145761e16ae1d31eb2" name="a91e3f895241a17145761e16ae1d31eb2"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>WallClimbTimeElapsed</b> = 0.0f</td></tr>
+<tr class="separator:a91e3f895241a17145761e16ae1d31eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdbdb60f57118b1face04588cf8168b9" id="r_afdbdb60f57118b1face04588cf8168b9"><td class="memItemLeft" align="right" valign="top"><a id="afdbdb60f57118b1face04588cf8168b9" name="afdbdb60f57118b1face04588cf8168b9"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>MaxWallClimbDuration</b> = 1.0f</td></tr>
+<tr class="separator:afdbdb60f57118b1face04588cf8168b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117fe357e4eecdceae7d2f57cc230daa" id="r_a117fe357e4eecdceae7d2f57cc230daa"><td class="memItemLeft" align="right" valign="top"><a id="a117fe357e4eecdceae7d2f57cc230daa" name="a117fe357e4eecdceae7d2f57cc230daa"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>WallClimbSpeed</b> = 780.0f</td></tr>
+<tr class="separator:a117fe357e4eecdceae7d2f57cc230daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e35b41d16d5148b7d838c40b1049790" id="r_a5e35b41d16d5148b7d838c40b1049790"><td class="memItemLeft" align="right" valign="top"><a id="a5e35b41d16d5148b7d838c40b1049790" name="a5e35b41d16d5148b7d838c40b1049790"></a>
+FTimerHandle&#160;</td><td class="memItemRight" valign="bottom"><b>WallClimbTimerHandle</b></td></tr>
+<tr class="separator:a5e35b41d16d5148b7d838c40b1049790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classUOWGameplayAbility"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classUOWGameplayAbility')"><img src="closed.png" alt="-"/>&#160;<a class="el" href="classUOWGameplayAbility.html">UOWGameplayAbility</a>(으)로부터 상속된 Protected 속성</td></tr>
 <tr class="memitem:ad020b1ca65fc734c2af3763190d611ff inherit pro_attribs_classUOWGameplayAbility" id="r_ad020b1ca65fc734c2af3763190d611ff"><td class="memItemLeft" align="right" valign="top">FScalableFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUOWGameplayAbility.html#ad020b1ca65fc734c2af3763190d611ff">CooldownDuration</a></td></tr>
 <tr class="separator:ad020b1ca65fc734c2af3763190d611ff inherit pro_attribs_classUOWGameplayAbility"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +205,7 @@ TArray&lt; TSubclassOf&lt; UGameplayEffect &gt; &gt;&#160;</td><td class="memIte
 </div>
 <hr/>이 클래스에 대한 문서화 페이지는 다음의 파일들로부터 생성되었습니다.:<ul>
 <li>Source/OliveWatch/Public/AbilitySystem/Abilities/Genji/<a class="el" href="OWGA__CyberAgility_8h_source.html">OWGA_CyberAgility.h</a></li>
-<li>Source/OliveWatch/Private/AbilitySystem/Abilities/<b>OWGA_CyberAgility.cpp</b></li>
+<li>Source/OliveWatch/Private/AbilitySystem/Abilities/Genji/<b>OWGA_CyberAgility.cpp</b></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
