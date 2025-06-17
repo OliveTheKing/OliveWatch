@@ -67,7 +67,7 @@ void UOWGA_ShurikenMain::ThrowSecondShuriken()
 	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
 
 	// 다음 표창까지 딜레이
-	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 0.1f);
+	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 1.0f);
 	DelayTask->OnFinish.AddDynamic(this, &UOWGA_ShurikenMain::ThrowThirdShuriken);
 	DelayTask->ReadyForActivation();
 }
@@ -82,4 +82,3 @@ void UOWGA_ShurikenMain::ThrowThirdShuriken()
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
 }
-//

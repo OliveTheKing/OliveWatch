@@ -41,4 +41,7 @@ namespace OWGameplayTags
 	UE_DEFINE_GAMEPLAY_TAG(State_Dead, "State.Dead");
 	UE_DEFINE_GAMEPLAY_TAG(State_UltimateReady, "State.UltimateReady");
 	UE_DEFINE_GAMEPLAY_TAG(State_Deflecting, "State.Deflecting");
+
+	//Ability
+	UE_DEFINE_GAMEPLAY_TAG(Ability_GunFire, "Ability.GunFire");
 }
