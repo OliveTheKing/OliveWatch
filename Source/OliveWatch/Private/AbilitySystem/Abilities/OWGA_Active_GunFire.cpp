@@ -11,6 +11,8 @@ UOWGA_Active_GunFire::UOWGA_Active_GunFire()
 	InstancingPolicy = EGameplayAbilityInstancingPolicy::InstancedPerActor;
 
 	SetAssetTags(FGameplayTagContainer(FGameplayTag::RequestGameplayTag("Input.Action.MainFire")));
+	CooldownTags.AddTag(OWGameplayTags::Ability_GunFire);
+	ActivationBlockedTags.AddTag(OWGameplayTags::Ability_GunFire);
 }
 
 

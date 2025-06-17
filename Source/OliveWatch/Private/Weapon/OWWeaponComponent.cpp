@@ -35,12 +35,12 @@ void UOWWeaponComponent::StartFire(const FVector Dir, const FGameplayEffectSpecH
     Direction = Dir;
     // 즉시 1발
     HandleFireTick();
-    // 이후 Interval마다 발사
-    GetWorld()->GetTimerManager().SetTimer(
-        TimerHandle_Fire,
-        this, &UOWWeaponComponent::HandleFireTick,
-        FireData->FirePattern.Interval,
-        true);
+    //// 이후 Interval마다 발사
+    //GetWorld()->GetTimerManager().SetTimer(
+    //    TimerHandle_Fire,
+    //    this, &UOWWeaponComponent::HandleFireTick,
+    //    FireData->FirePattern.Interval,
+    //    true);
 }
 
 void UOWWeaponComponent::StopFire()
