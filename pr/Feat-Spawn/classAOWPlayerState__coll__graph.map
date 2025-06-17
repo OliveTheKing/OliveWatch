@@ -1,0 +1,7 @@
+<map id="AOWPlayerState" name="AOWPlayerState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="9,119,258,284"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,104,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,82,96,117,91,120,74,84"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="129,5,295,71"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,84,176,120,171,117,188,82"/>
+</map>
