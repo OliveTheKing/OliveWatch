@@ -32,19 +32,24 @@ public:
 	UFUNCTION()
 	void ShurikenMain();
 
-	UFUNCTION()
+	/*UFUNCTION()
 	void ThrowFirstShuriken();
 
 	UFUNCTION()
 	void ThrowSecondShuriken();
 
 	UFUNCTION()
-	void ThrowThirdShuriken();
+	void ThrowThirdShuriken();*/
 
 private:
+	UFUNCTION()
+	void DoThrowLoop();
+
 	UPROPERTY(EditAnywhere, Category = "GAS")
 	TSubclassOf<class UOWGameplayEffect> UseBullet;
 
 	UPROPERTY()
 	UAbilityTask_WaitDelay* DelayTask;
+
+	int index;
 };
