@@ -1,4 +1,4 @@
-#include "AbilitySystem/Abilities/Genji/OWGA_CyberAgility.h"
+﻿#include "AbilitySystem/Abilities/Genji/OWGA_CyberAgility.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
@@ -16,22 +16,24 @@ void UOWGA_CyberAgility::ActivateAbility(
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
 	ACharacter* Character = Cast<ACharacter>(ActorInfo->AvatarActor.Get());
+	
+	// 일단 벽이 있는지 확인
+	if (IsNextToWall(Character))
+	{
+		// 벽타기 시작
+		StartWallClimb(Character);
+		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
+		return;
+	}
 
-	// �������� ���
+	// 공중에 있는지 확인 (벽 없음)
 	if (!Character->GetCharacterMovement()->IsFalling())
 	{
 		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
 		return;
 	}
 
-	// 
-	if (!bWallClimbActive && IsNextToWall(Character))
-	{
-		StartWallClimb(Character);
-		return;
-	}
-
-
+	// 더블점프 
 	if (bDoubleJumpUsed)
 	{
 		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
@@ -75,6 +77,12 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 	FCollisionQueryParams Params;
 	Params.AddIgnoredActor(Character);
 
+	bool bHitWall = GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
+
+	// 디버그용 라인
+	DrawDebugLine(GetWorld(), Start, End, bHitWall ? FColor::Green : FColor::Red, false, 1.0f, 0, 2.0f);
+
+
 	return GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
 }
 
@@ -89,7 +97,7 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 
 void UOWGA_CyberAgility::WallClimbTickWrapper()
 {
-	WallClimbTick(0.01f); // deltaTime ������
+	WallClimbTick(0.01f); // deltaTime 고정값
 }
 
 void UOWGA_CyberAgility::WallClimbTick(float DeltaTime)
