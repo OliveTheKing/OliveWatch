@@ -40,45 +40,62 @@ void UOWGA_ShurikenMain::EndAbility(const FGameplayAbilitySpecHandle Handle, con
 
 void UOWGA_ShurikenMain::ShurikenMain()
 {
-	ThrowFirstShuriken();
+	index = 0;
+	DoThrowLoop();
 }
 
-void UOWGA_ShurikenMain::ThrowFirstShuriken()
+void UOWGA_ShurikenMain::DoThrowLoop()
 {
-	Shoot();
+	if (index >= 3) { EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false); return; }
 
-	// 이펙트 실행
-	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
-	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
+	Shoot();  ++index;
 
-	// 다음 표창까지 딜레이
-	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 0.1f);
-	DelayTask->OnFinish.AddDynamic(this, &UOWGA_ShurikenMain::ThrowSecondShuriken);
-	DelayTask->ReadyForActivation();
-
-}
-
-void UOWGA_ShurikenMain::ThrowSecondShuriken()
-{
-	Shoot();
-
-	// 이펙트 실행
-	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
-	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
-
-	// 다음 표창까지 딜레이
-	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 1.0f);
-	DelayTask->OnFinish.AddDynamic(this, &UOWGA_ShurikenMain::ThrowThirdShuriken);
+	const float Delay = (index == 1) ? 0.1f : 1.0f;
+	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, Delay);
+	DelayTask->OnFinish.AddDynamic(this, &ThisClass::DoThrowLoop);
 	DelayTask->ReadyForActivation();
 }
-
-void UOWGA_ShurikenMain::ThrowThirdShuriken()
-{
-	Shoot();
-
-	// 이펙트 실행
-	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
-	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
-
-	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
-}
+//void UOWGA_ShurikenMain::ShurikenMain()
+//{
+//	ThrowFirstShuriken();
+//}
+//
+//void UOWGA_ShurikenMain::ThrowFirstShuriken()
+//{
+//	Shoot();
+//
+//	// 이펙트 실행
+//	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
+//	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
+//
+//	// 다음 표창까지 딜레이
+//	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 0.3f);
+//	DelayTask->OnFinish.AddDynamic(this, &UOWGA_ShurikenMain::ThrowSecondShuriken);
+//	DelayTask->ReadyForActivation();
+//
+//}
+//
+//void UOWGA_ShurikenMain::ThrowSecondShuriken()
+//{
+//	Shoot();
+//
+//	// 이펙트 실행
+//	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
+//	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
+//
+//	// 다음 표창까지 딜레이
+//	DelayTask = UAbilityTask_WaitDelay::WaitDelay(this, 0.3f);
+//	DelayTask->OnFinish.AddDynamic(this, &UOWGA_ShurikenMain::ThrowThirdShuriken);
+//	DelayTask->ReadyForActivation();
+//}
+//
+//void UOWGA_ShurikenMain::ThrowThirdShuriken()
+//{
+//	Shoot();
+//
+//	// 이펙트 실행
+//	FGameplayEffectSpecHandle SpecHandle = MakeOutgoingGameplayEffectSpec(UseBullet, 1.0f);
+//	ApplyGameplayEffectSpecToOwner(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, SpecHandle);
+//
+//	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
+//}
