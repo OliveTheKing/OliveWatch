@@ -1,26 +1,9 @@
 var searchData=
 [
-  ['uowabilityset_0',['UOWAbilitySet',['../classUOWAbilitySet.html',1,'']]],
-  ['uowabilitysystemcomponent_1',['UOWAbilitySystemComponent',['../classUOWAbilitySystemComponent.html',1,'']]],
-  ['uowaniminstance_2',['UOWAnimInstance',['../classUOWAnimInstance.html',1,'']]],
-  ['uowattributeset_3',['UOWAttributeSet',['../classUOWAttributeSet.html',1,'']]],
-  ['uowcooldowngameplayeffect_4',['UOWCooldownGameplayEffect',['../classUOWCooldownGameplayEffect.html',1,'']]],
-  ['uowga_5factive_5',['UOWGA_Active',['../classUOWGA__Active.html',1,'']]],
-  ['uowga_5factive_5fgunfire_6',['UOWGA_Active_GunFire',['../classUOWGA__Active__GunFire.html',1,'']]],
-  ['uowga_5fcyberagility_7',['UOWGA_CyberAgility',['../classUOWGA__CyberAgility.html',1,'']]],
-  ['uowga_5fdeflect_8',['UOWGA_Deflect',['../classUOWGA__Deflect.html',1,'']]],
-  ['uowga_5ffastzoom_9',['UOWGA_FastZoom',['../classUOWGA__FastZoom.html',1,'']]],
-  ['uowga_5fpassive_10',['UOWGA_Passive',['../classUOWGA__Passive.html',1,'']]],
-  ['uowga_5freload_11',['UOWGA_Reload',['../classUOWGA__Reload.html',1,'']]],
-  ['uowga_5fshurikenmain_12',['UOWGA_ShurikenMain',['../classUOWGA__ShurikenMain.html',1,'']]],
-  ['uowga_5fshurikensub_13',['UOWGA_ShurikenSub',['../classUOWGA__ShurikenSub.html',1,'']]],
-  ['uowga_5fultimate_14',['UOWGA_Ultimate',['../classUOWGA__Ultimate.html',1,'']]],
-  ['uowgameplayability_15',['UOWGameplayAbility',['../classUOWGameplayAbility.html',1,'']]],
-  ['uowgameplayeffect_16',['UOWGameplayEffect',['../classUOWGameplayEffect.html',1,'']]],
-  ['uowgameplaytask_17',['UOWGameplayTask',['../classUOWGameplayTask.html',1,'']]],
-  ['uowge_5fcost_18',['UOWGE_Cost',['../classUOWGE__Cost.html',1,'']]],
-  ['uowge_5finitultimategauge_19',['UOWGE_InitUltimateGauge',['../classUOWGE__InitUltimateGauge.html',1,'']]],
-  ['uowgt_5fplaymontageandwaitforevent_20',['UOWGT_PlayMontageAndWaitForEvent',['../classUOWGT__PlayMontageAndWaitForEvent.html',1,'']]],
-  ['uowinputdata_21',['UOWInputData',['../classUOWInputData.html',1,'']]],
-  ['uowreloadoverride_22',['UOWReloadOverride',['../classUOWReloadOverride.html',1,'']]]
+  ['setcooldowndata_0',['SetCooldownData',['../classUOWGameplayAbility.html#a71fc7e80eef5ad6f982d146d477f97c5',1,'UOWGameplayAbility']]],
+  ['setcosteffect_1',['SetCostEffect',['../classUOWGameplayAbility.html#a6577efab5f9429586c705823943f42f0',1,'UOWGameplayAbility']]],
+  ['setdamagespechandle_2',['SetDamageSpecHandle',['../classAOWProjectile.html#a1b56e68a02200e3b65468b49162177e1',1,'AOWProjectile']]],
+  ['shurikenmain_3',['ShurikenMain',['../classUOWGA__ShurikenMain.html#ab875aa9e070811fe72f5367fd7826c0b',1,'UOWGA_ShurikenMain']]],
+  ['shurikensub_4',['ShurikenSub',['../classUOWGA__ShurikenSub.html#ad4f308adfdf196dd9fc3a66886cc5ded',1,'UOWGA_ShurikenSub']]],
+  ['spawnprojectile_5',['SpawnProjectile',['../classUOWGA__ShurikenSub.html#aa66493ba1733edc1c224f6a1f23c70ba',1,'UOWGA_ShurikenSub']]]
 ];
