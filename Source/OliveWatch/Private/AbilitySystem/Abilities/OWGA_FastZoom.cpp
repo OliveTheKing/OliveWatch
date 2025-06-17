@@ -1,4 +1,4 @@
-#include "AbilitySystem/Abilities/OWGA_FastZoom.h"
+#include "AbilitySystem/Abilities/Ana/OWGA_FastZoom.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/Actor.h"
 #include "GameplayAbilitySpec.h"

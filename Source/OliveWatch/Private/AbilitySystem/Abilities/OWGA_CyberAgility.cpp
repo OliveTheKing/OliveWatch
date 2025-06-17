@@ -1,4 +1,4 @@
-#include "AbilitySystem/Abilities/OWGA_CyberAgility.h"
+#include "AbilitySystem/Abilities/Genji/OWGA_CyberAgility.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
