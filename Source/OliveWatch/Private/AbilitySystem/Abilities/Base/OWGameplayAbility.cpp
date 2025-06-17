@@ -62,19 +62,19 @@ bool UOWGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Han
 		//GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Blocked"));
 		return false;
 	}
-	// ·Î±× ±¸ºÐÀ» À§ÇØ else if·Î ºÐ¸®ÇØµÎ¾úÀ¸³ª ÃßÈÄ ÅëÇÕ °¡´É
+	// ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ else ifï¿½ï¿½ ï¿½Ð¸ï¿½ï¿½ØµÎ¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
 		return false;
 	}
-	// ·Î±× ±¸ºÐÀ» À§ÇØ else if·Î ºÐ¸®ÇØµÎ¾úÀ¸³ª ÃßÈÄ ÅëÇÕ °¡´É
+	// ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ else ifï¿½ï¿½ ï¿½Ð¸ï¿½ï¿½ØµÎ¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
 		return false;
 	}
-	// ·Î±× ±¸ºÐÀ» À§ÇØ else if·Î ºÐ¸®ÇØµÎ¾úÀ¸³ª ÃßÈÄ ÅëÇÕ °¡´É
+	// ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ else ifï¿½ï¿½ ï¿½Ð¸ï¿½ï¿½ØµÎ¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
