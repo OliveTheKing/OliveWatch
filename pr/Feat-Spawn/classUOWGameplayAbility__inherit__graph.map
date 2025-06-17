@@ -16,10 +16,10 @@
 <area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="605,461,605,505,599,505,599,461"/>
 <area shape="rect" id="Node000009" href="$classUOWGA__FastZoom.html" title=" " alt="" coords="707,535,844,621"/>
 <area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="648,455,732,533,729,537,644,459"/>
-<area shape="rect" id="Node000005" href="$classUOWGA__ShurikenMain.html" title=" " alt="" coords="5,699,191,924"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="173,645,149,700,144,697,168,643"/>
-<area shape="rect" id="Node000006" href="$classUOWGA__ShurikenSub.html" title=" " alt="" coords="215,729,381,894"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="228,643,265,727,260,730,223,645"/>
+<area shape="rect" id="Node000005" href="$classUOWGA__ShurikenMain.html" title=" " alt="" coords="5,699,191,864"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="168,645,141,700,136,697,164,642"/>
+<area shape="rect" id="Node000006" href="$classUOWGA__ShurikenSub.html" title=" " alt="" coords="215,699,381,864"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="232,642,260,697,255,700,228,645"/>
 <area shape="rect" id="Node000011" href="$classUOWGA__Reload.html" title=" " alt="" coords="869,505,1034,651"/>
 <area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="882,457,910,504,906,507,878,460"/>
 </map>
