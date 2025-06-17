@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-#include "AbilitySystem/Abilities/Genji/OWGA_CyberAgility.h"
-=======
 ﻿#include "AbilitySystem/Abilities/Genji/OWGA_CyberAgility.h"
->>>>>>> origin/main
 #include "GameFramework/Character.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
@@ -20,9 +16,6 @@ void UOWGA_CyberAgility::ActivateAbility(
 	Super::ActivateAbility(Handle, ActorInfo, ActivationInfo, TriggerEventData);
 
 	ACharacter* Character = Cast<ACharacter>(ActorInfo->AvatarActor.Get());
-<<<<<<< HEAD
-
-=======
 	
 	// 일단 벽이 있는지 확인
 	if (IsNextToWall(Character))
@@ -34,17 +27,13 @@ void UOWGA_CyberAgility::ActivateAbility(
 	}
 
 	// 공중에 있는지 확인 (벽 없음)
->>>>>>> origin/main
 	if (!Character->GetCharacterMovement()->IsFalling())
 	{
 		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
 		return;
 	}
 
-<<<<<<< HEAD
-=======
 	// 더블점프 
->>>>>>> origin/main
 	if (bDoubleJumpUsed)
 	{
 		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
@@ -55,10 +44,7 @@ void UOWGA_CyberAgility::ActivateAbility(
 
 	Character->LaunchCharacter(FVector(0.f, 0.f, DoubleJumpStrength), false, true);
 	bDoubleJumpUsed = true;
-<<<<<<< HEAD
-=======
 	//bCanWallClimb = false;
->>>>>>> origin/main
 	Character->LandedDelegate.AddDynamic(this, &UOWGA_CyberAgility::OnLanded);
 
 	EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
@@ -73,11 +59,6 @@ void UOWGA_CyberAgility::OnLanded(const FHitResult& Hit)
 	if (Character)
 	{
 		bDoubleJumpUsed = false;
-<<<<<<< HEAD
-		Character->LandedDelegate.RemoveDynamic(this, &UOWGA_CyberAgility::OnLanded);
-	}
-}
-=======
 		bWallClimbActive = false;
 		WallClimbTimeElapsed = 0.f;
 
@@ -147,4 +128,3 @@ void UOWGA_CyberAgility::StopWallClimb()
 
 	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT(">>> STOP WALL CLIMB <<<"));
 }
->>>>>>> origin/main
