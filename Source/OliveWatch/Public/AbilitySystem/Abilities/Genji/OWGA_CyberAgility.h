@@ -35,7 +35,6 @@ protected:
 	float WallClimbTimeElapsed = 0.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
-	// 임시로 설정
 	float MaxWallClimbDuration = 1.0f;
 
 	UPROPERTY(EditDefaultsOnly, Category = "CyberAgility")
