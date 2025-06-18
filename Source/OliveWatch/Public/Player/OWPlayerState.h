@@ -8,8 +8,6 @@
 #include "OWPlayerState.generated.h"
 
 class UOWAbilitySystemComponent;
-class UOWAbilitySet;
-
 /**
  * 
  */
@@ -24,15 +22,10 @@ public:
 public:
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
 	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
-	UOWAbilitySet* GetOWAbilitySet();
 
 	virtual void BeginPlay() override;
 
 protected:
 	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<UOWAbilitySystemComponent> AbilitySystemComponent;
-
-	UPROPERTY(EditDefaultsOnly, Category = "AbilitySet")
-	TObjectPtr<UOWAbilitySet> AbilitySet;
-
 };

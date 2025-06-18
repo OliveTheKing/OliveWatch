@@ -19,9 +19,4 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
-
-protected:
-	UPROPERTY(EditDefaultsOnly, Category = "AbilitySet")
-	TObjectPtr<class UOWAbilitySet> AbilitySet;
-
 };

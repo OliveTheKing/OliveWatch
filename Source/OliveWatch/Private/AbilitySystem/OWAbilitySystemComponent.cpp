@@ -26,7 +26,6 @@ void UOWAbilitySystemComponent::ActivateAbility(FGameplayTag InputTag)
 		if (AbilitySpec.Ability && AbilitySpec.GetDynamicSpecSourceTags().HasTag(InputTag))
 		{
 			TryActivateAbility(AbilitySpec.Handle);	
-		}
-		
+		}	
 	}
 }

@@ -43,8 +43,9 @@ void AOWPlayerController::SetupInputComponent()
             BindNativeAction(OWGameplayTags::Input_Action_MeleeAttack, this, &ThisClass::Input_MeleeAttack);
             BindNativeAction(OWGameplayTags::Input_Action_Look, this, &ThisClass::Input_Look);
             
+			
 			// 영웅별 스킬 Action
-			UOWAbilitySet* OWAS = GetPlayerState<AOWPlayerState>()->GetOWAbilitySet();
+			UOWAbilitySet* OWAS = Cast<AOWCharacter>(GetCharacter())->GetOWAbilitySet();
 
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_Jump, this, &ThisClass::Input_Jump);
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFire, this, &ThisClass::Input_MainFire);

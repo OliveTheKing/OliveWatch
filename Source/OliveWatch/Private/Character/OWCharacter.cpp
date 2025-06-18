@@ -4,6 +4,7 @@
 #include "Character/OWCharacter.h"
 #include "Player/OWPlayerState.h"
 #include "AbilitySystem/OWAbilitySystemComponent.h"
+#include "AbilitySystem/OWAbilitySet.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "OWGameplayTags.h"
@@ -70,6 +71,11 @@ void AOWCharacter::OnRep_PlayerState()
 		AbilitySystemComponent = Cast<UOWAbilitySystemComponent>(State->GetAbilitySystemComponent());
 		AbilitySystemComponent->InitAbilityActorInfo(State, this);
 	}
+}
+
+UOWAbilitySet* AOWCharacter::GetOWAbilitySet()
+{
+	return AbilitySet;
 }
 
 void AOWCharacter::Move(const FVector& direction, const float& speed)

@@ -9,6 +9,9 @@
 #include "Camera/CameraComponent.h"
 #include "OWCharacter.generated.h"
 
+class UOWAbilitySystemComponent;
+class UOWAbilitySet;
+
 UCLASS()
 class OLIVEWATCH_API AOWCharacter : public ACharacter
 {
@@ -37,6 +40,7 @@ public:
 	 */
 	void Look(const FVector& direction);
 	void ActivateAbility(FGameplayTag AbilityTag);
+	UOWAbilitySet* GetOWAbilitySet();
 	UOWAbilitySystemComponent* GetOWAbilitySystemComponent();
 	void Jump() override;
 
@@ -49,6 +53,9 @@ private:
 protected:
 	UPROPERTY()
 	TObjectPtr<class UOWAbilitySystemComponent> AbilitySystemComponent;
+
+	UPROPERTY(EditDefaultsOnly, Category = "AbilitySet")
+	TObjectPtr<UOWAbilitySet> AbilitySet;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera)
 	UCameraComponent* FirstPersonCamera;

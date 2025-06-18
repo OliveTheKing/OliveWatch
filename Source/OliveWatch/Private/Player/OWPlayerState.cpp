@@ -3,7 +3,6 @@
 
 #include "Player/OWPlayerState.h"
 #include "AbilitySystem/OWAbilitySystemComponent.h"
-#include "AbilitySystem/OWAbilitySet.h"
 #include "OWGameplayTags.h"
 #include "OWLogChannels.h"
 
@@ -29,15 +28,8 @@ UOWAbilitySystemComponent* AOWPlayerState::GetOWAbilitySystemComponent()
 	return AbilitySystemComponent;
 }
 
-UOWAbilitySet* AOWPlayerState::GetOWAbilitySet()
-{
-	return AbilitySet;
-}
-
-
 void AOWPlayerState::BeginPlay()
 {
-	AbilitySet->GiveToAbilitySystem(AbilitySystemComponent);
 	//for (const FGameplayAbilitySpec& AbilitySpec : AbilitySystemComponent->GetActivatableAbilities())
 	//{
 	//	AbilitySystemComponent->ActivateAbility(OWGameplayTags::Input_Action_MainFire);
