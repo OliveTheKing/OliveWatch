@@ -29,6 +29,7 @@ public:
     void FinishReload();     // Timer 콜백
 
     UOWFireDataAsset* GetFireData();
+    UAbilitySystemComponent* GetOwnerASC() const;
 
 protected:
     virtual void BeginPlay() override;
@@ -39,6 +40,8 @@ private:
     UOWFireDataAsset* FireData;
     UPROPERTY()
     TObjectPtr<ACharacter> CachedOwningCharacter;
+    UPROPERTY()
+    TObjectPtr<UAbilitySystemComponent> CachedOwningASC;
 
     /** TimerHandle for auto‐fire */
     FTimerHandle TimerHandle_Fire;
@@ -50,5 +53,7 @@ private:
 
     /** Timer 콜백: 한 발씩 발사 */
     void HandleFireTick();
+    void ShootRay();
     void SpawnProjectile();
 };
+
