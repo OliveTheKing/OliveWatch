@@ -15,6 +15,7 @@ namespace OWGameplayTags
 
 	//��ų
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_MainFire, "Input.Action.MainFire");
+	UE_DEFINE_GAMEPLAY_TAG(Input_Action_MainFireMainTain, "Input.Action.MainFireMainTain");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_SubFire, "Input.Action.SubFire");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill1, "Input.Action.Skill1");
 	UE_DEFINE_GAMEPLAY_TAG(Input_Action_Skill2, "Input.Action.Skill2");
