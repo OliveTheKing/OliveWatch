@@ -42,22 +42,47 @@ void AOWPlayerController::SetupInputComponent()
             BindNativeAction(OWGameplayTags::Input_Action_Curl, this, &ThisClass::Input_Curl);
             BindNativeAction(OWGameplayTags::Input_Action_MeleeAttack, this, &ThisClass::Input_MeleeAttack);
             BindNativeAction(OWGameplayTags::Input_Action_Look, this, &ThisClass::Input_Look);
-            
-			
-			// 영웅별 스킬 Action
-			UOWAbilitySet* OWAS = Cast<AOWCharacter>(GetCharacter())->GetOWAbilitySet();
-
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Jump, this, &ThisClass::Input_Jump);
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFire, this, &ThisClass::Input_MainFire);
-			BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFireMainTain, this, &ThisClass::Input_MainFireMainTain);
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_SubFire, this, &ThisClass::Input_SubFire);
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill1, this, &ThisClass::Input_Skill1);
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill2, this, &ThisClass::Input_Skill2);
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill3, this, &ThisClass::Input_Skill3);
-            BindSkillAction(OWAS, OWGameplayTags::Input_Action_Reload, this, &ThisClass::Input_Reload);
         }
 	}
 }
+
+void AOWPlayerController::BindAbilitiesFromPawn(APawn* InPawn)
+{
+	UnbindPreviousInputs();            // (옵션) 옛 Pawn 바인딩 해제
+
+	if (AOWCharacter* Ch = Cast<AOWCharacter>(InPawn))
+	{
+		if (UOWAbilitySet* OWAS = Ch->GetOWAbilitySet())
+		{
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_Jump, this, &ThisClass::Input_Jump);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFire, this, &ThisClass::Input_MainFire);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFireMainTain, this, &ThisClass::Input_MainFireMainTain);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_SubFire, this, &ThisClass::Input_SubFire);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill1, this, &ThisClass::Input_Skill1);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill2, this, &ThisClass::Input_Skill2);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill3, this, &ThisClass::Input_Skill3);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_Reload, this, &ThisClass::Input_Reload);
+		}
+	}
+}
+
+void AOWPlayerController::OnPossess(APawn* InPawn)
+{
+	Super::OnPossess(InPawn);
+	BindAbilitiesFromPawn(InPawn);                 // 서버
+}
+
+void AOWPlayerController::OnRep_Pawn()
+{
+	Super::OnRep_Pawn();
+	BindAbilitiesFromPawn(GetPawn());              // 클라이언트
+}
+
+void AOWPlayerController::UnbindPreviousInputs()
+{
+
+}
+
 
 
 void AOWPlayerController::Input_Move(const FInputActionValue& InputValue)

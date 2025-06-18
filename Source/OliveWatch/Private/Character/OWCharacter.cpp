@@ -59,6 +59,11 @@ void AOWCharacter::PossessedBy(AController* NewController)
 	if (AOWPlayerState* State = GetPlayerState<AOWPlayerState>()) {
 		AbilitySystemComponent = Cast<UOWAbilitySystemComponent>(State->GetOWAbilitySystemComponent());
 		AbilitySystemComponent->InitAbilityActorInfo(State, this);
+
+		if (AbilitySet) // && !AbilitySetHandles.IsValid())
+		{
+			AbilitySet->GiveToAbilitySystem(AbilitySystemComponent);//, &AbilitySetHandles);
+		}
 	}
 }
 

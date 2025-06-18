@@ -32,6 +32,7 @@ public:
 
     template<class UserClass, typename FuncType>
     void BindSkillAction(UOWAbilitySet* OWAS, const FGameplayTag& InputTag, UserClass* Object, FuncType Func);
+    void UnbindPreviousInputs();
 
 protected:
 	virtual void SetupInputComponent() override;
@@ -59,6 +60,11 @@ public:
 
     UPROPERTY()
     UEnhancedInputComponent* EnhancedInputComponent;
+
+private:
+    void BindAbilitiesFromPawn(APawn* InPawn);
+    void OnPossess(APawn* InPawn);
+    void OnRep_Pawn();
 };
 
 template<class UserClass, typename FuncType>
