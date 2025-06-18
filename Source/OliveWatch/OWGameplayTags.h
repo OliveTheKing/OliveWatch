@@ -17,6 +17,7 @@ namespace OWGameplayTags
 
 	//��ų
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MainFire);
+	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_MainFireMainTain);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_SubFire);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill1);
 	UE_DECLARE_GAMEPLAY_TAG_EXTERN(Input_Action_Skill2);
