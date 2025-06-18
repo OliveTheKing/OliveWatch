@@ -72,7 +72,7 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 	FVector Start = Character->GetActorLocation();
 	FVector Forward = Character->GetActorForwardVector();
 	// 벽에 최대한 가까이
-	FVector End = Start + Forward * 200.f;
+	FVector End = Start + Forward * 500.f;
 
 	FHitResult Hit;
 	FCollisionQueryParams Params;
@@ -81,7 +81,7 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 	bool bHitWall = GetWorld()->LineTraceSingleByChannel(Hit, Start, End, ECC_Visibility, Params);
 
 	// 디버그용 라인
-	DrawDebugLine(GetWorld(), Start, End, bHitWall ? FColor::Green : FColor::Red, false, 1.0f, 0, 2.0f);
+	//DrawDebugLine(GetWorld(), Start, End, bHitWall ? FColor::Green : FColor::Red, false, 1.0f, 0, 2.0f);
 
 	return bHitWall;
 }
@@ -95,16 +95,6 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 
 	Character->GetCharacterMovement()->GravityScale = 0.0f;
 	Character->GetCharacterMovement()->Velocity = FVector(0.0f, 0.0f, WallClimbSpeed); 
-	/*
-	Character->GetWorldTimerManager().SetTimer(
-		WallClimbTimerHandle,
-		this,
-		&UOWGA_CyberAgility::StopWallClimb,
-		MaxWallClimbDuration,
-		false,
-		0.f
-	);
-	*/
 
 	FTimerDelegate TimerDel;
 	TimerDel.BindUObject(this, &UOWGA_CyberAgility::StopWallClimb);
@@ -115,16 +105,6 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 		MaxWallClimbDuration,
 		false
 	);
-
-	if (GetWorld()->GetTimerManager().IsTimerActive(WallClimbTimerHandle))
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, TEXT("WallClimb timer successfully set."));
-	}
-	else
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, TEXT("Timer failed to set!"));
-	}
-
 }
 
 void UOWGA_CyberAgility::StopWallClimb()
@@ -138,5 +118,6 @@ void UOWGA_CyberAgility::StopWallClimb()
 	Character->GetCharacterMovement()->GravityScale = 1.0f;
 	Character->GetCharacterMovement()->Velocity = FVector::ZeroVector;
 
-	GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Green, TEXT(">>> STOP WALL CLIMB <<<"));
+	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
+
 }
