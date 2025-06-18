@@ -27,7 +27,7 @@ void UOWGA_CyberAgility::ActivateAbility(
 	}
 
 	// 공중에 있는지 확인 (벽 없음)
-	if (Character->GetCharacterMovement()->IsFalling())
+	else if (Character->GetCharacterMovement()->IsFalling())
 	{
 		// 더블점프 
 		if (!bDoubleJumpUsed)
@@ -40,6 +40,8 @@ void UOWGA_CyberAgility::ActivateAbility(
 			Character->LandedDelegate.AddDynamic(this, &UOWGA_CyberAgility::OnLanded);
 		}
 	}
+
+	else Character->Jump();
 
 	// 점프 전 혹은 점프 못하는 상황
 	EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
@@ -90,6 +92,8 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 
 	Character->GetCharacterMovement()->GravityScale = 0.0f;
 	Character->GetCharacterMovement()->Velocity = FVector(0.0f, 0.0f, WallClimbSpeed); 
+	Character->GetCharacterMovement()->SetMovementMode(MOVE_Flying);
+
 
 	FTimerDelegate TimerDel;
 	TimerDel.BindUObject(this, &UOWGA_CyberAgility::StopWallClimb);
@@ -113,6 +117,8 @@ void UOWGA_CyberAgility::StopWallClimb()
 
 	Character->GetCharacterMovement()->GravityScale = 1.0f;
 	Character->GetCharacterMovement()->Velocity = FVector::ZeroVector;
+	Character->GetCharacterMovement()->SetMovementMode(MOVE_Walking);
+
 
 	EndAbility(CurrentSpecHandle, CurrentActorInfo, CurrentActivationInfo, true, false);
 
