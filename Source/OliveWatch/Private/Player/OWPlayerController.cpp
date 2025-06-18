@@ -48,6 +48,7 @@ void AOWPlayerController::SetupInputComponent()
 
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_Jump, this, &ThisClass::Input_Jump);
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFire, this, &ThisClass::Input_MainFire);
+			BindSkillAction(OWAS, OWGameplayTags::Input_Action_MainFireMainTain, this, &ThisClass::Input_MainFireMainTain);
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_SubFire, this, &ThisClass::Input_SubFire);
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill1, this, &ThisClass::Input_Skill1);
             BindSkillAction(OWAS, OWGameplayTags::Input_Action_Skill2, this, &ThisClass::Input_Skill2);
@@ -88,6 +89,11 @@ void AOWPlayerController::Input_MeleeAttack(const FInputActionValue& Value)
 void AOWPlayerController::Input_MainFire(const FInputActionValue& Value)
 {
 	OWPlayer->ActivateAbility(OWGameplayTags::Input_Action_MainFire);
+}
+
+void AOWPlayerController::Input_MainFireMainTain(const FInputActionValue& InputValue)
+{
+	OWPlayer->ActivateAbility(OWGameplayTags::Input_Action_MainFireMainTain);
 }
 
 void AOWPlayerController::Input_SubFire(const FInputActionValue& Value)

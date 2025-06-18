@@ -6,12 +6,14 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "GameFramework/PlayerController.h"
+#include "GameplayTagContainer.h"         
+#include "AbilitySystem/OWAbilitySet.h"   
+#include "Data/OWInputData.h"             
+#include "EnhancedInputComponent.h"       
+#include "AbilitySystem/Abilities/Base/OWGameplayAbility.h"
 #include "OWPlayerController.generated.h"
 
-class UOWInputData;
 class AOWCharacter;
-class UEnhancedInputComponent;
-class UOWAbilitySet;
 struct FInputActionValue;
 
 /**
@@ -40,6 +42,7 @@ private:
     void Input_Curl(const FInputActionValue& InputValue);
     void Input_MeleeAttack(const FInputActionValue& InputValue);
     void Input_MainFire(const FInputActionValue& InputValue);
+    void Input_MainFireMainTain(const FInputActionValue& InputValue);
     void Input_SubFire(const FInputActionValue& InputValue);
     void Input_Skill1(const FInputActionValue& InputValue);
     void Input_Skill2(const FInputActionValue& InputValue);
