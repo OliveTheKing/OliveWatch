@@ -53,7 +53,8 @@ void UOWGA_Active_GunFire::Shoot(FVector Direction)
 		// TASK ³Ö±â
 
 		FGameplayEffectSpecHandle DamageEffectSpecHandle = MakeOutgoingGameplayEffectSpec(FD->FirePattern.DamageGameplayEffect, GetAbilityLevel());
-		DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag("Input.Action.MainFire"), FD->FirePattern.Damage);
+		//DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag("Input.Action.MainFire"), FD->FirePattern.Damage);
+		DamageEffectSpecHandle.Data.Get()->SetSetByCallerMagnitude(FGameplayTag::RequestGameplayTag("Data.Damage"), FD->FirePattern.Damage);
 		WeaponComp->StartFire(Direction, DamageEffectSpecHandle);
 	}
 }
