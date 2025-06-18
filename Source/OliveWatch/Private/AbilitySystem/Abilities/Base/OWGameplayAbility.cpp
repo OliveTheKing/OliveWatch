@@ -7,6 +7,7 @@
 #include "GameplayEffect.h"
 #include "AbilitySystem//Effects/OWCooldownGameplayEffect.h"
 #include "AbilitySystemComponent.h"
+#include "OWGameplayTags.h"
 
 
 UOWGameplayAbility::UOWGameplayAbility()
@@ -59,6 +60,24 @@ bool UOWGameplayAbility::CanActivateAbility(const FGameplayAbilitySpecHandle Han
 	if (ActorInfo->AbilitySystemComponent->HasAnyMatchingGameplayTags(CooldownTags))
 	{
 		//GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Blocked"));
+		return false;
+	}
+	// �α� ������ ���� else if�� �и��صξ����� ���� ���� ����
+	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
+		return false;
+	}
+	// �α� ������ ���� else if�� �и��صξ����� ���� ���� ����
+	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
+		return false;
+	}
+	// �α� ������ ���� else if�� �и��صξ����� ���� ���� ����
+	else if (ActorInfo->AbilitySystemComponent->HasMatchingGameplayTag(OWGameplayTags::Status_SkillBlocked))
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 1.0f, FColor::Cyan, TEXT("Status: Skill Blocked"));
 		return false;
 	}
 
