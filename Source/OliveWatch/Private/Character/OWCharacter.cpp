@@ -100,6 +100,9 @@ void AOWCharacter::ActivateAbility(FGameplayTag AbilityTag)
 
 UOWAbilitySystemComponent* AOWCharacter::GetOWAbilitySystemComponent()
 {
+	if (!AbilitySystemComponent) {
+		return NULL;
+	}
 	return AbilitySystemComponent;
 }
 void AOWCharacter::Jump()

@@ -4,6 +4,8 @@
 #include "AbilitySystem/OWOverlapHandlerComponent.h"
 #include "AbilitySystemComponent.h"
 #include "Character/OWCharacter.h"
+#include "Player/OWPlayerState.h"
+#include "AbilitySystem/OWAbilitySystemComponent.h"
 
 // Sets default values for this component's properties
 UOWOverlapHandlerComponent::UOWOverlapHandlerComponent()
@@ -19,8 +21,17 @@ void UOWOverlapHandlerComponent::Initialize(AOWCharacter* InInstigator, const TA
 void UOWOverlapHandlerComponent::OverlapTarget(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	if (Cast<AOWCharacter>(OtherActor) == Instigator) return;
-	UAbilitySystemComponent* ASC = OtherActor->FindComponentByClass<UAbilitySystemComponent>();
+	
+	UAbilitySystemComponent* ASC;
+	if (Cast<AOWCharacter>(OtherActor) && Cast<AOWCharacter>(OtherActor)->GetOWAbilitySystemComponent()) {
+		// OtherActor가 Player인 경우
+		ASC = Cast<AOWCharacter>(OtherActor)->GetOWAbilitySystemComponent();
+	}
+	else {
+		ASC = OtherActor->FindComponentByClass<UAbilitySystemComponent>();
+	}
 	if (!ASC) return;
+	
 
 	for (FGameplayEffectSpecHandle Effect : EffectSpecs) {
 		if (Effect.IsValid())
