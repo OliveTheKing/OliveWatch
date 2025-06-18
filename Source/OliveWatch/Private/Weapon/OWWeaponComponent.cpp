@@ -84,7 +84,8 @@ void UOWWeaponComponent::SpawnProjectile()
 
     if (Projectile)
     {
-        Projectile->DamageSpecHandle = CurrentDamageSpec;
+        //Projectile->DamageSpecHandle = CurrentDamageSpec;
+        Projectile->OverlapEffectSpec.Add(CurrentDamageSpec);
 
         Projectile->FinishSpawning(FTransform::Identity);  // 임시 트랜스폼으로 완료
 
