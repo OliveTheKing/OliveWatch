@@ -17,18 +17,18 @@ void UOWGA_CyberAgility::ActivateAbility(
 
 	ACharacter* Character = Cast<ACharacter>(ActorInfo->AvatarActor.Get());
 	
+	// 일단 벽이 있는지 확인
+	if (IsNextToWall(Character))
+	{
+		// 벽타기 시작
+		StartWallClimb(Character);
+		//EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
+		return;
+	}
+
 	// 공중에 있는지 확인 (벽 없음)
 	if (Character->GetCharacterMovement()->IsFalling())
 	{
-		// 일단 벽이 있는지 확인
-		if (IsNextToWall(Character))
-		{
-			// 벽타기 시작
-			StartWallClimb(Character);
-			//EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
-			return;
-		}
-
 		// 더블점프 
 		if (!bDoubleJumpUsed)
 		{
@@ -67,7 +67,7 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 	FVector Start = Character->GetActorLocation();
 	FVector Forward = Character->GetActorForwardVector();
 	// 벽에 얼마나 가까이 가야하는가?
-	FVector End = Start + Forward * 400.f;
+	FVector End = Start + Forward * 300.f;
 
 	FHitResult Hit;
 	FCollisionQueryParams Params;
