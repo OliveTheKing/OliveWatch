@@ -22,7 +22,7 @@ void UOWGA_CyberAgility::ActivateAbility(
 	{
 		// 벽타기 시작
 		StartWallClimb(Character);
-		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
+		//EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
 		return;
 	}
 
@@ -71,7 +71,8 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 {
 	FVector Start = Character->GetActorLocation();
 	FVector Forward = Character->GetActorForwardVector();
-	FVector End = Start + Forward * 50.f;
+	// 벽에 최대한 가까이
+	FVector End = Start + Forward * 200.f;
 
 	FHitResult Hit;
 	FCollisionQueryParams Params;
@@ -94,12 +95,21 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 
 	Character->GetCharacterMovement()->GravityScale = 0.0f;
 	Character->GetCharacterMovement()->Velocity = FVector(0.0f, 0.0f, WallClimbSpeed); 
+	/*
+	Character->GetWorldTimerManager().SetTimer(
+		WallClimbTimerHandle,
+		this,
+		&UOWGA_CyberAgility::StopWallClimb,
+		MaxWallClimbDuration,
+		false,
+		0.f
+	);
+	*/
 
 	FTimerDelegate TimerDel;
-	TimerDel.BindUFunction(this, FName("StopWallClimb"));
+	TimerDel.BindUObject(this, &UOWGA_CyberAgility::StopWallClimb);
 
-	AActor* OwnerActor = GetAvatarActorFromActorInfo();
-	OwnerActor->GetWorldTimerManager().SetTimer(
+	Character->GetWorldTimerManager().SetTimer(
 		WallClimbTimerHandle,
 		TimerDel,
 		MaxWallClimbDuration,
@@ -119,6 +129,8 @@ void UOWGA_CyberAgility::StartWallClimb(ACharacter* Character)
 
 void UOWGA_CyberAgility::StopWallClimb()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("~~~~~~~~~~~~~~~~~~~~~~~STOP WALL CLIMB~~~~~~~~~~~~~~~~~~~~~~~~~~~~"));
+
 	bWallClimbActive = false;
 
 	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
