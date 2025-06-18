@@ -6,5 +6,6 @@ var searchData=
   ['aowplayercontroller_3',['AOWPlayerController',['../classAOWPlayerController.html',1,'']]],
   ['aowplayerstate_4',['AOWPlayerState',['../classAOWPlayerState.html',1,'']]],
   ['aowprojectile_5',['AOWProjectile',['../classAOWProjectile.html',1,'']]],
-  ['aowtmpprojectile_6',['AOWTmpProjectile',['../classAOWTmpProjectile.html',1,'']]]
+  ['aowtestactor_6',['AOWTestActor',['../classAOWTestActor.html',1,'']]],
+  ['aowtmpprojectile_7',['AOWTmpProjectile',['../classAOWTmpProjectile.html',1,'']]]
 ];

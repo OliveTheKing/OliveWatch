@@ -22,7 +22,8 @@ var searchData=
   ['uowgameplaytask_19',['UOWGameplayTask',['../classUOWGameplayTask.html',1,'']]],
   ['uowge_5fcost_20',['UOWGE_Cost',['../classUOWGE__Cost.html',1,'']]],
   ['uowge_5finitultimategauge_21',['UOWGE_InitUltimateGauge',['../classUOWGE__InitUltimateGauge.html',1,'']]],
-  ['uowgt_5fplaymontageandwaitforevent_22',['UOWGT_PlayMontageAndWaitForEvent',['../classUOWGT__PlayMontageAndWaitForEvent.html',1,'']]],
-  ['uowinputdata_23',['UOWInputData',['../classUOWInputData.html',1,'']]],
-  ['uowreloadoverride_24',['UOWReloadOverride',['../classUOWReloadOverride.html',1,'']]]
+  ['uowge_5fsleep_22',['UOWGE_Sleep',['../classUOWGE__Sleep.html',1,'']]],
+  ['uowgt_5fplaymontageandwaitforevent_23',['UOWGT_PlayMontageAndWaitForEvent',['../classUOWGT__PlayMontageAndWaitForEvent.html',1,'']]],
+  ['uowinputdata_24',['UOWInputData',['../classUOWInputData.html',1,'']]],
+  ['uowreloadoverride_25',['UOWReloadOverride',['../classUOWReloadOverride.html',1,'']]]
 ];
