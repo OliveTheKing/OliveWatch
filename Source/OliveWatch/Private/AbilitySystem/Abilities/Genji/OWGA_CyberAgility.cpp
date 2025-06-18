@@ -17,36 +17,31 @@ void UOWGA_CyberAgility::ActivateAbility(
 
 	ACharacter* Character = Cast<ACharacter>(ActorInfo->AvatarActor.Get());
 	
-	// 일단 벽이 있는지 확인
-	if (IsNextToWall(Character))
-	{
-		// 벽타기 시작
-		StartWallClimb(Character);
-		//EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
-		return;
-	}
-
 	// 공중에 있는지 확인 (벽 없음)
-	if (!Character->GetCharacterMovement()->IsFalling())
+	if (Character->GetCharacterMovement()->IsFalling())
 	{
-		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
-		return;
+		// 일단 벽이 있는지 확인
+		if (IsNextToWall(Character))
+		{
+			// 벽타기 시작
+			StartWallClimb(Character);
+			//EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
+			return;
+		}
+
+		// 더블점프 
+		if (!bDoubleJumpUsed)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("CyberAgility: activate double jump!"));
+
+			Character->LaunchCharacter(FVector(0.f, 0.f, DoubleJumpStrength), false, true);
+			bDoubleJumpUsed = true;
+			//bCanWallClimb = false;
+			Character->LandedDelegate.AddDynamic(this, &UOWGA_CyberAgility::OnLanded);
+		}
 	}
 
-	// 더블점프 
-	if (bDoubleJumpUsed)
-	{
-		EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
-		return;
-	}
-
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Green, TEXT("CyberAgility: activate double jump!"));
-
-	Character->LaunchCharacter(FVector(0.f, 0.f, DoubleJumpStrength), false, true);
-	bDoubleJumpUsed = true;
-	//bCanWallClimb = false;
-	Character->LandedDelegate.AddDynamic(this, &UOWGA_CyberAgility::OnLanded);
-
+	// 점프 전 혹은 점프 못하는 상황
 	EndAbility(Handle, ActorInfo, ActivationInfo, true, false);
 }
 
@@ -71,8 +66,8 @@ bool UOWGA_CyberAgility::IsNextToWall(ACharacter* Character)
 {
 	FVector Start = Character->GetActorLocation();
 	FVector Forward = Character->GetActorForwardVector();
-	// 벽에 최대한 가까이
-	FVector End = Start + Forward * 500.f;
+	// 벽에 얼마나 가까이 가야하는가?
+	FVector End = Start + Forward * 400.f;
 
 	FHitResult Hit;
 	FCollisionQueryParams Params;
@@ -112,6 +107,7 @@ void UOWGA_CyberAgility::StopWallClimb()
 	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("~~~~~~~~~~~~~~~~~~~~~~~STOP WALL CLIMB~~~~~~~~~~~~~~~~~~~~~~~~~~~~"));
 
 	bWallClimbActive = false;
+	bDoubleJumpUsed = false;
 
 	ACharacter* Character = Cast<ACharacter>(CurrentActorInfo->AvatarActor.Get());
 
