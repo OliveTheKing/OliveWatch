@@ -7,6 +7,7 @@
 #include "Weapon/OWWeaponComponent.h"
 #include "GameplayTagContainer.h"
 #include "Camera/CameraComponent.h"
+#include "AbilitySystem/OWAbilitySystemComponent.h"
 #include "OWCharacter.generated.h"
 
 UCLASS()
