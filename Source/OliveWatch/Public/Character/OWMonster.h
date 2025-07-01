@@ -19,9 +19,14 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 protected:
 	UPROPERTY(EditDefaultsOnly, Category = "AbilitySet")
 	TObjectPtr<class UOWAbilitySet> AbilitySet;
 
+private:
+	float TimeDuration;
+	float ElapsedTime;
+	bool bMoveRight;
 };
