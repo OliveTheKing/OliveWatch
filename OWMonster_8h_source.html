@@ -100,14 +100,19 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">protected</span>:</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> BeginPlay() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    UPROPERTY(EditDefaultsOnly, Category = <span class="stringliteral">&quot;AbilitySet&quot;</span>)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    TObjectPtr&lt;class UOWAbilitySet&gt; AbilitySet;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> Tick(<span class="keywordtype">float</span> DeltaTime) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    UPROPERTY(EditDefaultsOnly, Category = <span class="stringliteral">&quot;AbilitySet&quot;</span>)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    TObjectPtr&lt;class UOWAbilitySet&gt; AbilitySet;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">float</span> TimeDuration;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">float</span> ElapsedTime;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> bMoveRight;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
 </div>
-<div class="ttc" id="aclassAOWCharacter_html"><div class="ttname"><a href="classAOWCharacter.html">AOWCharacter</a></div><div class="ttdef"><b>Definition</b> OWCharacter.h:14</div></div>
+<div class="ttc" id="aclassAOWCharacter_html"><div class="ttname"><a href="classAOWCharacter.html">AOWCharacter</a></div><div class="ttdef"><b>Definition</b> OWCharacter.h:15</div></div>
 <div class="ttc" id="aclassAOWMonster_html"><div class="ttname"><a href="classAOWMonster.html">AOWMonster</a></div><div class="ttdef"><b>Definition</b> OWMonster.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
