@@ -6,6 +6,7 @@
 #include "AbilitySystemComponent.h"
 #include "OWGameplayTags.h"
 #include "Character/OWCharacter.h"
+#include "AbilitySystem/OWOverlapHandlerComponent.h"
 
 
 AOWProjectile::AOWProjectile()
@@ -49,6 +50,10 @@ void AOWProjectile::BeginPlay()
 
 void AOWProjectile::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+    if (IsDeflected) {
+        Super::OnOverlapBegin(OverlappedComp, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
+        return;
+    }
     //UAbilitySystemComponent* ASC = OtherActor->FindComponentByClass<UAbilitySystemComponent>();
     UAbilitySystemComponent* ASC = Cast<AOWCharacter>(OtherActor)->GetOWAbilitySystemComponent();
 
@@ -61,6 +66,8 @@ void AOWProjectile::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActor* 
 
         // 주인 변경(겐지로)
         SetOwner(OtherActor);
+        OverlapHandler->Initialize(Cast<AOWCharacter>(OtherActor), OverlapEffectSpec);
+        IsDeflected = true;
 
         GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Cyan, TEXT("반사"));
         return;
