@@ -1,6 +1,6 @@
 <map id="AOWCollisionHit" name="AOWCollisionHit">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,119,211,344"/>
-<area shape="rect" id="Node000003" href="$classAOWProjectile.html" title=" " alt="" coords="11,392,205,577"/>
+<area shape="rect" id="Node000003" href="$classAOWProjectile.html" title=" " alt="" coords="11,392,205,597"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="111,358,111,392,105,392,105,358"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="79,5,137,71"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,84,111,119,105,119,105,84"/>

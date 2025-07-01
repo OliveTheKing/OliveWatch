@@ -117,24 +117,27 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = <span class="stringliteral">&quot;true&quot;</span>))</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classAOWProjectile.html#acfcb046c42dec1fad2cb913b8ea3d3a6">   36</a></span>    UProjectileMovementComponent* ProjectileMovement;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//UFUNCTION()</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//virtual void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult&amp; Hit) override;</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>public:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classAOWProjectile.html#a1b56e68a02200e3b65468b49162177e1">   45</a></span>    <span class="keywordtype">void</span> SetDamageSpecHandle(FGameplayEffectSpecHandle InHandle) { DamageSpecHandle = InHandle; }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    UPROPERTY()</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> IsDeflected = false;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">//UFUNCTION()</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">//virtual void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult&amp; Hit) override;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>public:</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">//USphereComponent* GetCollisionComp() const { return CollisionComp; }</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classAOWProjectile.html#a1bf4a7476cfa86d619e1a9b3040b8f3e">   51</a></span>    UProjectileMovementComponent* <a class="code hl_function" href="classAOWProjectile.html#a1bf4a7476cfa86d619e1a9b3040b8f3e">GetProjectileMovement</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ProjectileMovement; }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    UFUNCTION()</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    void SetProjectileVelocity(FVector Rotation);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classAOWProjectile.html#a1b56e68a02200e3b65468b49162177e1">   48</a></span>    <span class="keywordtype">void</span> SetDamageSpecHandle(FGameplayEffectSpecHandle InHandle) { DamageSpecHandle = InHandle; }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">//USphereComponent* GetCollisionComp() const { return CollisionComp; }</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classAOWProjectile.html#a1bf4a7476cfa86d619e1a9b3040b8f3e">   54</a></span>    UProjectileMovementComponent* <a class="code hl_function" href="classAOWProjectile.html#a1bf4a7476cfa86d619e1a9b3040b8f3e">GetProjectileMovement</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ProjectileMovement; }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    UFUNCTION()</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    void SetProjectileVelocity(FVector Rotation);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
 </div>
 <div class="ttc" id="aclassAOWCollisionHit_html"><div class="ttname"><a href="classAOWCollisionHit.html">AOWCollisionHit</a></div><div class="ttdef"><b>Definition</b> OWCollisionHit.h:17</div></div>
 <div class="ttc" id="aclassAOWProjectile_html"><div class="ttname"><a href="classAOWProjectile.html">AOWProjectile</a></div><div class="ttdef"><b>Definition</b> OWProjectile.h:16</div></div>
-<div class="ttc" id="aclassAOWProjectile_html_a1bf4a7476cfa86d619e1a9b3040b8f3e"><div class="ttname"><a href="classAOWProjectile.html#a1bf4a7476cfa86d619e1a9b3040b8f3e">AOWProjectile::GetProjectileMovement</a></div><div class="ttdeci">UProjectileMovementComponent * GetProjectileMovement() const</div><div class="ttdef"><b>Definition</b> OWProjectile.h:51</div></div>
+<div class="ttc" id="aclassAOWProjectile_html_a1bf4a7476cfa86d619e1a9b3040b8f3e"><div class="ttname"><a href="classAOWProjectile.html#a1bf4a7476cfa86d619e1a9b3040b8f3e">AOWProjectile::GetProjectileMovement</a></div><div class="ttdeci">UProjectileMovementComponent * GetProjectileMovement() const</div><div class="ttdef"><b>Definition</b> OWProjectile.h:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
